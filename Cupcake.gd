@@ -15,15 +15,15 @@ onready var sprite: = $Sprite
 # onready var ladderSensor = $LadderSensor as RayCast2D
 
 
-export(int) var JUMP_FORCE = 230
-export(int) var JUMP_RELEASE_FORCE = 120
-export(int) var FALL_EXTRA_GRAVITY = 10
-export(int) var GRAVITY = 10
+export(int) var JUMP_FORCE = 500
+export(int) var JUMP_RELEASE_FORCE = 300
+export(int) var FALL_EXTRA_GRAVITY = 100
+export(int) var GRAVITY = 20
 export(int) var FRICTION_DELTA = 100
 export(int) var ACCELERATION_DELTA = 100
-export(int) var MAX_SPEED = 100
-export(int) var MAX_FALL_VELOCITY = 300
-export(int) var CLIMB_SPEED = 50
+export(int) var MAX_SPEED = 200
+export(int) var MAX_FALL_VELOCITY = 400
+export(int) var CLIMB_SPEED = 100
 export(int) var MAX_JUMPS = 2
 export(float) var JUMP_BUFFER_SECONDS = 0.2
 export(float) var COYOTE_TIME_SECONDS = 0.1
@@ -64,7 +64,7 @@ func _physics_process(_delta):
 
 func jump():
 	velocity.y = -JUMP_FORCE
-	state = State.JUMP
+	set_state(State.JUMP)
 	jumps_left -= 1
 	jump_buffer_activated = false
 	coyote_time_activated = false
@@ -118,7 +118,8 @@ func character_looks_direction(movement):
 
 func process_state_idle(movement):
 	# Animation
-	animation_player.play("Idle")
+	if animation_player.current_animation != "Landed":
+		animation_player.play("Idle")
 
 	# Apply Physics
 	apply_friction(movement)
@@ -128,7 +129,7 @@ func process_state_idle(movement):
 
 	# Change state?
 	if is_on_ladder() and Input.is_action_pressed("ui_up"):
-		state = State.CLIMB
+		set_state(State.CLIMB)
 		return
 
 	if can_jump() and Input.is_action_just_pressed("ui_up"):
@@ -136,17 +137,18 @@ func process_state_idle(movement):
 		return
 
 	if movement.length() > 0:
-		state = State.MOVE
+		set_state(State.MOVE)
 		return
 
 	if not is_on_floor():
-		state = State.JUMP
+		set_state(State.JUMP)
 		return
 
 
 func process_state_move(movement):
 	# Animation
-	animation_player.play("Run")
+	if animation_player.current_animation != "Landed":
+		animation_player.play("Run")
 
 	# Apply Physics
 	apply_gravity()
@@ -163,11 +165,11 @@ func process_state_move(movement):
 
 	# Change state?
 	if is_on_ladder() and Input.is_action_pressed("ui_up"):
-		state = State.CLIMB
+		set_state(State.CLIMB)
 		return
 
 	if not is_on_floor():
-		state = State.JUMP
+		set_state(State.JUMP)
 		return
 
 	if (can_jump() or coyote_time_activated) and Input.is_action_just_pressed("ui_up"):
@@ -175,7 +177,7 @@ func process_state_move(movement):
 		return
 
 	if movement.x == 0:
-		state = State.IDLE
+		set_state(State.IDLE)
 		return
 
 
@@ -199,13 +201,14 @@ func process_state_climb(movement):
 
 	# Change state?
 	if not is_on_ladder():
-		state = State.MOVE
+		set_state(State.MOVE)
 		return
 
 
 func process_state_jump(movement):
 	# Animation
-	animation_player.play("Jump")
+	if animation_player.current_animation != "Jump" and animation_player.current_animation != "":
+		animation_player.play("Jump")
 
 	# Apply Physics
 	apply_gravity()
@@ -230,7 +233,7 @@ func process_state_jump(movement):
 
 	# Change state?
 	if is_on_ladder() and Input.is_action_pressed("ui_up"):
-		state = State.CLIMB
+		set_state(State.CLIMB)
 		return
 
 	if can_jump() and Input.is_action_just_pressed("ui_up"):
@@ -238,7 +241,7 @@ func process_state_jump(movement):
 		return
 
 	if is_on_floor():
-		state = State.IDLE
+		set_state(State.IDLE)
 		return
 
 
@@ -246,6 +249,11 @@ func is_on_ladder():
 	return false
 	# No implemented
 	# return ladderSensor.is_colliding() and ladderSensor.get_collider() is Ladder
+
+
+func set_state(value: int) -> void:
+	print("set_state: ", State.keys()[value])
+	state = value
 
 
 func _on_JumpBufferTimer_timeout():
