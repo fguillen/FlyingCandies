@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Player
+class_name Cupcake
 
 onready var labelVelocity = $LabelVelocity as Label
 onready var labelState = $LabelState as Label

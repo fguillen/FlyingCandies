@@ -10,12 +10,54 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "Player",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Art/StateMachine/Character.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Cupcake",
 "language": "GDScript",
 "path": "res://Cupcake.gd"
+}, {
+"base": "Node",
+"class": "InputManager",
+"language": "GDScript",
+"path": "res://Art/StateMachine/InputManager.gd"
+}, {
+"base": "Character",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://Art/StateMachine/State.gd"
+}, {
+"base": "State",
+"class": "StateIdle",
+"language": "GDScript",
+"path": "res://Art/StateMachine/StateIdle.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Art/StateMachine/StateMachine.gd"
+}, {
+"base": "State",
+"class": "StateMove",
+"language": "GDScript",
+"path": "res://Art/StateMachine/StateMove.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Character": "",
+"Cupcake": "",
+"InputManager": "",
+"Player": "",
+"State": "",
+"StateIdle": "",
+"StateMachine": "",
+"StateMove": ""
 }
 
 [application]
