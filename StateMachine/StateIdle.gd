@@ -3,7 +3,7 @@ extends State
 
 
 func enter(_msg := {}) -> void:
-	pass
+	character.animation_player.play("Idle")
 
 func process(_delta: float) -> void:
 	character.movement_manager.direction = character.input_manager.get_move_direction()

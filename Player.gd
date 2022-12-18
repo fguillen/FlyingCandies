@@ -1,6 +1,4 @@
 class_name Player
 extends Character
 
-
-func _ready():
-	pass
+onready var ship_engine: = $ShipEngine
