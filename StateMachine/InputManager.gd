@@ -8,4 +8,6 @@ func get_move_direction() -> Vector2:
 		Input.get_axis("ui_up", "ui_down")
 	)
 
+	result = result.clamped(1.0)
+
 	return result
