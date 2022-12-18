@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/laserRed02.png" type="Texture" id=1]
+[ext_resource path="res://ProjectileLaser.gd" type="Script" id=2]
+
+[node name="ProjectileLaser" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 1 )

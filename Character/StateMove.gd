@@ -12,6 +12,9 @@ func physics_process(_delta: float) -> void:
 		character.state_machine.transition_to("Idle")
 		return
 
+	if character.input_manager.is_attacking():
+		character.weapon_manager.attack()
+
 	character.movement_manager.apply_friction()
 	character.movement_manager.apply_acceleration()
 

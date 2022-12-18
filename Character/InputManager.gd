@@ -8,6 +8,9 @@ func get_move_direction() -> Vector2:
 		Input.get_axis("ui_up", "ui_down")
 	)
 
-	result = result.clamped(1.0)
+	result = result.limit_length(1.0)
 
 	return result
+
+func is_attacking() -> bool:
+	return Input.is_action_pressed("ui_accept")
