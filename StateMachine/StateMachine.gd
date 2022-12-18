@@ -4,15 +4,15 @@ extends Node
 signal transitioned(state_name)
 
 export var initial_state_path := NodePath()
+
 export(bool) var debug := false
 export(int) var actual_state := 0
 
 onready var state: State = get_node(initial_state_path)
 
 
-func _ready() -> void:
-	yield(owner, "ready")
 
+func _ready() -> void:
 	for child in get_children():
 		child.character = owner
 

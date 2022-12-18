@@ -1,22 +1,29 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Art/StateMachine/StateMachine.gd" type="Script" id=2]
-[ext_resource path="res://Art/StateMachine/StateMove.gd" type="Script" id=3]
-[ext_resource path="res://Art/StateMachine/StateIdle.gd" type="Script" id=4]
+[ext_resource path="res://StateMachine/StateMachine.gd" type="Script" id=2]
+[ext_resource path="res://StateMachine/StateMove.gd" type="Script" id=3]
+[ext_resource path="res://StateMachine/StateIdle.gd" type="Script" id=4]
 [ext_resource path="res://Player.gd" type="Script" id=5]
-[ext_resource path="res://Art/StateMachine/InputManager.gd" type="Script" id=6]
+[ext_resource path="res://StateMachine/InputManager.gd" type="Script" id=6]
+[ext_resource path="res://StateMachine/MovemementManager.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 10, 36 )
 script = ExtResource( 5 )
-speed = 100.0
 state_machine_path = NodePath("StateMachine")
 input_manager_path = NodePath("InputManager")
+movement_manager_path = NodePath("MovementManager")
 
 [node name="InputManager" type="Node" parent="."]
 script = ExtResource( 6 )
+
+[node name="MovementManager" type="Node" parent="."]
+script = ExtResource( 7 )
+FRICTION_DELTA = 40.0
+ACCELERATION_DELTA = 50.0
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )

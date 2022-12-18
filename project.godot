@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
-"path": "res://Art/StateMachine/Character.gd"
+"path": "res://StateMachine/Character.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Cupcake",
@@ -22,7 +22,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "InputManager",
 "language": "GDScript",
-"path": "res://Art/StateMachine/InputManager.gd"
+"path": "res://StateMachine/InputManager.gd"
+}, {
+"base": "Node",
+"class": "MovementManager",
+"language": "GDScript",
+"path": "res://StateMachine/MovemementManager.gd"
 }, {
 "base": "Character",
 "class": "Player",
@@ -32,27 +37,28 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://Art/StateMachine/State.gd"
+"path": "res://StateMachine/State.gd"
 }, {
 "base": "State",
 "class": "StateIdle",
 "language": "GDScript",
-"path": "res://Art/StateMachine/StateIdle.gd"
+"path": "res://StateMachine/StateIdle.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://Art/StateMachine/StateMachine.gd"
+"path": "res://StateMachine/StateMachine.gd"
 }, {
 "base": "State",
 "class": "StateMove",
 "language": "GDScript",
-"path": "res://Art/StateMachine/StateMove.gd"
+"path": "res://StateMachine/StateMove.gd"
 } ]
 _global_script_class_icons={
 "Character": "",
 "Cupcake": "",
 "InputManager": "",
+"MovementManager": "",
 "Player": "",
 "State": "",
 "StateIdle": "",
@@ -71,7 +77,6 @@ config/icon="res://icon.png"
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
-window/size/always_on_top=true
 window/stretch/aspect="keep"
 
 [gui]
