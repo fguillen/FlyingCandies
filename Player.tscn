@@ -49,7 +49,7 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="Area2D"]
 rotation = -0.00127678
 script = ExtResource( 5 )
 state_machine_path = NodePath("StateMachine")

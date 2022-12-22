@@ -20,7 +20,5 @@ func add_weapon(weapon:Weapon) -> void:
 
 
 func attack() -> void:
-	print("WeaponManager.can_attack(): ", actual_weapon.can_attack())
-
 	if actual_weapon != null and actual_weapon.can_attack():
 		actual_weapon.attack()
