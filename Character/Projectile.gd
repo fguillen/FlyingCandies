@@ -9,5 +9,5 @@ func _ready():
 func collision(area:Area2D):
 	print("Projectile collision with: ", area.get_class())
 
-	if area.get_class() == "Character":
+	if area.get_class() == "Enemy":
 		area.get_hit(DAMAGE)

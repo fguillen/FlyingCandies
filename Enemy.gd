@@ -12,3 +12,7 @@ func _ready():
 
 	ship_engine.setup(self)
 	behaviour.setup(self)
+
+
+func get_class():
+	return "Enemy"

@@ -10,3 +10,7 @@ func _ready():
 	weapon_manager.add_weapon(weapon)
 
 	ship_engine.setup(self)
+
+
+func get_class():
+	return "Player"

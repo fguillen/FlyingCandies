@@ -9,15 +9,14 @@ const MAX_SCALE = 1.5
 var power = 0.0
 var character
 
-func _ready():
-	for child in get_children():
-		if child is Sprite:
-			sprites.append(child)
-
 
 func setup(_character:Character):
 	character = _character
 	character.movement_manager.connect("velocity_changed", self, "on_velocity_changed")
+
+	for child in get_children():
+		if child is Sprite:
+			sprites.append(child)
 
 
 func on_velocity_changed(velocity:Vector2):
@@ -34,6 +33,7 @@ func set_power(value:float):
 
 
 func activate():
+	print("XXX ShipEngine.activate(), ", owner.get_class())
 	for sprite in sprites:
 		sprite.set_visible(true)
 
