@@ -105,6 +105,7 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 FRICTION_DELTA = 40.0
 ACCELERATION_DELTA = 40.0
+MAX_SPEED = 10.0
 
 [node name="WeaponManager" type="Node2D" parent="."]
 position = Vector2( 40, 0.051 )
@@ -129,20 +130,20 @@ position = Vector2( -7.99999, -0.0102142 )
 rotation = 3.14159
 script = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="ShipEngine"]
+[node name="SpriteEnemy" type="Sprite" parent="ShipEngine"]
 position = Vector2( -15.9898, -8.02042 )
 rotation = -1.5708
 texture = ExtResource( 9 )
 offset = Vector2( 0, -20 )
 
-[node name="Sprite2" type="Sprite" parent="ShipEngine"]
+[node name="SpriteEnemy2" type="Sprite" parent="ShipEngine"]
 position = Vector2( -16.0102, 7.97956 )
 rotation = -1.5708
 texture = ExtResource( 9 )
 offset = Vector2( 0, -20 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 4, 4 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

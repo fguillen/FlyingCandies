@@ -1,11 +1,10 @@
 class_name ShipEngine
 extends Node2D
 
-export(Array) var sprites: = []
-
 const MIN_SCALE = 0.5
 const MAX_SCALE = 1.5
 
+var sprites: = []
 var power = 0.0
 var character
 
@@ -24,6 +23,8 @@ func on_velocity_changed(velocity:Vector2):
 
 
 func set_power(value:float):
+	if power == value: return
+
 	power = value
 	if power > 0:
 		activate()
@@ -33,7 +34,6 @@ func set_power(value:float):
 
 
 func activate():
-	print("XXX ShipEngine.activate(), ", owner.get_class())
 	for sprite in sprites:
 		sprite.set_visible(true)
 

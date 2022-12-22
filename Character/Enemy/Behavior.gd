@@ -7,5 +7,5 @@ func setup(_character:Character):
 	character = _character
 
 func _process(_delta):
-	pass
-	# character.input_manager.move_direction = Vector2.LEFT
+	character.input_manager.move_direction = Vector2.LEFT
+	# pass
