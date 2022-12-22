@@ -6,7 +6,6 @@ export(Array) var sprites: = []
 const MIN_SCALE = 0.5
 const MAX_SCALE = 1.5
 
-
 var power = 0.0
 var character
 
@@ -22,7 +21,6 @@ func setup(_character:Character):
 
 
 func on_velocity_changed(velocity:Vector2):
-	print("on_velocity_changed: ", velocity)
 	set_power(velocity.length() / character.movement_manager.MAX_SPEED)
 
 
@@ -34,13 +32,16 @@ func set_power(value:float):
 	else:
 		deactivate()
 
+
 func activate():
 	for sprite in sprites:
 		sprite.set_visible(true)
 
+
 func deactivate():
 	for sprite in sprites:
 		sprite.set_visible(false)
+
 
 func scale(value:float):
 	for sprite in sprites:
