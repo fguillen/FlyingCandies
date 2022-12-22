@@ -72,22 +72,27 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://Character/State.gd"
+"path": "res://Character/States/State.gd"
+}, {
+"base": "State",
+"class": "StateDead",
+"language": "GDScript",
+"path": "res://Character/States/StateDead.gd"
 }, {
 "base": "State",
 "class": "StateIdle",
 "language": "GDScript",
-"path": "res://Character/StateIdle.gd"
+"path": "res://Character/States/StateIdle.gd"
 }, {
 "base": "Node",
-"class": "StateMachine",
+"class": "StateManager",
 "language": "GDScript",
-"path": "res://Character/StateMachine.gd"
+"path": "res://Character/States/StateManager.gd"
 }, {
 "base": "State",
 "class": "StateMove",
 "language": "GDScript",
-"path": "res://Character/StateMove.gd"
+"path": "res://Character/States/StateMove.gd"
 }, {
 "base": "Node2D",
 "class": "Weapon",
@@ -118,8 +123,9 @@ _global_script_class_icons={
 "ProjectileLaser": "",
 "ShipEngine": "",
 "State": "",
+"StateDead": "",
 "StateIdle": "",
-"StateMachine": "",
+"StateManager": "",
 "StateMove": "",
 "Weapon": "",
 "WeaponLaser": "",
@@ -129,7 +135,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Flying Candies"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="res://SpaceShooterScene.tscn"
 config/icon="res://icon.png"
 
 [display]

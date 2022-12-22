@@ -16,6 +16,10 @@ func physics_process(_delta: float) -> void:
 	pass
 
 
+func animation_ended() -> void:
+	pass
+
+
 func enter(_message := {}) -> void:
 	pass
 

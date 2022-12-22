@@ -1,4 +1,4 @@
-class_name StateMachine
+class_name StateManager
 extends Node
 
 signal transitioned(state_name)
@@ -11,24 +11,22 @@ export(int) var actual_state := 0
 onready var state: State = get_node(initial_state_path)
 
 
-func _ready() -> void:
-	yield(owner, "ready")
-
+func setup(character, initial_state:String = "Idle") -> void:
 	for child in get_children():
-		child.character = owner
+		child.character = character
 
-	state.enter()
+	transition_to(initial_state)
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func handle_input(event: InputEvent) -> void:
 	state.handle_input(event)
 
 
-func _process(delta: float) -> void:
+func process(delta: float) -> void:
 	state.process(delta)
 
 
-func _physics_process(delta: float) -> void:
+func physics_process(delta: float) -> void:
 	state.physics_process(delta)
 
 
@@ -44,3 +42,7 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	state = get_node(node_name)
 	state.enter(msg)
 	emit_signal("transitioned", state.name)
+
+
+func animation_ended() -> void:
+	state.animation_ended()
