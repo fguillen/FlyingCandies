@@ -15,11 +15,16 @@ func _ready():
 		if child is Sprite:
 			sprites.append(child)
 
-func setup(_character:Character):
-	self.character = _character
 
-func _process(_delta):
-	set_power(character.movement_manager.velocity.length() / character.movement_manager.MAX_SPEED)
+func setup(_character:Character):
+	character = _character
+	character.movement_manager.connect("velocity_changed", self, "on_velocity_changed")
+
+
+func on_velocity_changed(velocity:Vector2):
+	print("on_velocity_changed: ", velocity)
+	set_power(velocity.length() / character.movement_manager.MAX_SPEED)
+
 
 func set_power(value:float):
 	power = value
