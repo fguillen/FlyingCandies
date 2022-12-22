@@ -8,3 +8,5 @@ const WeaponDefault = preload("res://WeaponLaser.tscn")
 func _ready():
 	var weapon = WeaponDefault.instance()
 	weapon_manager.add_weapon(weapon)
+
+	ship_engine.setup(self)
