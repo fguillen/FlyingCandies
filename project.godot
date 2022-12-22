@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Behavior",
+"language": "GDScript",
+"path": "res://Character/Enemy/Behavior.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
@@ -19,10 +24,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Cupcake.gd"
 }, {
+"base": "Character",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy.gd"
+}, {
 "base": "Node",
 "class": "InputManager",
 "language": "GDScript",
 "path": "res://Character/InputManager.gd"
+}, {
+"base": "InputManager",
+"class": "InputManagerCharacter",
+"language": "GDScript",
+"path": "res://Character/InputManagerCharacter.gd"
 }, {
 "base": "Node",
 "class": "MovementManager",
@@ -85,9 +100,12 @@ _global_script_classes=[ {
 "path": "res://Character/WeaponManager.gd"
 } ]
 _global_script_class_icons={
+"Behavior": "",
 "Character": "",
 "Cupcake": "",
+"Enemy": "",
 "InputManager": "",
+"InputManagerCharacter": "",
 "MovementManager": "",
 "Player": "",
 "Projectile": "",

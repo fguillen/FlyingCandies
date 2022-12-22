@@ -1,16 +1,12 @@
 class_name InputManager
 extends Node
 
+var move_direction = Vector2.ZERO
+var attacking = false
+
 
 func get_move_direction() -> Vector2:
-	var result := Vector2(
-		Input.get_axis("ui_left", "ui_right"),
-		Input.get_axis("ui_up", "ui_down")
-	)
-
-	result = result.limit_length(1.0)
-
-	return result
+	return move_direction
 
 func is_attacking() -> bool:
-	return Input.is_action_pressed("ui_accept")
+	return attacking
