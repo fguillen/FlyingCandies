@@ -12,7 +12,7 @@ func on_collision(collision:KinematicCollision2D):
 	print("Projectile collision with: ", collision.collider.get_class())
 
 	if true: # collision.collider.get_class() == "Enemy":
-		collision.collider.get_hit(DAMAGE)
+		collision.collider.get_hit(DAMAGE, collision.position)
 		emit_signal("hit", collision.position)
 
 	queue_free()

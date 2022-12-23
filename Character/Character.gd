@@ -19,6 +19,7 @@ onready var damage_manager: DamageManager = get_node(damage_manager_path)
 
 signal out_of_health(position)
 signal dead(position)
+signal hit(position)
 
 
 func _ready():
@@ -50,8 +51,9 @@ func get_class():
 	return "Character"
 
 
-func get_hit(damage:int):
+func get_hit(damage:int, position:Vector2):
 	damage_manager.get_hit(damage)
+	emit_signal("hit", position)
 
 
 func on_health_changed(value:int):
