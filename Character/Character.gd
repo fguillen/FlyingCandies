@@ -1,5 +1,5 @@
 class_name Character
-extends Area2D
+extends KinematicBody2D
 
 
 export var state_manager_path := NodePath()
@@ -41,14 +41,13 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	state_manager.physics_process(delta)
+	var collision = move_and_collide(movement_manager.velocity * delta)
+	if collision != null:
+		state_manager.on_collision(collision)
 
 
 func get_class():
 	return "Character"
-
-
-func move(velocity:Vector2):
-	global_position = global_position + velocity
 
 
 func get_hit(damage:int):

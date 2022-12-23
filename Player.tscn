@@ -53,7 +53,7 @@ length = 0.1
 resource_name = "Move"
 length = 0.1
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="KinematicBody2D"]
 rotation = -0.00127678
 script = ExtResource( 5 )
 state_manager_path = NodePath("StateManager")

@@ -46,3 +46,7 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 
 func animation_ended() -> void:
 	state.animation_ended()
+
+
+func on_collision(collision:KinematicCollision2D):
+	state.on_collision(collision)

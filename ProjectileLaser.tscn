@@ -7,7 +7,7 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="ProjectileLaser" type="Area2D"]
+[node name="ProjectileLaser" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="FeedbackParticles" parent="." instance=ExtResource( 3 )]

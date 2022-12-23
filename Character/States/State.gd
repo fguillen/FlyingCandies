@@ -26,3 +26,7 @@ func enter(_message := {}) -> void:
 
 func exit() -> void:
 	pass
+
+
+func on_collision(_collision:KinematicCollision2D):
+	pass

@@ -16,4 +16,3 @@ func physics_process(delta: float) -> void:
 		character.weapon_manager.attack()
 
 	character.movement_manager.apply_friction(delta)
-	character.move(character.movement_manager.velocity * delta)
