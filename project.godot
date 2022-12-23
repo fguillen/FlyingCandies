@@ -34,6 +34,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Enemy.gd"
 }, {
+"base": "Node2D",
+"class": "Feedback",
+"language": "GDScript",
+"path": "res://Character/Feedback/Feedback.gd"
+}, {
+"base": "Feedback",
+"class": "FeedbackImpact",
+"language": "GDScript",
+"path": "res://Character/Feedback/FeedbackImpact.gd"
+}, {
 "base": "Node",
 "class": "InputManager",
 "language": "GDScript",
@@ -115,6 +125,8 @@ _global_script_class_icons={
 "Cupcake": "",
 "DamageManager": "",
 "Enemy": "",
+"Feedback": "",
+"FeedbackImpact": "",
 "InputManager": "",
 "InputManagerCharacter": "",
 "MovementManager": "",
