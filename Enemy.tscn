@@ -96,7 +96,7 @@ damage_manager_path = NodePath("DamageManager")
 
 [node name="DamageManager" type="Node" parent="."]
 script = ExtResource( 12 )
-max_health = 12
+max_health = 4
 
 [node name="Behavior" type="Node" parent="."]
 script = ExtResource( 11 )
