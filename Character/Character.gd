@@ -17,6 +17,9 @@ onready var state_manager: StateManager = get_node(state_manager_path)
 onready var weapon_manager: WeaponManager = get_node(weapon_manager_path)
 onready var damage_manager: DamageManager = get_node(damage_manager_path)
 
+signal out_of_health(position)
+signal dead(position)
+
 
 func _ready():
 	# warning-ignore:return_value_discarded
@@ -58,8 +61,14 @@ func on_health_changed(value:int):
 
 func on_out_of_health():
 	print("Out of health")
+	emit_signal("out_of_health", global_position)
 	state_manager.transition_to("Dead")
 
 
 func on_animation_ended():
 	state_manager.animation_ended()
+
+
+func dead():
+	emit_signal("dead", global_position)
+	queue_free()

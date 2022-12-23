@@ -7,4 +7,4 @@ func enter(_msg := {}) -> void:
 
 
 func animation_ended() -> void:
-	character.queue_free()
+	character.dead()

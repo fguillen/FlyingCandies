@@ -40,9 +40,9 @@ _global_script_classes=[ {
 "path": "res://Character/Feedback/Feedback.gd"
 }, {
 "base": "Feedback",
-"class": "FeedbackImpact",
+"class": "FeedbackParticles",
 "language": "GDScript",
-"path": "res://Character/Feedback/FeedbackImpact.gd"
+"path": "res://Character/Feedback/FeedbackParticles.gd"
 }, {
 "base": "Node",
 "class": "InputManager",
@@ -126,7 +126,7 @@ _global_script_class_icons={
 "DamageManager": "",
 "Enemy": "",
 "Feedback": "",
-"FeedbackImpact": "",
+"FeedbackParticles": "",
 "InputManager": "",
 "InputManagerCharacter": "",
 "MovementManager": "",
