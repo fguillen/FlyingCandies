@@ -21,6 +21,8 @@ signal out_of_health(position)
 signal dead(position)
 signal hit(position)
 
+var looking_towards = Vector2.RIGHT
+
 
 func _ready():
 	# warning-ignore:return_value_discarded
@@ -30,6 +32,7 @@ func _ready():
 	damage_manager.connect("out_of_health", self, "on_out_of_health")
 
 	state_manager.setup(self, "Idle")
+	weapon_manager.setup(self)
 
 
 func _unhandled_input(event: InputEvent) -> void:

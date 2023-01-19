@@ -1,7 +1,6 @@
 class_name ProjectileLaser
 extends Projectile
 
-var direction: = Vector2.RIGHT
 var speed: = 1500.0
 
 func _ready():
