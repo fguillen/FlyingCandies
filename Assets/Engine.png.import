@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserRed04.png-22c1a234238d2cf8b5946512d309f3b2.stex"
+path="res://.import/Engine.png-215aaea6ee4cd6cfabd0c3d105237574.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/laserRed04.png"
-dest_files=[ "res://.import/laserRed04.png-22c1a234238d2cf8b5946512d309f3b2.stex" ]
+source_file="res://Assets/Engine.png"
+dest_files=[ "res://.import/Engine.png-215aaea6ee4cd6cfabd0c3d105237574.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

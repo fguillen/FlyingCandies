@@ -8,7 +8,7 @@
 [ext_resource path="res://Character/InputManagerCharacter.gd" type="Script" id=6]
 [ext_resource path="res://Character/MovemementManager.gd" type="Script" id=7]
 [ext_resource path="res://ShipEngine.gd" type="Script" id=8]
-[ext_resource path="res://Assets/laserRed04.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Engine.png" type="Texture" id=9]
 [ext_resource path="res://Character/WeaponManager.gd" type="Script" id=10]
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=11]
 
@@ -54,7 +54,6 @@ resource_name = "Move"
 length = 0.1
 
 [node name="Player" type="KinematicBody2D"]
-rotation = -0.00127678
 script = ExtResource( 5 )
 state_manager_path = NodePath("StateManager")
 input_manager_path = NodePath("InputManagerPlayer")
@@ -88,20 +87,13 @@ script = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="ShipEngine" type="Node2D" parent="."]
-position = Vector2( 7.99999, 0.0102142 )
+position = Vector2( -22, 0 )
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="ShipEngine"]
-position = Vector2( -15.9898, -8.02042 )
-rotation = -1.5708
+scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
-offset = Vector2( 0, -20 )
-
-[node name="Sprite2" type="Sprite" parent="ShipEngine"]
-position = Vector2( -16.0102, 7.97956 )
-rotation = -1.5708
-texture = ExtResource( 9 )
-offset = Vector2( 0, -20 )
+offset = Vector2( -4, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )
@@ -109,7 +101,6 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.49106, -0.0140346 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,8 +1,8 @@
 class_name ShipEngine
 extends Node2D
 
-const MIN_SCALE = 0.5
-const MAX_SCALE = 1.5
+const MIN_SCALE = 0.25
+const MAX_SCALE = 3.25
 
 var sprites: = []
 var power = 0.0
@@ -45,4 +45,4 @@ func deactivate():
 
 func scale(value:float):
 	for sprite in sprites:
-		sprite.set_scale(Vector2(value, value))
+		sprite.set_scale(Vector2(value, sprite.scale.y))
