@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/gun07.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Bullet.png" type="Texture" id=1]
 [ext_resource path="res://WeaponLaser.gd" type="Script" id=2]
 
 [node name="WeaponLaser" type="Node2D"]
@@ -8,5 +8,5 @@ script = ExtResource( 2 )
 reload_time = 0.2
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = 1.5708
+scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
