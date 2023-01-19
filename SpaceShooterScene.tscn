@@ -15,64 +15,51 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 216, 208 )
-scale = Vector2( 1, 1 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 392, 200 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 392, 144 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 392, 256 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 464, 144 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 464, 200 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 464, 256 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy7" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544, 200 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544, 144 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy9" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544, 256 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy10" parent="." instance=ExtResource( 2 )]
 position = Vector2( 616, 144 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy11" parent="." instance=ExtResource( 2 )]
 position = Vector2( 616, 200 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
 
 [node name="Enemy12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 616, 256 )
 rotation = -0.0313932
-scale = Vector2( 1, 1 )
