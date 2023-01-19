@@ -4,13 +4,13 @@
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
 [ext_resource path="res://Character/States/StateMove.gd" type="Script" id=3]
 [ext_resource path="res://Character/States/StateIdle.gd" type="Script" id=4]
-[ext_resource path="res://Enemy.gd" type="Script" id=5]
+[ext_resource path="res://EnemyPatrolPath.gd" type="Script" id=5]
 [ext_resource path="res://Character/InputManager.gd" type="Script" id=6]
 [ext_resource path="res://Character/MovemementManager.gd" type="Script" id=7]
 [ext_resource path="res://ShipEngine.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Engine.png" type="Texture" id=9]
 [ext_resource path="res://Character/WeaponManager.gd" type="Script" id=10]
-[ext_resource path="res://Character/Enemy/Behavior.gd" type="Script" id=11]
+[ext_resource path="res://Character/Enemy/BehaviorPathPatrol.gd" type="Script" id=11]
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=12]
 [ext_resource path="res://Character/States/StateDead.gd" type="Script" id=13]
 [ext_resource path="res://Character/Feedback/FeedbackParticlesExplosion.tscn" type="PackedScene" id=14]
@@ -85,7 +85,7 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="EnemyPatrolPath" type="KinematicBody2D"]
 rotation = -0.00127678
 script = ExtResource( 5 )
 state_manager_path = NodePath("StateManager")
@@ -94,13 +94,13 @@ movement_manager_path = NodePath("MovementManager")
 animation_player_path = NodePath("AnimationPlayer")
 weapon_manager_path = NodePath("WeaponManager")
 damage_manager_path = NodePath("DamageManager")
-behavior_path = NodePath("Behavior")
+behavior_path = NodePath("BehaviorPatrolPath")
 
 [node name="DamageManager" type="Node" parent="."]
 script = ExtResource( 12 )
 max_health = 4
 
-[node name="Behavior" type="Node" parent="."]
+[node name="BehaviorPatrolPath" type="Node" parent="."]
 script = ExtResource( 11 )
 
 [node name="InputManager" type="Node" parent="."]
@@ -108,9 +108,9 @@ script = ExtResource( 6 )
 
 [node name="MovementManager" type="Node" parent="."]
 script = ExtResource( 7 )
-FRICTION_DELTA = 40.0
-ACCELERATION_DELTA = 40.0
-MAX_SPEED = 10.0
+FRICTION_DELTA = 1000.0
+ACCELERATION_DELTA = 1000.0
+MAX_SPEED = 100.0
 
 [node name="WeaponManager" type="Node2D" parent="."]
 position = Vector2( 40, 0.051 )
