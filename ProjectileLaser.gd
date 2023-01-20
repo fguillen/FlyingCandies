@@ -1,7 +1,7 @@
 class_name ProjectileLaser
 extends Projectile
 
-var speed: = 1500.0
+var speed: = 300.0
 
 func _ready():
 	pass

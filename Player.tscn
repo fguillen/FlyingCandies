@@ -13,7 +13,7 @@
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.4898, 15.014 )
+extents = Vector2( 7, 6 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Dead"
@@ -72,7 +72,7 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 
 [node name="WeaponManager" type="Node2D" parent="."]
-position = Vector2( 32, 0 )
+position = Vector2( 12, 0 )
 script = ExtResource( 10 )
 
 [node name="StateManager" type="Node" parent="."]
@@ -87,20 +87,17 @@ script = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="ShipEngine" type="Node2D" parent="."]
-position = Vector2( -22, 0 )
+position = Vector2( -8, 0 )
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="ShipEngine"]
-scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
 offset = Vector2( -4, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.49106, -0.0140346 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

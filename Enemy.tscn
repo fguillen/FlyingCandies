@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Enemy.png" type="Texture" id=1]
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
@@ -17,7 +17,7 @@
 [ext_resource path="res://Character/Feedback/FeedbackFlash.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.9847, 23 )
+extents = Vector2( 4.99425, 6.99616 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Dead"
@@ -32,7 +32,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 4, 4 ), Vector2( 3, 3 ), Vector2( 4, 4 ), Vector2( 3, 3 ) ]
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -85,6 +85,21 @@ tracks/0/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ) ]
+}
+
 [node name="Enemy" type="KinematicBody2D"]
 rotation = -0.00127678
 script = ExtResource( 5 )
@@ -131,21 +146,21 @@ script = ExtResource( 3 )
 script = ExtResource( 13 )
 
 [node name="ShipEngine" type="Node2D" parent="."]
-position = Vector2( 16, 0.0204285 )
+position = Vector2( 6, 0.00766068 )
 rotation = 3.14159
 script = ExtResource( 8 )
 
 [node name="SpriteEnemy" type="Sprite" parent="ShipEngine"]
-scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
 offset = Vector2( -4, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 3, 3 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11022e-16, 1.13687e-13 )
+position = Vector2( 0.00446955, 0.00510827 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -153,6 +168,7 @@ autoplay = "Idle"
 anims/Dead = SubResource( 4 )
 anims/Idle = SubResource( 2 )
 anims/Move = SubResource( 3 )
+anims/RESET = SubResource( 5 )
 
 [node name="Feedback" type="Node" parent="."]
 

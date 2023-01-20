@@ -21,12 +21,13 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 216, 208 )
+position = Vector2( 39, 88 )
 
 [node name="EnemiesPatrol" type="Node" parent="."]
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
-position = Vector2( 617, 99 )
+position = Vector2( 224, 47 )
+scale = Vector2( 0.457299, 0.32545 )
 curve = SubResource( 1 )
 script = ExtResource( 4 )
 
@@ -43,16 +44,13 @@ rotation = -2.06571
 texture = ExtResource( 2 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 607, 112 )
-scale = Vector2( 1, 1 )
+position = Vector2( 223, 48 )
 path_follow_path = NodePath("../Path2D/PathFollow2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 677, 112 )
-scale = Vector2( 1, 1 )
+position = Vector2( 247, 48 )
 path_follow_path = NodePath("../Path2D/PathFollow2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 754, 112 )
-scale = Vector2( 1, 1 )
+position = Vector2( 270, 48 )
 path_follow_path = NodePath("../Path2D/PathFollow2D")

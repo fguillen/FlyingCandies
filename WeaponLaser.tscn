@@ -8,5 +8,4 @@ script = ExtResource( 2 )
 reload_time = 0.2
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
