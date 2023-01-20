@@ -70,6 +70,9 @@ script = ExtResource( 6 )
 
 [node name="MovementManager" type="Node" parent="."]
 script = ExtResource( 7 )
+FRICTION_DELTA = 600.0
+ACCELERATION_DELTA = 600.0
+MAX_SPEED = 60.0
 
 [node name="WeaponManager" type="Node2D" parent="."]
 position = Vector2( 12, 0 )
