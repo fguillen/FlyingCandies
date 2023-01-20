@@ -10,4 +10,3 @@ func setup(character:Character):
 
 func on_process(_delta):
 	character.input_manager.move_direction = (path_follow.global_position - character.global_position).normalized()
-	print("BehaviorPathPatrol: ", character.input_manager.move_direction)

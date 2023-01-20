@@ -11,4 +11,3 @@ func _process(delta):
 
 func on_process(_delta):
 	character.input_manager.move_direction = Vector2.LEFT
-	print("Behavior: ", character.input_manager.move_direction)

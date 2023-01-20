@@ -56,4 +56,4 @@ path_follow_path = NodePath("../Path2D/PathFollow2D")
 position = Vector2( 357.634, 84.0947 )
 path_follow_path = NodePath("../Path2D/PathFollow2D")
 
-[node name="Control" parent="." instance=ExtResource( 5 )]
+[node name="HUD" parent="." instance=ExtResource( 5 )]
