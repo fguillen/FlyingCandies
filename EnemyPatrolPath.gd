@@ -15,3 +15,7 @@ func setup():
 
 func on_activate():
 	pass
+
+func on_dead(position):
+	.on_dead(position)
+	path.remove_enemy(self)

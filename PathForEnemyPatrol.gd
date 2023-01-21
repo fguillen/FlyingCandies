@@ -24,3 +24,14 @@ func attach_enemy(enemy:Enemy) -> Node2D:
 	followers.append(follower)
 
 	return path_follow
+
+
+func remove_enemy(enemy:Enemy):
+	var element = null
+	for follower in followers:
+		if follower["enemy"] == enemy:
+			element = follower
+			break
+
+	followers.erase(element)
+	element["path_follow"].queue_free()
