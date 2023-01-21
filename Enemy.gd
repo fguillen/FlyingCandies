@@ -8,6 +8,8 @@ onready var ship_engine: = $ShipEngine
 
 onready var behavior: Behavior = get_node(behavior_path)
 
+var activated = false
+
 const WeaponDefault = preload("res://WeaponLaser.tscn")
 
 func _ready():
@@ -28,3 +30,11 @@ func on_dead(_position):
 
 func get_class():
 	return "Enemy"
+
+func activate():
+	print("Activate")
+	on_activate()
+	activated = true
+
+func on_activate():
+	pass
