@@ -1,17 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://EnemyPatrolPath.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PathForEnemyPatrol.gd" type="Script" id=2]
-[ext_resource path="res://ActivatorArea.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Energy_fill.png" type="Texture" id=4]
+[ext_resource path="res://ActivatorArea.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 283, 83, 34.5096, -0.355769, -34.5096, 0.355769, 239, 113, 33.4423, -0.355769, -33.4423, 0.355769, 192, 74, 33.0865, 0.355769, -33.0865, -0.355769, 155, 111, 30.9519, -1.42308, -30.9519, 1.42308, 95, 71, 30.9519, -0.355769, -30.9519, 0.355769, 52, 117, 29.8846, 0.711538, -29.8846, -0.711538, 0, 72, 0, 0, 0, 0, -52, 119 )
 }
-
-[sub_resource type="LineShape2D" id=2]
-normal = Vector2( 1, 0 )
 
 [node name="SceneTest" type="Node2D"]
 
@@ -32,13 +28,4 @@ position = Vector2( -68, 0 )
 curve = SubResource( 1 )
 script = ExtResource( 2 )
 
-[node name="ActivatorArea" type="Area2D" parent="."]
-position = Vector2( 207, 92 )
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivatorArea"]
-shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="ActivatorArea"]
-rotation = 1.5708
-texture = ExtResource( 4 )
+[node name="ActivatorArea" parent="." instance=ExtResource( 3 )]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ActivatorArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EnemyPatrolPath.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PathForEnemyPatrol.gd" type="Script" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -32, -0.040857, 65.2217, 0.645537, -65.2217, -0.645537, -127.918, -64.1634, 62.9726, 0.642665, -62.9726, -0.642665, -256.082, 63.6731, 66.3476, -0.477552, -66.3476, 0.477552, -383.918, -64.4902, 71.9695, 0.0918893, -71.9695, -0.0918893, -512.081, 63.3462, 0, 0, 0, 0, -639.918, -64.8171 )
+"points": PoolVector2Array( 0, 0, 0, 0, -32, -0.040857, 28.7244, -1.32729, -28.7244, 1.32729, -67, -21, 18.0907, 0.149458, -18.0907, -0.149458, -99, 6.00001, 19.4929, 0.0156552, -19.4929, -0.0156552, -146, -20, 0, 0, 0, 0, -180, 6.00001 )
 }
 
 [node name="SpaceShooterScene" type="Node"]
@@ -28,8 +29,7 @@ position = Vector2( 80, 89 )
 [node name="EnemiesPatrol" type="Node" parent="."]
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
-position = Vector2( 311.634, 83.0947 )
-scale = Vector2( 0.457299, 0.32545 )
+position = Vector2( 289, 86 )
 curve = SubResource( 1 )
 script = ExtResource( 4 )
 
@@ -38,9 +38,12 @@ position = Vector2( 310.634, 84.0947 )
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 334.634, 84.0947 )
+position = Vector2( 322, 84 )
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 357.634, 84.0947 )
+position = Vector2( 332, 84 )
 path_path = NodePath("../Path2D")
+
+[node name="ActivatorArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 291, 94 )
