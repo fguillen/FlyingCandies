@@ -57,6 +57,3 @@ position = Vector2( 357.634, 84.0947 )
 path_follow_path = NodePath("../Path2D/PathFollow2D")
 
 [node name="HUD" parent="." instance=ExtResource( 5 )]
-__meta__ = {
-"_edit_lock_": true
-}
