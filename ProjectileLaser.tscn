@@ -8,6 +8,8 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="ProjectileLaser" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="FeedbackParticles" parent="." instance=ExtResource( 3 )]

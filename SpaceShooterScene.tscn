@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/CircleWithBorder.png" type="Texture" id=2]
 [ext_resource path="res://EnemyPatrolPath.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PathForEnemyPatrol.gd" type="Script" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
@@ -34,23 +33,14 @@ scale = Vector2( 0.457299, 0.32545 )
 curve = SubResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Sprite2" type="Sprite" parent="EnemiesPatrol/Path2D"]
-position = Vector2( -32, -0.040857 )
-rotation = -2.06571
-texture = ExtResource( 2 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="EnemiesPatrol/Path2D"]
-position = Vector2( -32, -0.040857 )
-rotation = -2.06571
-
-[node name="Sprite" type="Sprite" parent="EnemiesPatrol/Path2D/PathFollow2D"]
-texture = ExtResource( 2 )
-
 [node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 310.634, 84.0947 )
+path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 334.634, 84.0947 )
+path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 357.634, 84.0947 )
+path_path = NodePath("../Path2D")
