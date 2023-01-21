@@ -1,12 +1,11 @@
 class_name BehaviorPathPatrol
 extends Behavior
 
-var path_follow
+var node_to_follow
 
 func setup(character:Character):
 	.setup(character)
-	path_follow = character.path_follow
-	path_follow.get_parent().speed = character.movement_manager.MAX_SPEED
+	node_to_follow = character.node_to_follow
 
 func on_process(_delta):
-	character.input_manager.move_direction = (path_follow.global_position - character.global_position).normalized()
+	character.input_manager.move_direction = (node_to_follow.global_position - character.global_position).normalized()

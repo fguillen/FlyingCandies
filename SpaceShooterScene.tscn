@@ -13,6 +13,8 @@ _data = {
 
 [node name="SpaceShooterScene" type="Node"]
 
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,14 +48,9 @@ texture = ExtResource( 2 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 310.634, 84.0947 )
-path_follow_path = NodePath("../Path2D/PathFollow2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 334.634, 84.0947 )
-path_follow_path = NodePath("../Path2D/PathFollow2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 357.634, 84.0947 )
-path_follow_path = NodePath("../Path2D/PathFollow2D")
-
-[node name="HUD" parent="." instance=ExtResource( 5 )]
