@@ -75,9 +75,9 @@ _global_script_classes=[ {
 "path": "res://Character/InputManager.gd"
 }, {
 "base": "InputManager",
-"class": "InputManagerCharacter",
+"class": "InputManagerPlayer",
 "language": "GDScript",
-"path": "res://Character/InputManagerCharacter.gd"
+"path": "res://Character/InputManagerPlayer.gd"
 }, {
 "base": "Node",
 "class": "MovementManager",
@@ -120,6 +120,11 @@ _global_script_classes=[ {
 "path": "res://Character/States/State.gd"
 }, {
 "base": "State",
+"class": "StateAttack",
+"language": "GDScript",
+"path": "res://Character/States/StateAttack.gd"
+}, {
+"base": "State",
 "class": "StateDead",
 "language": "GDScript",
 "path": "res://Character/States/StateDead.gd"
@@ -143,6 +148,11 @@ _global_script_classes=[ {
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://Character/Weapon.gd"
+}, {
+"base": "WeaponBase",
+"class": "WeaponBall",
+"language": "GDScript",
+"path": "res://WeaponBall.gd"
 }, {
 "base": "Weapon",
 "class": "WeaponBase",
@@ -168,7 +178,7 @@ _global_script_class_icons={
 "FeedbackMuzzleBlast": "",
 "FeedbackParticles": "",
 "InputManager": "",
-"InputManagerCharacter": "",
+"InputManagerPlayer": "",
 "MovementManager": "",
 "PathForEnemyPatrol": "",
 "Player": "",
@@ -177,11 +187,13 @@ _global_script_class_icons={
 "ProjectileBase": "",
 "ShipEngine": "",
 "State": "",
+"StateAttack": "",
 "StateDead": "",
 "StateIdle": "",
 "StateManager": "",
 "StateMove": "",
 "Weapon": "",
+"WeaponBall": "",
 "WeaponBase": "",
 "WeaponManager": ""
 }

@@ -1,4 +1,4 @@
-class_name InputManagerCharacter
+class_name InputManagerPlayer
 extends InputManager
 
 func _process(_delta):

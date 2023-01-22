@@ -6,7 +6,6 @@ signal transitioned(state_name)
 export var initial_state_path := NodePath()
 
 export(bool) var debug := false
-export(int) var actual_state := 0
 
 onready var state: State = get_node(initial_state_path)
 
@@ -35,7 +34,6 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 
 	var node_name = "State%s" % target_state_name
 	assert(has_node(node_name), "State Node not found: '%s'" % node_name)
-	actual_state = 10
 	property_list_changed_notify()
 
 	state.exit()
@@ -50,3 +48,7 @@ func animation_ended() -> void:
 
 func on_collision(collision:KinematicCollision2D):
 	state.on_collision(collision)
+
+
+func _on_AnimationPlayer_animation_finished(_anim_name):
+	animation_ended()
