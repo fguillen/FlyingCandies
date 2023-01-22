@@ -154,7 +154,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://WeaponBall.gd"
 }, {
-"base": "Weapon",
+"base": "Reference",
 "class": "WeaponBase",
 "language": "GDScript",
 "path": "res://WeaponBase.gd"
