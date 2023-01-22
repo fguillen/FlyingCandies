@@ -9,6 +9,8 @@ export var animation_player_path := NodePath()
 export var weapon_manager_path := NodePath()
 export var damage_manager_path := NodePath()
 
+export (Resource) var weapon_default = null
+
 
 onready var input_manager: InputManager = get_node(input_manager_path)
 onready var movement_manager: MovementManager = get_node(movement_manager_path)
@@ -25,14 +27,15 @@ var looking_towards = Vector2.RIGHT
 
 
 func _ready():
-	# warning-ignore:return_value_discarded
 	damage_manager.connect("health_changed", self, "on_health_changed")
-
-	# warning-ignore:return_value_discarded
 	damage_manager.connect("out_of_health", self, "on_out_of_health")
 
 	state_manager.setup(self, "Idle")
+
 	weapon_manager.setup(self)
+	var weapon = weapon_default.instance()
+	weapon_manager.add_weapon(weapon)
+
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Bullet.png" type="Texture" id=1]
 [ext_resource path="res://WeaponBase.gd" type="Script" id=2]
+[ext_resource path="res://ProjectileBall.tscn" type="PackedScene" id=3]
 
 [node name="WeaponBase" type="Node2D"]
 script = ExtResource( 2 )
 reload_time = 0.2
+projectile_template = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

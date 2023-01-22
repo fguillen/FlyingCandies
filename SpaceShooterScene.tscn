@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ActivatorArea.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Moon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=7]
 [ext_resource path="res://EnemyFloor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemy.gd" type="Script" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -51,48 +52,22 @@ position = Vector2( 80, 89 )
 
 [node name="EnemiesPatrol" type="Node2D" parent="."]
 
+[node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
+position = Vector2( 268, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
+position = Vector2( 277, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
+position = Vector2( 286, 86 )
+path_path = NodePath("../Path2D")
+
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
 position = Vector2( 289, 86 )
 curve = SubResource( 1 )
 script = ExtResource( 4 )
-
-[node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 310.634, 84.0947 )
-scale = Vector2( 1, 1 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 322, 84 )
-scale = Vector2( 1, 1 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 332, 84 )
-scale = Vector2( 1, 1 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemiesPatrol2" type="Node2D" parent="."]
-position = Vector2( 170, -1 )
-
-[node name="Path2D" type="Path2D" parent="EnemiesPatrol2"]
-position = Vector2( 289, 86 )
-curve = SubResource( 1 )
-script = ExtResource( 4 )
-
-[node name="EnemyPatrolPath" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
-position = Vector2( 310.634, 84.0947 )
-scale = Vector2( 1, 1 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath2" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
-position = Vector2( 322, 84 )
-scale = Vector2( 1, 1 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath3" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
-position = Vector2( 332, 84 )
-scale = Vector2( 1, 1 )
-path_path = NodePath("../Path2D")
 
 [node name="ActivatorArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 291, 85 )
@@ -103,5 +78,6 @@ current = true
 
 [node name="EnemyFloor" parent="." instance=ExtResource( 8 )]
 position = Vector2( 200, 135 )
+script = ExtResource( 9 )
 
 [editable path="ActivatorArea"]

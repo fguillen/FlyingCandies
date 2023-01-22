@@ -3,7 +3,7 @@ extends Node2D
 
 export(float) var reload_time: = 1.0
 
-var projectile_template
+export (Resource) var projectile_template = null
 var reloading: = false
 var reloading_timer: = Timer.new()
 var character
