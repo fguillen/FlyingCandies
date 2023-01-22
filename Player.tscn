@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Engine.png" type="Texture" id=9]
 [ext_resource path="res://Character/WeaponManager.gd" type="Script" id=10]
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=11]
-[ext_resource path="res://WeaponBase.tscn" type="PackedScene" id=12]
+[ext_resource path="res://WeaponPlayer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Character/States/StateAttack.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]

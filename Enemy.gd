@@ -16,6 +16,7 @@ func _ready():
 
 func setup():
 	behavior.setup((self as Character))
+	looking_towards = Vector2.LEFT
 
 
 func on_dead(_position):

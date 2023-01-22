@@ -1,7 +1,8 @@
-class_name Projectile
+class_name ProjectileBase
 extends KinematicBody2D
 
 export(int) var DAMAGE = 1
+export(int) var SPEED = 300
 
 onready var collision_shape: = $CollisionShape2D
 
@@ -24,3 +25,9 @@ func on_collision(collision:KinematicCollision2D):
 		emit_signal("hit", collision.position)
 
 	queue_free()
+
+
+func _physics_process(delta):
+	var collision = move_and_collide(direction * SPEED * delta)
+	if collision != null:
+		on_collision(collision)

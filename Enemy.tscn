@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Enemy.png" type="Texture" id=1]
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Character/InputManager.gd" type="Script" id=6]
 [ext_resource path="res://Character/MovemementManager.gd" type="Script" id=7]
 [ext_resource path="res://WeaponBall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Character/States/StateAttack.gd" type="Script" id=9]
 [ext_resource path="res://Character/WeaponManager.gd" type="Script" id=10]
 [ext_resource path="res://Character/Enemy/Behavior.gd" type="Script" id=11]
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=12]
@@ -17,6 +18,10 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.99425, 3 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Attack"
+length = 0.1
 
 [sub_resource type="Animation" id=4]
 resource_name = "Dead"
@@ -119,6 +124,9 @@ script = ExtResource( 3 )
 [node name="StateDead" type="Node" parent="StateManager"]
 script = ExtResource( 13 )
 
+[node name="StateAttack" type="Node" parent="StateManager"]
+script = ExtResource( 9 )
+
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 1 )
@@ -129,6 +137,7 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
+anims/Attack = SubResource( 6 )
 anims/Dead = SubResource( 4 )
 anims/Idle = SubResource( 2 )
 anims/Move = SubResource( 3 )
@@ -143,3 +152,4 @@ sprite_to_flash_path = NodePath("../../Sprite")
 
 [connection signal="hit" from="." to="Feedback/FeedbackFlash" method="perform"]
 [connection signal="out_of_health" from="." to="Feedback/FeedbackParticles" method="perform"]
+[connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]
