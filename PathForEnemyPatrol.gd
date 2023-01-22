@@ -11,7 +11,7 @@ func _process(delta):
 			follower["path_follow"].offset += delta * follower["speed"]
 
 
-func attach_enemy(enemy:Enemy) -> Node2D:
+func attach_enemy(enemy) -> Node2D:
 	var path_follow = PathFollow2DWithSprite.instance()
 	add_child(path_follow)
 
@@ -26,12 +26,12 @@ func attach_enemy(enemy:Enemy) -> Node2D:
 	return path_follow
 
 
-func remove_enemy(enemy:Enemy):
+func remove_enemy(enemy):
 	var element = null
 	for follower in followers:
 		if follower["enemy"] == enemy:
 			element = follower
 			break
 
-	followers.erase(element)
 	element["path_follow"].queue_free()
+	followers.erase(element)

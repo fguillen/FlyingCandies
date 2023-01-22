@@ -50,6 +50,7 @@ texture = ExtResource( 7 )
 position = Vector2( 80, 89 )
 
 [node name="EnemiesPatrol" type="Node2D" parent="."]
+position = Vector2( 44, -3 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 268, 86 )
@@ -68,6 +69,46 @@ position = Vector2( 289, 86 )
 curve = SubResource( 1 )
 script = ExtResource( 4 )
 
+[node name="EnemiesPatrol2" type="Node2D" parent="."]
+position = Vector2( 129, -48 )
+
+[node name="EnemyPatrolPath" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
+position = Vector2( 268, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath2" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
+position = Vector2( 277, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath3" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
+position = Vector2( 286, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="Path2D" type="Path2D" parent="EnemiesPatrol2"]
+position = Vector2( 289, 86 )
+curve = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="EnemiesPatrol3" type="Node2D" parent="."]
+position = Vector2( 129, 13 )
+
+[node name="EnemyPatrolPath" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
+position = Vector2( 268, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath2" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
+position = Vector2( 277, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath3" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
+position = Vector2( 286, 86 )
+path_path = NodePath("../Path2D")
+
+[node name="Path2D" type="Path2D" parent="EnemiesPatrol3"]
+position = Vector2( 289, 86 )
+curve = SubResource( 1 )
+script = ExtResource( 4 )
+
 [node name="ActivatorArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 291, 85 )
 
@@ -75,13 +116,33 @@ position = Vector2( 291, 85 )
 position = Vector2( -138, 0 )
 current = true
 
-[node name="EnemyFloor" parent="." instance=ExtResource( 8 )]
+[node name="EnemiesFloor" type="Node2D" parent="."]
+
+[node name="EnemyFloor" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 200, 134 )
+scale = Vector2( 1, 1 )
 
-[node name="EnemyFloor2" parent="." instance=ExtResource( 8 )]
+[node name="EnemyFloor2" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 212, 134 )
+scale = Vector2( 1, 1 )
 
-[node name="EnemyFloor3" parent="." instance=ExtResource( 8 )]
+[node name="EnemyFloor3" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 224, 134 )
+scale = Vector2( 1, 1 )
+
+[node name="EnemiesFloor2" type="Node2D" parent="."]
+position = Vector2( 145, 0 )
+
+[node name="EnemyFloor" parent="EnemiesFloor2" instance=ExtResource( 8 )]
+position = Vector2( 200, 134 )
+scale = Vector2( 1, 1 )
+
+[node name="EnemyFloor2" parent="EnemiesFloor2" instance=ExtResource( 8 )]
+position = Vector2( 212, 134 )
+scale = Vector2( 1, 1 )
+
+[node name="EnemyFloor3" parent="EnemiesFloor2" instance=ExtResource( 8 )]
+position = Vector2( 224, 134 )
+scale = Vector2( 1, 1 )
 
 [editable path="ActivatorArea"]
