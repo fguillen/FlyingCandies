@@ -4,8 +4,6 @@ extends Character
 export var points: = 10
 export var behavior_path := NodePath()
 
-onready var ship_engine: = $ShipEngine
-
 onready var behavior: Behavior = get_node(behavior_path)
 
 var activated = false
@@ -21,7 +19,6 @@ func _ready():
 	setup()
 
 func setup():
-	ship_engine.setup(self)
 	behavior.setup(self)
 
 

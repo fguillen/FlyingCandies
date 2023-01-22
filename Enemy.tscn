@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Enemy.png" type="Texture" id=1]
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
@@ -7,8 +7,6 @@
 [ext_resource path="res://Enemy.gd" type="Script" id=5]
 [ext_resource path="res://Character/InputManager.gd" type="Script" id=6]
 [ext_resource path="res://Character/MovemementManager.gd" type="Script" id=7]
-[ext_resource path="res://ShipEngine.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Engine.png" type="Texture" id=9]
 [ext_resource path="res://Character/WeaponManager.gd" type="Script" id=10]
 [ext_resource path="res://Character/Enemy/Behavior.gd" type="Script" id=11]
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=12]
@@ -17,7 +15,7 @@
 [ext_resource path="res://Character/Feedback/FeedbackFlash.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.99425, 6.99616 )
+extents = Vector2( 4.99425, 3 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Dead"
@@ -52,38 +50,10 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
 length = 0.1
-tracks/0/type = "method"
-tracks/0/path = NodePath("ShipEngine")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "deactivate"
-} ]
-}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Move"
 length = 0.1
-tracks/0/type = "method"
-tracks/0/path = NodePath("ShipEngine")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "activate"
-} ]
-}
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -146,15 +116,6 @@ script = ExtResource( 3 )
 
 [node name="StateDead" type="Node" parent="StateManager"]
 script = ExtResource( 13 )
-
-[node name="ShipEngine" type="Node2D" parent="."]
-position = Vector2( 6, 0.00766068 )
-rotation = 3.14159
-script = ExtResource( 8 )
-
-[node name="SpriteEnemy" type="Sprite" parent="ShipEngine"]
-texture = ExtResource( 9 )
-offset = Vector2( -4, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 1.2, 1.2 )
