@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://EnemyPatrolPath_back.tscn" type="PackedScene" id=1]
+[ext_resource path="res://EnemyPatrolPath.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PathForEnemyPatrol.gd" type="Script" id=2]
 [ext_resource path="res://ActivatorArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -11,21 +12,16 @@ _data = {
 
 [node name="SceneTest" type="Node2D"]
 
-[node name="EnemyPatrolPath" parent="." instance=ExtResource( 1 )]
-position = Vector2( 241, 84 )
-path_path = NodePath("../PathForEnemyPatrol")
-
-[node name="EnemyPatrolPath2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 247, 84 )
-path_path = NodePath("../PathForEnemyPatrol")
-
-[node name="EnemyPatrolPath3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 253, 84 )
-path_path = NodePath("../PathForEnemyPatrol")
-
 [node name="PathForEnemyPatrol" type="Path2D" parent="."]
 position = Vector2( -68, 0 )
 curve = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ActivatorArea" parent="." instance=ExtResource( 3 )]
+
+[node name="EnemyPatrolPath" parent="." instance=ExtResource( 1 )]
+position = Vector2( 231, 89 )
+path_path = NodePath("../PathForEnemyPatrol")
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 48, 87 )

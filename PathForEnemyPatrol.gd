@@ -13,7 +13,9 @@ func _process(delta):
 
 func attach_enemy(enemy) -> Node2D:
 	var path_follow = PathFollow2DWithSprite.instance()
-	add_child(path_follow)
+	print("X1")
+	call_deferred("add_child", path_follow)
+	print("X2")
 
 	var follower = {
 		"enemy": enemy,
@@ -27,11 +29,16 @@ func attach_enemy(enemy) -> Node2D:
 
 
 func remove_enemy(enemy):
+	print("remove_enemy")
 	var element = null
 	for follower in followers:
+		print("follower.enemy: ", follower["enemy"], " ,", enemy)
 		if follower["enemy"] == enemy:
+			print("Is a match!")
 			element = follower
+			print("element: ", element)
 			break
 
+	print("element2: ", element)
 	element["path_follow"].queue_free()
 	followers.erase(element)

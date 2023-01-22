@@ -19,6 +19,8 @@ _data = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_offset = Vector2( -152, 0 )
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer2"]
 anchor_right = 1.0
@@ -120,29 +122,23 @@ current = true
 
 [node name="EnemyFloor" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 200, 134 )
-scale = Vector2( 1, 1 )
 
 [node name="EnemyFloor2" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 212, 134 )
-scale = Vector2( 1, 1 )
 
 [node name="EnemyFloor3" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 224, 134 )
-scale = Vector2( 1, 1 )
 
 [node name="EnemiesFloor2" type="Node2D" parent="."]
 position = Vector2( 145, 0 )
 
 [node name="EnemyFloor" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 200, 134 )
-scale = Vector2( 1, 1 )
 
 [node name="EnemyFloor2" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 212, 134 )
-scale = Vector2( 1, 1 )
 
 [node name="EnemyFloor3" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 224, 134 )
-scale = Vector2( 1, 1 )
 
 [editable path="ActivatorArea"]

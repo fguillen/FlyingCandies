@@ -8,4 +8,5 @@ func enter(_msg := {}) -> void:
 
 
 func animation_ended() -> void:
+	print("animation_ended")
 	character.dead()

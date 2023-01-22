@@ -10,12 +10,11 @@ var character
 
 signal attack(position)
 
-func _ready():
+func setup(_character, position:Vector2):
 	add_child(reloading_timer)
 	reloading_timer.set_one_shot(true)
 	var _i = reloading_timer.connect("timeout", self, "_on_reloading_timer_timeout")
 
-func setup(_character, position:Vector2):
 	character = _character
 	global_position = position
 

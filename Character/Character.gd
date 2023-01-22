@@ -78,5 +78,6 @@ func on_animation_ended():
 
 
 func dead():
+	print("dead")
 	emit_signal("dead", global_position)
 	queue_free()
