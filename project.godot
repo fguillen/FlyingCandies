@@ -95,9 +95,9 @@ _global_script_classes=[ {
 "path": "res://Character/Projectile.gd"
 }, {
 "base": "Projectile",
-"class": "ProjectileLaser",
+"class": "ProjectileBase",
 "language": "GDScript",
-"path": "res://ProjectileLaser.gd"
+"path": "res://ProjectileBase.gd"
 }, {
 "base": "Node2D",
 "class": "ShipEngine",
@@ -135,9 +135,9 @@ _global_script_classes=[ {
 "path": "res://Character/Weapon.gd"
 }, {
 "base": "Weapon",
-"class": "WeaponLaser",
+"class": "WeaponBase",
 "language": "GDScript",
-"path": "res://WeaponLaser.gd"
+"path": "res://WeaponBase.gd"
 }, {
 "base": "Node2D",
 "class": "WeaponManager",
@@ -162,7 +162,7 @@ _global_script_class_icons={
 "PathForEnemyPatrol": "",
 "Player": "",
 "Projectile": "",
-"ProjectileLaser": "",
+"ProjectileBase": "",
 "ShipEngine": "",
 "State": "",
 "StateDead": "",
@@ -170,7 +170,7 @@ _global_script_class_icons={
 "StateManager": "",
 "StateMove": "",
 "Weapon": "",
-"WeaponLaser": "",
+"WeaponBase": "",
 "WeaponManager": ""
 }
 

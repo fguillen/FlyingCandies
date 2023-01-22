@@ -8,7 +8,7 @@ onready var behavior: Behavior = get_node(behavior_path)
 
 var activated = false
 
-const WeaponDefault = preload("res://WeaponLaser.tscn")
+const WeaponDefault = preload("res://WeaponBase.tscn")
 
 func _ready():
 	var weapon = WeaponDefault.instance()

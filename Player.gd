@@ -3,7 +3,7 @@ extends Character
 
 onready var ship_engine: = $ShipEngine
 
-const WeaponDefault = preload("res://WeaponLaser.tscn")
+const WeaponDefault = preload("res://WeaponBase.tscn")
 
 func _ready():
 	var weapon = WeaponDefault.instance()

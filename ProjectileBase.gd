@@ -1,4 +1,4 @@
-class_name ProjectileLaser
+class_name ProjectileBase
 extends Projectile
 
 var speed: = 300.0
