@@ -26,7 +26,7 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 89 )
 
-[node name="EnemiesPatrol" type="Node" parent="."]
+[node name="EnemiesPatrol" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
 position = Vector2( 289, 86 )
@@ -35,15 +35,47 @@ script = ExtResource( 4 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 310.634, 84.0947 )
+scale = Vector2( 1, 1 )
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 322, 84 )
+scale = Vector2( 1, 1 )
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 332, 84 )
+scale = Vector2( 1, 1 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemiesPatrol2" type="Node2D" parent="."]
+position = Vector2( 170, -1 )
+
+[node name="Path2D" type="Path2D" parent="EnemiesPatrol2"]
+position = Vector2( 289, 86 )
+curve = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="EnemyPatrolPath" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
+position = Vector2( 310.634, 84.0947 )
+scale = Vector2( 1, 1 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath2" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
+position = Vector2( 322, 84 )
+scale = Vector2( 1, 1 )
+path_path = NodePath("../Path2D")
+
+[node name="EnemyPatrolPath3" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
+position = Vector2( 332, 84 )
+scale = Vector2( 1, 1 )
 path_path = NodePath("../Path2D")
 
 [node name="ActivatorArea" parent="." instance=ExtResource( 2 )]
-position = Vector2( 291, 94 )
+position = Vector2( 291, 85 )
+
+[node name="Camera2D" type="Camera2D" parent="ActivatorArea"]
+position = Vector2( -138, 0 )
+current = true
+
+[editable path="ActivatorArea"]
