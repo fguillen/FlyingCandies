@@ -12,6 +12,7 @@ path_path = null
 
 [node name="Behavior" parent="." index="1"]
 script = ExtResource( 11 )
+shoot_time = Vector2( 1, 5 )
 
 [node name="WeaponManager" parent="." index="4"]
 position = Vector2( -9.99999, -0.0127678 )

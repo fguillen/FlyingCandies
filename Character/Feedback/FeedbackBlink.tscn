@@ -1,4 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Character/Feedback/FeedbackFlash.tscn" type="PackedScene" id=1]
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
@@ -12,8 +14,11 @@ void fragment() {
 	COLOR = color;
 }"
 
-[resource]
+[sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
 shader = SubResource( 2 )
 shader_param/flash_color = Color( 1, 1, 1, 0 )
 shader_param/flash_modifier = 0.0
+
+[node name="FeedbackBlink" instance=ExtResource( 1 )]
+material_flash = SubResource( 3 )

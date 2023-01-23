@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Ship.png" type="Texture" id=1]
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
@@ -57,6 +57,24 @@ length = 0.1
 [sub_resource type="Animation" id=3]
 resource_name = "Move"
 length = 0.1
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0, 1.0, 0.1) = 0.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/flash_color = Color( 0, 0, 0, 0 )
+shader_param/flash_modifier = 0.0
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 12
@@ -123,8 +141,10 @@ anims/Move = SubResource( 3 )
 
 [node name="Feedback" type="Node" parent="."]
 
-[node name="FeedbackFlash" parent="Feedback" instance=ExtResource( 14 )]
+[node name="FeedbackBlink" parent="Feedback" instance=ExtResource( 14 )]
+flashing_number = 5
 sprite_to_flash_path = NodePath("../../Sprite")
+material_flash = SubResource( 9 )
 
-[connection signal="hit" from="." to="Feedback/FeedbackFlash" method="perform"]
+[connection signal="hit" from="." to="Feedback/FeedbackBlink" method="perform"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]
