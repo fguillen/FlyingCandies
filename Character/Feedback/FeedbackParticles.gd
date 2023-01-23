@@ -8,14 +8,7 @@ func _ready():
 	particles.get_parent().remove_child(particles)
 	get_tree().current_scene.call_deferred("add_child", particles)
 
+
 func perform(position:Vector2):
 	particles.global_position = position
 	particles.emitting = true
-
-
-func _on_ProjectileLaser_hit(position:Vector2):
-	perform(position)
-
-
-func _on_Enemy_dead(position:Vector2):
-	perform(position)

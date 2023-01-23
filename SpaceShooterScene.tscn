@@ -29,6 +29,7 @@ rect_min_size = Vector2( 304, 171 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.3, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
@@ -56,14 +57,17 @@ position = Vector2( 44, -3 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 268, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 277, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 286, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
@@ -76,14 +80,17 @@ position = Vector2( 129, -48 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
 position = Vector2( 268, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
 position = Vector2( 277, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
 position = Vector2( 286, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol2"]
@@ -96,14 +103,17 @@ position = Vector2( 129, 13 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
 position = Vector2( 268, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
 position = Vector2( 277, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
 position = Vector2( 286, 86 )
+points = null
 path_path = NodePath("../Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol3"]
@@ -122,23 +132,29 @@ current = true
 
 [node name="EnemyFloor" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 200, 134 )
+points = null
 
 [node name="EnemyFloor2" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 212, 134 )
+points = null
 
 [node name="EnemyFloor3" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 224, 134 )
+points = null
 
 [node name="EnemiesFloor2" type="Node2D" parent="."]
 position = Vector2( 145, 0 )
 
 [node name="EnemyFloor" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 200, 134 )
+points = null
 
 [node name="EnemyFloor2" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 212, 134 )
+points = null
 
 [node name="EnemyFloor3" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 224, 134 )
+points = null
 
 [editable path="ActivatorArea"]

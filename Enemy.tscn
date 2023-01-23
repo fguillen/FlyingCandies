@@ -13,7 +13,7 @@
 [ext_resource path="res://Character/Enemy/Behavior.gd" type="Script" id=11]
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=12]
 [ext_resource path="res://Character/States/StateDead.gd" type="Script" id=13]
-[ext_resource path="res://Character/Feedback/FeedbackParticlesExplosion.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Character/Feedback/FeedbackExplosion.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Character/Feedback/FeedbackFlash.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -59,7 +59,6 @@ animation_player_path = NodePath("AnimationPlayer")
 weapon_manager_path = NodePath("WeaponManager")
 damage_manager_path = NodePath("DamageManager")
 weapon_default = ExtResource( 8 )
-points = null
 behavior_path = NodePath("Behavior")
 
 [node name="DamageManager" type="Node" parent="."]
@@ -116,11 +115,11 @@ anims/Move = SubResource( 3 )
 
 [node name="Feedback" type="Node" parent="."]
 
-[node name="FeedbackParticles" parent="Feedback" instance=ExtResource( 14 )]
+[node name="FeedbackExplosion" parent="Feedback" instance=ExtResource( 14 )]
 
 [node name="FeedbackFlash" parent="Feedback" instance=ExtResource( 15 )]
 sprite_to_flash_path = NodePath("../../Sprite")
 
 [connection signal="hit" from="." to="Feedback/FeedbackFlash" method="perform"]
-[connection signal="out_of_health" from="." to="Feedback/FeedbackParticles" method="perform"]
+[connection signal="out_of_health" from="." to="Feedback/FeedbackExplosion" method="perform"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]
