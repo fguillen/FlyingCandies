@@ -32,7 +32,7 @@ color = Color( 0, 0, 0, 1 )
 motion_scale = Vector2( 0.3, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 200, 147 )
+position = Vector2( 200, 146 )
 texture = ExtResource( 6 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]

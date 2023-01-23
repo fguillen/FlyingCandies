@@ -20,7 +20,7 @@ script = ExtResource( 2 )
 [node name="ActivatorArea" parent="." instance=ExtResource( 3 )]
 
 [node name="EnemyPatrolPath" parent="." instance=ExtResource( 1 )]
-position = Vector2( 231, 89 )
+position = Vector2( 231, 83 )
 path_path = NodePath("../PathForEnemyPatrol")
 
 [node name="Player" parent="." instance=ExtResource( 4 )]

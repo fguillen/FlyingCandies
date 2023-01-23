@@ -59,6 +59,7 @@ animation_player_path = NodePath("AnimationPlayer")
 weapon_manager_path = NodePath("WeaponManager")
 damage_manager_path = NodePath("DamageManager")
 weapon_default = ExtResource( 8 )
+points = null
 behavior_path = NodePath("Behavior")
 
 [node name="DamageManager" type="Node" parent="."]

@@ -8,6 +8,7 @@ onready var behavior: Behavior = get_node(behavior_path)
 
 var activated = false
 
+signal activate()
 
 func _ready():
 	connect("dead", self, "on_dead")
@@ -31,6 +32,7 @@ func activate():
 	print("Activate")
 	on_activate()
 	activated = true
+	emit_signal("activate")
 
 
 func on_activate():

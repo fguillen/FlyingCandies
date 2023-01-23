@@ -1,5 +1,5 @@
 class_name BehaviorPathPatrol
-extends Behavior
+extends BehaviorRandomTimeShooter
 
 var node_to_follow
 

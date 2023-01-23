@@ -14,15 +14,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character/Enemy/Behavior.gd"
 }, {
-"base": "Behavior",
-"class": "BehaviorFloor",
-"language": "GDScript",
-"path": "res://Character/Enemy/BehaviorFloor.gd"
-}, {
-"base": "Behavior",
+"base": "BehaviorRandomTimeShooter",
 "class": "BehaviorPathPatrol",
 "language": "GDScript",
 "path": "res://Character/Enemy/BehaviorPathPatrol.gd"
+}, {
+"base": "Behavior",
+"class": "BehaviorRandomTimeShooter",
+"language": "GDScript",
+"path": "res://Character/Enemy/BehaviorRandomTimeShooter.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Character",
@@ -154,7 +154,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://WeaponBall.gd"
 }, {
-"base": "Reference",
+"base": "WeaponBase",
+"class": "WeaponBallDirection",
+"language": "GDScript",
+"path": "res://WeaponBallDirection.gd"
+}, {
+"base": "Weapon",
 "class": "WeaponBase",
 "language": "GDScript",
 "path": "res://WeaponBase.gd"
@@ -166,8 +171,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Behavior": "",
-"BehaviorFloor": "",
 "BehaviorPathPatrol": "",
+"BehaviorRandomTimeShooter": "",
 "Character": "",
 "Cupcake": "",
 "DamageManager": "",
@@ -194,6 +199,7 @@ _global_script_class_icons={
 "StateMove": "",
 "Weapon": "",
 "WeaponBall": "",
+"WeaponBallDirection": "",
 "WeaponBase": "",
 "WeaponManager": ""
 }
@@ -210,6 +216,7 @@ Global="*res://Global.gd"
 
 [debug]
 
+gdscript/warnings/shadowed_variable=false
 gdscript/warnings/return_value_discarded=false
 
 [display]

@@ -27,9 +27,14 @@ func attack() -> void:
 
 	var projectile = projectile_template.instance()
 	get_tree().current_scene.add_child(projectile)
-	projectile.shoot(global_position, character.looking_towards)
+	projectile.shoot(global_position, projectile_direction())
 
 	emit_signal("attack", global_position)
+
+
+func projectile_direction() -> Vector2:
+	return character.looking_towards
+
 
 func _on_reloading_timer_timeout():
 	reloading = false
