@@ -29,7 +29,6 @@ rect_min_size = Vector2( 304, 171 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_scale = Vector2( 0.3, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
