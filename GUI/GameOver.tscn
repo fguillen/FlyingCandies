@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/m3x6.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GUI/GameOver.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+Label/fonts/font = SubResource( 1 )
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -58.5
+margin_top = -19.0
+margin_right = 58.5
+margin_bottom = 19.0
+theme = SubResource( 2 )
+text = "Game Over"
+
+[node name="ButtonRestart" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.0
+margin_top = 19.5
+margin_right = 75.0
+margin_bottom = 51.5
+theme = ExtResource( 1 )
+text = "Click to restart"
+
+[connection signal="pressed" from="ButtonRestart" to="." method="_on_ButtonRestart_pressed"]

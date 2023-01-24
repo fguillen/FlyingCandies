@@ -148,7 +148,7 @@ anims/Move = SubResource( 3 )
 [node name="Feedback" type="Node" parent="."]
 
 [node name="FeedbackInmunity" parent="Feedback" instance=ExtResource( 14 )]
-time_seconds = 5.0
+time_seconds = 2.0
 collision_shape_path = NodePath("../../CollisionShape2D")
 
 [node name="FeedbackBlink" parent="Feedback" instance=ExtResource( 15 )]

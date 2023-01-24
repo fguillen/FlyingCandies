@@ -219,6 +219,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Global.gd"
+SceneSwitcher="*res://SceneSwitcher.tscn"
 
 [debug]
 
