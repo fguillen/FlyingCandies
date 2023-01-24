@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Ship.png" type="Texture" id=1]
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=11]
 [ext_resource path="res://WeaponPlayer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Character/States/StateAttack.gd" type="Script" id=13]
-[ext_resource path="res://Character/Feedback/FeedbackFlash.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Character/Feedback/FeedbackInmunity.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Character/Feedback/FeedbackBlink.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 6 )
@@ -58,7 +59,7 @@ length = 0.1
 resource_name = "Move"
 length = 0.1
 
-[sub_resource type="Shader" id=7]
+[sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
 
 uniform vec4 flash_color : hint_color = vec4(1.0);
@@ -70,9 +71,9 @@ void fragment() {
 	COLOR = color;
 }"
 
-[sub_resource type="ShaderMaterial" id=9]
+[sub_resource type="ShaderMaterial" id=7]
 resource_local_to_scene = true
-shader = SubResource( 7 )
+shader = SubResource( 6 )
 shader_param/flash_color = Color( 0, 0, 0, 0 )
 shader_param/flash_modifier = 0.0
 
@@ -89,6 +90,7 @@ weapon_default = ExtResource( 12 )
 
 [node name="DamageManager" type="Node" parent="."]
 script = ExtResource( 11 )
+max_health = 3
 
 [node name="InputManagerPlayer" type="Node" parent="."]
 script = ExtResource( 6 )
@@ -141,10 +143,15 @@ anims/Move = SubResource( 3 )
 
 [node name="Feedback" type="Node" parent="."]
 
-[node name="FeedbackBlink" parent="Feedback" instance=ExtResource( 14 )]
-flashing_number = 5
-sprite_to_flash_path = NodePath("../../Sprite")
-material_flash = SubResource( 9 )
+[node name="FeedbackInmunity" parent="Feedback" instance=ExtResource( 14 )]
+time_seconds = 5.0
+collision_shape_path = NodePath("../../CollisionShape2D")
 
+[node name="FeedbackBlink" parent="Feedback" instance=ExtResource( 15 )]
+flashing_number = 13
+sprite_to_flash_path = NodePath("../../Sprite")
+material_flash = SubResource( 7 )
+
+[connection signal="hit" from="." to="Feedback/FeedbackInmunity" method="perform"]
 [connection signal="hit" from="." to="Feedback/FeedbackBlink" method="perform"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]

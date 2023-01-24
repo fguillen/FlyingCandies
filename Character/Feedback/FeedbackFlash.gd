@@ -37,3 +37,4 @@ func perform(_position:Vector2):
 	sprite_to_flash.material = previous_material
 
 	flashing = false
+	emit_signal("finished")
