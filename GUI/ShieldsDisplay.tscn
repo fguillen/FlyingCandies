@@ -4,10 +4,11 @@
 [ext_resource path="res://GUI/ShieldsDisplay.gd" type="Script" id=2]
 
 [node name="ShieldsDisplay" type="Control"]
-margin_right = 44.0
-margin_bottom = 8.0
+margin_right = 54.0
+margin_bottom = 10.0
 script = ExtResource( 2 )
 shield_template = ExtResource( 1 )
+ini_num_shields_full = 2
 
 [node name="Shields" type="HBoxContainer" parent="."]
 anchor_right = 1.0
@@ -17,9 +18,9 @@ custom_constants/separation = 1
 
 [node name="ShieldUI" parent="Shields" instance=ExtResource( 1 )]
 margin_right = 8.0
-margin_bottom = 8.0
+margin_bottom = 10.0
 
 [node name="ShieldUI2" parent="Shields" instance=ExtResource( 1 )]
 margin_left = 9.0
 margin_right = 17.0
-margin_bottom = 8.0
+margin_bottom = 10.0
