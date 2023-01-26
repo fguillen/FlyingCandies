@@ -114,6 +114,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character/ProjectileBase.gd"
 }, {
+"base": "Control",
+"class": "ShieldUI",
+"language": "GDScript",
+"path": "res://GUI/ShieldUI.gd"
+}, {
 "base": "Node2D",
 "class": "ShipEngine",
 "language": "GDScript",
@@ -196,6 +201,7 @@ _global_script_class_icons={
 "Player": "",
 "ProjectileBall": "",
 "ProjectileBase": "",
+"ShieldUI": "",
 "ShipEngine": "",
 "State": "",
 "StateAttack": "",
