@@ -1,6 +1,7 @@
 class_name Character
 extends KinematicBody2D
 
+export (int) var ini_max_health := 3
 
 export var state_manager_path := NodePath()
 export var input_manager_path := NodePath()
@@ -19,6 +20,7 @@ onready var state_manager: StateManager = get_node(state_manager_path)
 onready var weapon_manager: WeaponManager = get_node(weapon_manager_path)
 onready var damage_manager: DamageManager = get_node(damage_manager_path)
 
+signal health_changed(value)
 signal out_of_health(position)
 signal dead(position)
 signal hit(position)
@@ -27,6 +29,8 @@ var looking_towards = Vector2.RIGHT
 
 
 func _ready():
+	damage_manager.max_health = ini_max_health
+	damage_manager.health = ini_max_health
 	damage_manager.connect("health_changed", self, "on_health_changed")
 	damage_manager.connect("out_of_health", self, "on_out_of_health")
 
@@ -65,6 +69,7 @@ func get_hit(damage:int, position:Vector2):
 
 func on_health_changed(value:int):
 	print("on_health_changed: ", value)
+	emit_signal("health_changed", value)
 
 
 func on_out_of_health():

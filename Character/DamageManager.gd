@@ -1,7 +1,7 @@
 class_name DamageManager
 extends Node
 
-export(int) var max_health = 2
+var max_health = 2
 
 var health setget set_health,get_health
 
