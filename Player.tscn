@@ -151,7 +151,7 @@ time_seconds = 2.0
 collision_shape_path = NodePath("../../CollisionShape2D")
 
 [node name="FeedbackBlink" parent="Feedback" instance=ExtResource( 15 )]
-flashing_number = 13
+flashing_number = 5
 sprite_to_flash_path = NodePath("../../Sprite")
 material_flash = SubResource( 7 )
 

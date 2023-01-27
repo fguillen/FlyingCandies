@@ -20,8 +20,6 @@ func perform(_position:Vector2):
 	var previous_material = sprite_to_flash.material
 	sprite_to_flash.material = material_flash
 
-	print("material_flash: ", material_flash)
-
 	for i in flashing_number:
 		sprite_to_flash.material.set_shader_param("flash_modifier", 1)
 

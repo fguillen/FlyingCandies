@@ -29,7 +29,6 @@ func get_class():
 
 
 func activate():
-	print("Activate")
 	on_activate()
 	activated = true
 	emit_signal("activate")

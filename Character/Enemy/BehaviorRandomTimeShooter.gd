@@ -31,7 +31,6 @@ func shoot():
 
 func start_shoot_timer():
 	var shoot_in_seconds = rng.randi_range(shoot_time.x, shoot_time.y)
-	print("Next shoot in: ", shoot_in_seconds)
 	timer_shoot.start(shoot_in_seconds)
 
 

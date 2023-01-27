@@ -3,19 +3,26 @@ extends Control
 
 export (Resource) var shield_template
 
-export (int) var ini_num_shields := 3
-export (int) var ini_num_shields_full := 3
+export (int) var ini_num_shields := 1
+export (int) var ini_num_shields_full := 1
 
 
 var shields = []
+var initialized = false
 
 onready var shields_control := $Shields
 
 
 func _ready():
-	set_num_shields(ini_num_shields)
-	set_num_shields_full(ini_num_shields_full)
+	if !initialized:
+		setup(ini_num_shields, ini_num_shields_full)
 
+
+func setup(num_shields, num_shields_full):
+	set_num_shields(num_shields)
+	set_num_shields_full(num_shields_full)
+
+	initialized = true
 
 func set_num_shields(value):
 	remove_all_shields()
@@ -24,9 +31,14 @@ func set_num_shields(value):
 
 
 func set_num_shields_full(value):
+	print("set_num_shields_full(%d)" % value)
+	value = clamp(value, 0, num_shields())
+	print("set_num_shields_full(%d)" % value)
+
 	if value > num_shields_full():
 		add_shield_full()
 		set_num_shields_full(value)
+
 	elif value < num_shields_full():
 		remove_shield_full()
 		set_num_shields_full(value)

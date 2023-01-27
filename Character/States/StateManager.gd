@@ -30,7 +30,7 @@ func physics_process(delta: float) -> void:
 
 
 func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
-	if(debug): print("StateMachine.transition_to(%s)" % target_state_name)
+	# if(debug): print("StateMachine.transition_to(%s)" % target_state_name)
 
 	var node_name = "State%s" % target_state_name
 	assert(has_node(node_name), "State Node not found: '%s'" % node_name)
