@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/CircleWithBorder.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 7.0
+radius = 6.0
 
 [node name="ProjectileBall" instance=ExtResource( 1 )]
 collision_layer = 8

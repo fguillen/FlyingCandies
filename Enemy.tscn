@@ -81,7 +81,6 @@ behavior_path = NodePath("Behavior")
 
 [node name="DamageManager" type="Node" parent="."]
 script = ExtResource( 12 )
-max_health = 4
 
 [node name="Behavior" type="Node" parent="."]
 script = ExtResource( 11 )
@@ -93,7 +92,7 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 FRICTION_DELTA = 40.0
 ACCELERATION_DELTA = 40.0
-MAX_SPEED = 10.0
+MAX_SPEED = 20.0
 
 [node name="WeaponManager" type="Node2D" parent="."]
 position = Vector2( 40, 0.051 )

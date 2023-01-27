@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 10
+var speed = 5
 
 func _ready():
 	var _i = connect("body_entered", self, "activate_enemy")
