@@ -28,11 +28,11 @@ script = ExtResource( 5 )
 weapon_default = ExtResource( 2 )
 path_path = null
 
-[node name="Behavior" parent="." index="1"]
+[node name="Behavior" parent="." index="2"]
 script = ExtResource( 11 )
 shoot_time = Vector2( 1, 5 )
 
-[node name="WeaponManager" parent="." index="4"]
+[node name="WeaponManager" parent="." index="5"]
 position = Vector2( -9.99999, -0.0127678 )
 
 [node name="FeedbackFlash" parent="Feedback" index="1"]

@@ -2,6 +2,7 @@ class_name Character
 extends KinematicBody2D
 
 export (int) var ini_max_health := 3
+export (int) var speed := 50
 
 export var state_manager_path := NodePath()
 export var input_manager_path := NodePath()
@@ -40,6 +41,7 @@ func _ready():
 	var weapon = weapon_default.instance()
 	weapon_manager.add_weapon(weapon)
 
+	movement_manager.MAX_SPEED = speed
 
 
 func _unhandled_input(event: InputEvent) -> void:

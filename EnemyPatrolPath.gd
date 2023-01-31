@@ -18,6 +18,8 @@ func on_activate():
 	pass
 
 
-func on_dead(position):
-	.on_dead(position)
-	path.remove_enemy(self)
+
+func _notification(what):
+	if (what == NOTIFICATION_PREDELETE):
+		print("EnemyPatrolPath.before free")
+		path.remove_enemy(self)

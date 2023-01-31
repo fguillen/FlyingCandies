@@ -4,7 +4,7 @@ extends Character
 export var points: = 10
 export var behavior_path := NodePath()
 
-onready var behavior: Behavior = get_node(behavior_path)
+onready var behavior := get_node(behavior_path)
 
 var activated = false
 
@@ -36,3 +36,8 @@ func activate():
 
 func on_activate():
 	pass
+
+
+func on_screen_exited():
+	print("Enemy.on_screen_exited", global_position)
+	queue_free()

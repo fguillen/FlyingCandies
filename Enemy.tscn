@@ -79,6 +79,8 @@ damage_manager_path = NodePath("DamageManager")
 weapon_default = ExtResource( 8 )
 behavior_path = NodePath("Behavior")
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
 [node name="DamageManager" type="Node" parent="."]
 script = ExtResource( 12 )
 
@@ -90,8 +92,8 @@ script = ExtResource( 6 )
 
 [node name="MovementManager" type="Node" parent="."]
 script = ExtResource( 7 )
-FRICTION_DELTA = 40.0
-ACCELERATION_DELTA = 40.0
+FRICTION_DELTA = 1000.0
+ACCELERATION_DELTA = 1000.0
 MAX_SPEED = 20.0
 
 [node name="WeaponManager" type="Node2D" parent="."]
@@ -139,6 +141,5 @@ flashing_number = 1
 sprite_to_flash_path = NodePath("../../Sprite")
 material_flash = SubResource( 8 )
 
-[connection signal="hit" from="." to="Feedback/FeedbackFlash" method="perform"]
-[connection signal="out_of_health" from="." to="Feedback/FeedbackExplosion" method="perform"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="on_screen_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]

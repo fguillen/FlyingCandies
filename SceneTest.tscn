@@ -7,21 +7,26 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 283, 83, 34.5096, -0.355769, -34.5096, 0.355769, 239, 113, 33.4423, -0.355769, -33.4423, 0.355769, 192, 74, 33.0865, 0.355769, -33.0865, -0.355769, 155, 111, 30.9519, -1.42308, -30.9519, 1.42308, 95, 71, 30.9519, -0.355769, -30.9519, 0.355769, 52, 117, 29.8846, 0.711538, -29.8846, -0.711538, 0, 72, 0, 0, 0, 0, -52, 119 )
+"points": PoolVector2Array( 0, 0, 0, 0, 283, 83, 34.5096, -0.355769, -34.5096, 0.355769, 239, 113, 33.4423, -0.355769, -33.4423, 0.355769, 192, 74, 33.0865, 0.355769, -33.0865, -0.355769, 155, 111, 30.9519, -1.42308, -30.9519, 1.42308, 95, 71, 30.9519, -0.355769, -30.9519, 0.355769, 52, 117, 29.8846, 0.711538, -29.8846, -0.711538, 0, 72, 0, 0, 0, 0, -89, 100, 0, 0, 0, 0, -256, 101 )
 }
 
 [node name="SceneTest" type="Node2D"]
 
 [node name="PathForEnemyPatrol" type="Path2D" parent="."]
-position = Vector2( -68, 0 )
+position = Vector2( -10, -4 )
 curve = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ActivatorArea" parent="." instance=ExtResource( 3 )]
+position = Vector2( 265, 88 )
 
 [node name="EnemyPatrolPath" parent="." instance=ExtResource( 1 )]
-position = Vector2( 231, 83 )
+position = Vector2( 289, 79 )
+speed = 20
 path_path = NodePath("../PathForEnemyPatrol")
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 48, 87 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -114, 102 )
