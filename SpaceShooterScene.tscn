@@ -63,18 +63,18 @@ position = Vector2( 44, -3 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 268, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 277, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
 position = Vector2( 286, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
 position = Vector2( 289, 86 )
@@ -86,18 +86,18 @@ position = Vector2( 129, -21 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
 position = Vector2( 268, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
 position = Vector2( 277, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
 position = Vector2( 286, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol2"]
 position = Vector2( 289, 86 )
@@ -109,18 +109,18 @@ position = Vector2( 129, 13 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
 position = Vector2( 268, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
 position = Vector2( 277, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
 position = Vector2( 286, 86 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol3"]
 position = Vector2( 289, 86 )
@@ -132,18 +132,18 @@ position = Vector2( 335, -9 )
 
 [node name="EnemyPatrolPath" parent="EnemiesPatrol4" instance=ExtResource( 3 )]
 position = Vector2( 256, 81 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol4" instance=ExtResource( 3 )]
 position = Vector2( 265, 81 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol4" instance=ExtResource( 3 )]
 position = Vector2( 274, 81 )
-points = null
 path_path = NodePath("../Path2D")
+points = null
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol4"]
 position = Vector2( 289, 102 )

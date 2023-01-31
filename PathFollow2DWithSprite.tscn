@@ -5,6 +5,7 @@
 [node name="PathFollow2DWithSprite" type="PathFollow2D"]
 position = Vector2( 283, 83 )
 rotation = 1.97187
+loop = false
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

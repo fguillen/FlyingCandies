@@ -6,6 +6,7 @@ var path: Path2D
 
 var node_to_follow
 
+
 func setup():
 	path = get_node(path_path)
 	node_to_follow = path.attach_enemy(self)
@@ -15,6 +16,7 @@ func setup():
 
 func on_activate():
 	pass
+
 
 func on_dead(position):
 	.on_dead(position)

@@ -3,9 +3,11 @@ extends BehaviorRandomTimeShooter
 
 var node_to_follow
 
-func setup(character:Character):
+
+func setup(character):
 	.setup(character)
 	node_to_follow = character.node_to_follow
+
 
 func on_process(_delta):
 	if(character.activated):
