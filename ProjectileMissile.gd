@@ -9,7 +9,12 @@ export(float) var speed_max = 40.0
 export(float) var speed_ini = 1.0
 
 
-onready var sensor := $Sensor
+export(Vector2) var engine_amount = Vector2(1, 3)
+export(Vector2) var engine_lifetime = Vector2(0.1, 0.3)
+
+
+onready var sensor:Area2D = $Sensor
+onready var engine:CPUParticles2D = $Engine
 
 
 var objective:Node2D = null
@@ -22,6 +27,8 @@ func _ready():
 	if(objective_path != null):
 		objective = get_node(objective_path)
 
+	update_engine()
+
 
 func _process(delta):
 	if(objective != null):
@@ -30,6 +37,7 @@ func _process(delta):
 		find_closest_objective()
 
 	accelerate(delta)
+	update_engine()
 
 
 func look_towards_objective(delta):
@@ -55,3 +63,16 @@ func find_closest_objective():
 		for node in nodes:
 			if((global_position - node.global_position) < (global_position - objective.global_position)):
 				objective = node
+
+
+func update_engine():
+	var amount = floor(lerp(engine_amount.x, engine_amount.y, speed / speed_max))
+	var lifetime = stepify(lerp(engine_lifetime.x, engine_lifetime.y, speed / speed_max), 0.1)
+
+	if(engine.amount != amount):
+		engine.amount = amount
+
+	if(engine.lifetime != lifetime):
+		engine.lifetime = lifetime
+
+	print("ProjectileMissile.amount: ", engine.amount, ", lifetime: ", engine.lifetime)

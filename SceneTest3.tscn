@@ -10,7 +10,6 @@ radius = 8.0
 
 [node name="ProjectileMissile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 16, 8 )
-objective_path = null
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 160, 40 )
