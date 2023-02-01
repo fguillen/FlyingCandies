@@ -65,6 +65,9 @@ func find_closest_objective():
 				objective = node
 
 
+		objective.connect("tree_exiting", self, "disconnect_objective")
+
+
 func update_engine():
 	var amount = floor(lerp(engine_amount.x, engine_amount.y, speed / speed_max))
 	var lifetime = stepify(lerp(engine_lifetime.x, engine_lifetime.y, speed / speed_max), 0.1)
@@ -75,4 +78,7 @@ func update_engine():
 	if(engine.lifetime != lifetime):
 		engine.lifetime = lifetime
 
-	print("ProjectileMissile.amount: ", engine.amount, ", lifetime: ", engine.lifetime)
+
+func disconnect_objective():
+	print("ProjectileMissile.disconnect_objective()")
+	objective = null
