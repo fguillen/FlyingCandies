@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ProjectileMissile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Enemy.png" type="Texture" id=2]
+[ext_resource path="res://FollowMouse.gd" type="Script" id=3]
+
+[node name="SceneTest3" type="Node2D"]
+
+[node name="ProjectileMissile" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 8 )
+damage = 1
+speed = 300
+objective_path = NodePath("../Sprite")
+direction_delta = 2
+speed_delta = 10
+speed_max = 40
+speed_ini = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 128, 56 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
