@@ -8,9 +8,9 @@
 script = ExtResource( 3 )
 objective_path = NodePath("")
 direction_delta = 10
-speed_delta = 10
-speed_max = 40
-speed_ini = 1
+speed_delta = 10.0
+speed_max = 40.0
+speed_ini = 1.0
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

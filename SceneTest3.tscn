@@ -9,12 +9,12 @@
 [node name="ProjectileMissile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 16, 8 )
 damage = 1
-speed = 300
+speed = 300.0
 objective_path = NodePath("../Sprite")
-direction_delta = 2
-speed_delta = 10
-speed_max = 40
-speed_ini = 1
+direction_delta = 5
+speed_delta = 50.0
+speed_max = 100.0
+speed_ini = 10.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 128, 56 )

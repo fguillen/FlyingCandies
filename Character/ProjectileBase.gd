@@ -2,7 +2,7 @@ class_name ProjectileBase
 extends KinematicBody2D
 
 export(int) var damage = 1
-export(int) var speed = 300
+export(float) var speed = 300.0
 
 onready var collision_shape: = $CollisionShape2D
 
