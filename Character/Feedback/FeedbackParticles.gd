@@ -1,7 +1,9 @@
 class_name FeedbackParticles
 extends Feedback
 
+
 onready var particles: = $Particles
+
 
 func _ready():
 	assert(particles != null)
@@ -11,4 +13,5 @@ func _ready():
 
 func perform(position:Vector2):
 	particles.global_position = position
-	particles.emitting = true
+	if not particles.emitting:
+		particles.emitting = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ActivatorArea.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=7]
 [ext_resource path="res://EnemyFloor.tscn" type="PackedScene" id=8]
 [ext_resource path="res://WeaponMissle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://CollectableStar.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -163,14 +164,17 @@ current = true
 
 [node name="EnemyFloor" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 200, 134 )
+speed = 0
 points = null
 
 [node name="EnemyFloor2" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 212, 134 )
+speed = 0
 points = null
 
 [node name="EnemyFloor3" parent="EnemiesFloor" instance=ExtResource( 8 )]
 position = Vector2( 224, 134 )
+speed = 0
 points = null
 
 [node name="EnemiesFloor2" type="Node2D" parent="."]
@@ -178,14 +182,29 @@ position = Vector2( 145, 0 )
 
 [node name="EnemyFloor" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 200, 134 )
+speed = 0
 points = null
 
 [node name="EnemyFloor2" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 212, 134 )
+speed = 0
 points = null
 
 [node name="EnemyFloor3" parent="EnemiesFloor2" instance=ExtResource( 8 )]
 position = Vector2( 224, 134 )
+speed = 0
 points = null
+
+[node name="CollectableStar" parent="." instance=ExtResource( 10 )]
+position = Vector2( 139, 96 )
+
+[node name="CollectableStar2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 156, 96 )
+
+[node name="CollectableStar3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 172, 96 )
+
+[node name="CollectableStar4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 123, 96 )
 
 [editable path="ActivatorArea"]

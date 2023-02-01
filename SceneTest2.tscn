@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://EnemyFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/theme.tres" type="Theme" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://LabelText.gd" type="Script" id=5]
 [ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Character/States/StateManager.gd" type="Script" id=7]
-[ext_resource path="res://Character/DamageManager.gd" type="Script" id=8]
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
@@ -38,14 +36,8 @@ position = Vector2( 48, 87 )
 [node name="EnemyFloor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130, 120 )
 
-[node name="DamageManager" parent="EnemyFloor" index="0"]
-script = ExtResource( 8 )
-
-[node name="Behavior" parent="EnemyFloor" index="1"]
+[node name="Behavior" parent="EnemyFloor" index="2"]
 shoot_time = Vector2( 1, 1 )
-
-[node name="StateManager" parent="EnemyFloor" index="5"]
-script = ExtResource( 7 )
 
 [node name="FeedbackFlash" parent="EnemyFloor/Feedback" index="1"]
 material_flash = SubResource( 8 )

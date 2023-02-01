@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character/Character.gd"
 }, {
+"base": "Node2D",
+"class": "CollectableBase",
+"language": "GDScript",
+"path": "res://CollectableBase.gd"
+}, {
+"base": "CollectableBase",
+"class": "CollectableStar",
+"language": "GDScript",
+"path": "res://CollectableStar.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Cupcake",
 "language": "GDScript",
@@ -69,7 +79,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://FeedbackInmunity.gd"
 }, {
-"base": "Feedback",
+"base": "FeedbackParticles",
 "class": "FeedbackMuzzleBlast",
 "language": "GDScript",
 "path": "res://Character/Feedback/FeedbackMuzzleBlast.gd"
@@ -194,6 +204,8 @@ _global_script_class_icons={
 "BehaviorPathPatrol": "",
 "BehaviorRandomTimeShooter": "",
 "Character": "",
+"CollectableBase": "",
+"CollectableStar": "",
 "Cupcake": "",
 "DamageManager": "",
 "Enemy": "",
