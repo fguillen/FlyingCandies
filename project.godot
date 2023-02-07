@@ -185,9 +185,9 @@ _global_script_classes=[ {
 "path": "res://WeaponBall.gd"
 }, {
 "base": "WeaponBase",
-"class": "WeaponBallDirection",
+"class": "WeaponBallTowardsPlayer",
 "language": "GDScript",
-"path": "res://WeaponBallDirection.gd"
+"path": "res://WeaponBallTowardsPlayer.gd"
 }, {
 "base": "Weapon",
 "class": "WeaponBase",
@@ -198,6 +198,11 @@ _global_script_classes=[ {
 "class": "WeaponManager",
 "language": "GDScript",
 "path": "res://Character/WeaponManager.gd"
+}, {
+"base": "WeaponBase",
+"class": "WeaponMissile",
+"language": "GDScript",
+"path": "res://WeaponMissile.gd"
 } ]
 _global_script_class_icons={
 "Behavior": "",
@@ -235,9 +240,10 @@ _global_script_class_icons={
 "StateMove": "",
 "Weapon": "",
 "WeaponBall": "",
-"WeaponBallDirection": "",
+"WeaponBallTowardsPlayer": "",
 "WeaponBase": "",
-"WeaponManager": ""
+"WeaponManager": "",
+"WeaponMissile": ""
 }
 
 [application]

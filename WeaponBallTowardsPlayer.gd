@@ -1,9 +1,9 @@
-class_name WeaponBallDirection
+class_name WeaponBallTowardsPlayer
 extends WeaponBase
 
 
 func weapon_name() -> String:
-	return "BallDirection"
+	return "BallTowardsPlayer"
 
 
 func projectile_direction() -> Vector2:

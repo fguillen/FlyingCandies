@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://WeaponBallDirection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WeaponBallTowardsPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EnemyPatrolPath.gd" type="Script" id=5]
 [ext_resource path="res://Character/Enemy/BehaviorPathPatrol.gd" type="Script" id=11]
 
