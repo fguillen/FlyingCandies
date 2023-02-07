@@ -6,7 +6,7 @@
 
 [node name="CollectableStar" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-points = 10
+points = null
 
 [node name="FeedbackPoints" parent="Feedback" index="1" instance=ExtResource( 3 )]
 

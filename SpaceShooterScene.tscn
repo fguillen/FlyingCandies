@@ -185,14 +185,23 @@ points = null
 
 [node name="CollectableStar" parent="." instance=ExtResource( 10 )]
 position = Vector2( 139, 96 )
+points = null
 
 [node name="CollectableStar2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 156, 96 )
+points = null
 
 [node name="CollectableStar3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 172, 96 )
+points = null
 
 [node name="CollectableStar4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 123, 96 )
+points = null
+
+[connection signal="collected_at" from="CollectableStar" to="CollectableStar/Feedback/FeedbackPoints" method="perform"]
+[connection signal="collected_at" from="CollectableStar2" to="CollectableStar2/Feedback/FeedbackPoints" method="perform"]
+[connection signal="collected_at" from="CollectableStar3" to="CollectableStar3/Feedback/FeedbackPoints" method="perform"]
+[connection signal="collected_at" from="CollectableStar4" to="CollectableStar4/Feedback/FeedbackPoints" method="perform"]
 
 [editable path="ActivatorArea"]
