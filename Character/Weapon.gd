@@ -10,6 +10,11 @@ var character
 
 signal attack(position)
 
+
+func weapon_name() -> String:
+	return "Weapon"
+
+
 func setup(_character, position:Vector2):
 	add_child(reloading_timer)
 	reloading_timer.set_one_shot(true)
@@ -18,8 +23,10 @@ func setup(_character, position:Vector2):
 	character = _character
 	global_position = position
 
+
 func can_attack() -> bool:
 	return not reloading
+
 
 func attack() -> void:
 	reloading = true

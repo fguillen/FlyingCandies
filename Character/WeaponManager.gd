@@ -5,11 +5,14 @@ var weapons: = []
 var actual_weapon:Weapon
 var character
 
+
 func _ready():
 	pass
 
+
 func setup(_character) -> void:
 	character = _character
+
 
 func add_weapon(weapon:Weapon) -> void:
 	if weapon.get_parent() != null:
@@ -25,6 +28,7 @@ func add_weapon(weapon:Weapon) -> void:
 func attack() -> void:
 	if actual_weapon != null and actual_weapon.can_attack():
 		actual_weapon.attack()
+
 
 func can_attack() -> bool:
 	return actual_weapon != null and actual_weapon.can_attack()

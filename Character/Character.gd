@@ -63,7 +63,6 @@ func get_class():
 	return "Character"
 
 
-
 func get_hit(damage:int, position:Vector2):
 	damage_manager.get_hit(damage)
 	emit_signal("hit", position)

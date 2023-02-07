@@ -1,6 +1,11 @@
 class_name WeaponBallDirection
 extends WeaponBase
 
+
+func weapon_name() -> String:
+	return "BallDirection"
+
+
 func projectile_direction() -> Vector2:
 	var direction = (Global.player.global_position - global_position).normalized()
 	print("projectile_direction: ", direction)
