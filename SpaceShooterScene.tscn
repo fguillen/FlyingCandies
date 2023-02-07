@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ActivatorArea.tscn" type="PackedScene" id=2]
@@ -8,13 +8,12 @@
 [ext_resource path="res://Assets/Moon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=7]
 [ext_resource path="res://EnemyFloor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://WeaponMissile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://CollectableStar.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -47, -21, 5.68254, 0.386567, -5.68254, -0.386567, -67, -21, 0.761714, -18.4716, -0.761714, 18.4716, -158, -3, -11.997, -0.952143, 11.997, 0.952143, -124, 17, 2.28514, 13.33, -2.28514, -13.33, -93, -1, 26.0887, 2.09471, -26.0887, -2.09471, -145, -23, 0, 0, 0, 0, -238, -26 )
+"points": PoolVector2Array( 0, 0, 0, 0, -47, -21, 5.68254, 0.386567, -5.68254, -0.386567, -67, -21, 0.761714, -18.4716, -0.761714, 18.4716, -158, -3, -11.997, -0.952143, 11.997, 0.952143, -124, 17, 2.28514, 13.33, -2.28514, -13.33, -93, -1, 26.0887, 2.09471, -26.0887, -2.09471, -145, -23, 0, 0, 0, 0, -238, -26, 0, -19.0251, 0, 19.0251, -274, -9, -19.4299, 0.809578, 19.4299, -0.809578, -233, 18, 1.21437, 17.0011, -1.21437, -17.0011, -199, -5, 0, 0, 0, 0, -223, -26, 0, 0, 0, 0, -326, -26 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -59,7 +58,6 @@ texture = ExtResource( 7 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 89 )
 ini_max_health = 5
-weapon_default = ExtResource( 9 )
 
 [node name="EnemiesPatrol" type="Node2D" parent="."]
 position = Vector2( 44, -3 )
@@ -77,7 +75,7 @@ position = Vector2( 286, 86 )
 path_path = NodePath("../Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
-position = Vector2( 289, 86 )
+position = Vector2( 289, 82 )
 curve = SubResource( 1 )
 script = ExtResource( 4 )
 
@@ -185,23 +183,18 @@ points = null
 
 [node name="CollectableStar" parent="." instance=ExtResource( 10 )]
 position = Vector2( 139, 96 )
-points = null
+points = 10
 
 [node name="CollectableStar2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 156, 96 )
-points = null
+points = 10
 
 [node name="CollectableStar3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 172, 96 )
-points = null
+points = 10
 
 [node name="CollectableStar4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 123, 96 )
-points = null
-
-[connection signal="collected_at" from="CollectableStar" to="CollectableStar/Feedback/FeedbackPoints" method="perform"]
-[connection signal="collected_at" from="CollectableStar2" to="CollectableStar2/Feedback/FeedbackPoints" method="perform"]
-[connection signal="collected_at" from="CollectableStar3" to="CollectableStar3/Feedback/FeedbackPoints" method="perform"]
-[connection signal="collected_at" from="CollectableStar4" to="CollectableStar4/Feedback/FeedbackPoints" method="perform"]
+points = 10
 
 [editable path="ActivatorArea"]
