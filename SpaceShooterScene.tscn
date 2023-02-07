@@ -183,18 +183,14 @@ points = null
 
 [node name="CollectableStar" parent="." instance=ExtResource( 10 )]
 position = Vector2( 139, 96 )
-points = 10
 
 [node name="CollectableStar2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 156, 96 )
-points = 10
 
 [node name="CollectableStar3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 172, 96 )
-points = 10
 
 [node name="CollectableStar4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 123, 96 )
-points = 10
 
 [editable path="ActivatorArea"]

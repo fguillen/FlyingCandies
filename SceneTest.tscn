@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://EnemyPatrolPath.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PathForEnemyPatrol.gd" type="Script" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://CollectableBase.gd" type="Script" id=7]
 [ext_resource path="res://Character/Feedback/FeedbackPoints.gd" type="Script" id=8]
 [ext_resource path="res://CollectableWeaponBall.tscn" type="PackedScene" id=9]
-[ext_resource path="res://CollectableWeapon.gd" type="Script" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -79,10 +78,8 @@ script = ExtResource( 7 )
 
 [node name="CollectableWeaponMissile" parent="." instance=ExtResource( 5 )]
 position = Vector2( 110, 35 )
-script = ExtResource( 10 )
 
 [node name="CollectableWeaponBall" parent="." instance=ExtResource( 9 )]
 position = Vector2( 136, 35 )
-script = ExtResource( 10 )
 
 [editable path="EnemyPatrolPath"]

@@ -1,8 +1,6 @@
 class_name ShieldUI
 extends Control
 
-export (NodePath) var texture_full_path
-export (NodePath) var texture_empty_path
 
 onready var texture_full := $Full
 onready var texture_empty := $Empty

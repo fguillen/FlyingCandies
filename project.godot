@@ -80,6 +80,11 @@ _global_script_classes=[ {
 "path": "res://Character/Feedback/FeedbackFlash.gd"
 }, {
 "base": "Feedback",
+"class": "FeedbackFloating",
+"language": "GDScript",
+"path": "res://Character/Feedback/FeedbackFloating.gd"
+}, {
+"base": "Feedback",
 "class": "FeedbackInmunity",
 "language": "GDScript",
 "path": "res://Character/FeedbackInmunity.gd"
@@ -229,6 +234,7 @@ _global_script_class_icons={
 "EnemyPatrolPath": "",
 "Feedback": "",
 "FeedbackFlash": "",
+"FeedbackFloating": "",
 "FeedbackInmunity": "",
 "FeedbackMuzzleBlast": "",
 "FeedbackParticles": "",
