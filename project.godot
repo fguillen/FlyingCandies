@@ -77,7 +77,7 @@ _global_script_classes=[ {
 "base": "Feedback",
 "class": "FeedbackInmunity",
 "language": "GDScript",
-"path": "res://FeedbackInmunity.gd"
+"path": "res://Character/FeedbackInmunity.gd"
 }, {
 "base": "FeedbackParticles",
 "class": "FeedbackMuzzleBlast",
@@ -88,6 +88,11 @@ _global_script_classes=[ {
 "class": "FeedbackParticles",
 "language": "GDScript",
 "path": "res://Character/Feedback/FeedbackParticles.gd"
+}, {
+"base": "Feedback",
+"class": "FeedbackPoints",
+"language": "GDScript",
+"path": "res://Character/Feedback/FeedbackPoints.gd"
 }, {
 "base": "Node",
 "class": "InputManager",
@@ -221,6 +226,7 @@ _global_script_class_icons={
 "FeedbackInmunity": "",
 "FeedbackMuzzleBlast": "",
 "FeedbackParticles": "",
+"FeedbackPoints": "",
 "InputManager": "",
 "InputManagerPlayer": "",
 "MovementManager": "",
