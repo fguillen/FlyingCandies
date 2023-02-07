@@ -21,5 +21,5 @@ func on_activate():
 
 func _notification(what):
 	if (what == NOTIFICATION_PREDELETE):
-		print("EnemyPatrolPath.before free")
+		print("EnemyPatrolPath.before free: ", path)
 		path.remove_enemy(self)

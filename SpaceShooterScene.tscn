@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ActivatorArea.tscn" type="PackedScene" id=2]
-[ext_resource path="res://EnemyPatrolPath.tscn" type="PackedScene" id=3]
-[ext_resource path="res://PathForEnemyPatrol.gd" type="Script" id=4]
+[ext_resource path="res://EnemiesBatchPatrol2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://EnemiesBatchPatrol3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Moon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=7]
@@ -11,17 +11,6 @@
 [ext_resource path="res://CollectableWeaponMissile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://CollectableStar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://EnemiesBatchPatrol.tscn" type="PackedScene" id=11]
-
-[sub_resource type="Curve2D" id=1]
-resource_local_to_scene = true
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -47, -21, 5.68254, 0.386567, -5.68254, -0.386567, -67, -21, 0.761714, -18.4716, -0.761714, 18.4716, -158, -3, -11.997, -0.952143, 11.997, 0.952143, -124, 17, 2.28514, 13.33, -2.28514, -13.33, -93, -1, 26.0887, 2.09471, -26.0887, -2.09471, -145, -23, 0, 0, 0, 0, -238, -26, 0, -19.0251, 0, 19.0251, -274, -9, -19.4299, 0.809578, 19.4299, -0.809578, -233, 18, 1.21437, 17.0011, -1.21437, -17.0011, -199, -5, 0, 0, 0, 0, -223, -26, 0, 0, 0, 0, -326, -26 )
-}
-
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -50, -21, 16.2364, 0.338258, -16.2364, -0.338258, -89, -43, 12.5156, 0.676516, -12.5156, -0.676516, -117, -21, 16.5747, 0, -16.5747, 0, -150, -44, 12.5156, 0.676516, -12.5156, -0.676516, -177, -21, 14.2068, 0.676516, -14.2068, -0.676516, -205, -45 )
-}
 
 [node name="SpaceShooterScene" type="Node"]
 
@@ -62,66 +51,22 @@ position = Vector2( 80, 89 )
 ini_max_health = 5
 
 [node name="EnemiesPatrol" parent="." instance=ExtResource( 11 )]
+position = Vector2( 351, 74 )
 
-[node name="EnemiesPatrol2" type="Node2D" parent="."]
-position = Vector2( 129, -21 )
+[node name="EnemiesPatrol2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 407, 52 )
 
-[node name="EnemyPatrolPath" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
-position = Vector2( 257, 65 )
-path_path = NodePath("../Path2D")
+[node name="EnemiesPatrol3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 408, 100 )
 
-[node name="EnemyPatrolPath2" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
-position = Vector2( 258, 65 )
-path_path = NodePath("../Path2D")
+[node name="EnemiesBatchPatrol2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 458, 77 )
 
-[node name="EnemyPatrolPath3" parent="EnemiesPatrol2" instance=ExtResource( 3 )]
-position = Vector2( 259, 65 )
-path_path = NodePath("../Path2D")
+[node name="EnemiesBatchPatrol3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 497, 77 )
 
-[node name="Path2D" type="Path2D" parent="EnemiesPatrol2"]
-position = Vector2( 289, 86 )
-curve = SubResource( 1 )
-script = ExtResource( 4 )
-
-[node name="EnemiesPatrol3" type="Node2D" parent="."]
-position = Vector2( 129, 13 )
-
-[node name="EnemyPatrolPath" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
-position = Vector2( 259, 67 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath2" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
-position = Vector2( 260, 67 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath3" parent="EnemiesPatrol3" instance=ExtResource( 3 )]
-position = Vector2( 261, 67 )
-path_path = NodePath("../Path2D")
-
-[node name="Path2D" type="Path2D" parent="EnemiesPatrol3"]
-position = Vector2( 289, 86 )
-curve = SubResource( 1 )
-script = ExtResource( 4 )
-
-[node name="EnemiesPatrol4" type="Node2D" parent="."]
-position = Vector2( 335, -9 )
-
-[node name="EnemyPatrolPath" parent="EnemiesPatrol4" instance=ExtResource( 3 )]
-position = Vector2( 256, 81 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath2" parent="EnemiesPatrol4" instance=ExtResource( 3 )]
-position = Vector2( 265, 81 )
-path_path = NodePath("../Path2D")
-
-[node name="EnemyPatrolPath3" parent="EnemiesPatrol4" instance=ExtResource( 3 )]
-position = Vector2( 274, 81 )
-path_path = NodePath("../Path2D")
-
-[node name="Path2D" type="Path2D" parent="EnemiesPatrol4"]
-position = Vector2( 289, 102 )
-curve = SubResource( 2 )
-script = ExtResource( 4 )
+[node name="EnemiesBatchPatrol4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 532, 77 )
 
 [node name="ActivatorArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 291, 85 )
@@ -172,5 +117,8 @@ position = Vector2( 118, 49 )
 
 [node name="CollectableWeaponMissile" parent="Collectables" instance=ExtResource( 9 )]
 position = Vector2( 130, 115 )
+
+[node name="EndLevel" type="Node2D" parent="."]
+position = Vector2( 1300, 0 )
 
 [editable path="ActivatorArea"]
