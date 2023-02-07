@@ -13,8 +13,13 @@ var position_start:Vector2 = Vector2.ZERO
 var position_down:Vector2 = Vector2.ZERO
 var position_up:Vector2 = Vector2.ZERO
 
+func _ready():
+	print("FeedbackFloating.ready()")
+
 
 func perform(_position:Vector2) -> void:
+	print("FeedbackFloating.perform()")
+
 	position_start = node2D.global_position
 	position_down = position_start
 	position_up = position_start + Vector2(0, -distance)
@@ -56,3 +61,8 @@ func animate():
 		# print("FeedbackFloating.is_instance_valid2() ", is_instance_valid(self))
 		float_down()
 		yield(tween, "tween_completed")
+
+
+func _on_FeedbackFloating_tree_exiting():
+	print("FeedbackFloating._on_FeedbackFloating_tree_exiting()")
+	pass # Replace with function body.

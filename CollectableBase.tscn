@@ -30,3 +30,4 @@ node2D_path = NodePath("../..")
 
 [connection signal="collected_at" from="." to="Feedback/FeedbackCollectableCollected" method="perform"]
 [connection signal="ready" from="." to="Feedback/FeedbackFloating" method="perform" binds= [ Vector2( 0, 0 ) ]]
+[connection signal="tree_exiting" from="Feedback/FeedbackFloating" to="Feedback/FeedbackFloating" method="_on_FeedbackFloating_tree_exiting"]
