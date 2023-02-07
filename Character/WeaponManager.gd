@@ -26,9 +26,14 @@ func add_weapon(weapon:Weapon) -> void:
 
 
 func attack() -> void:
-	if actual_weapon != null and actual_weapon.can_attack():
-		actual_weapon.attack()
+	for weapon in weapons:
+		if weapon.can_attack():
+			weapon.attack()
 
 
 func can_attack() -> bool:
-	return actual_weapon != null and actual_weapon.can_attack()
+	for weapon in weapons:
+		if weapon.can_attack():
+			return true
+
+	return false
