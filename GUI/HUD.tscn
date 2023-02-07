@@ -95,20 +95,3 @@ value = 50.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
 texture_progress_offset = Vector2( 2, 2 )
-
-[node name="AddShieldFull" type="Button" parent="CanvasLayer/Panel/Main"]
-margin_left = 38.0
-margin_top = 36.0
-margin_right = 50.0
-margin_bottom = 56.0
-text = "+"
-
-[node name="RemoveShieldFull" type="Button" parent="CanvasLayer/Panel/Main"]
-margin_left = 63.0
-margin_top = 36.0
-margin_right = 83.0
-margin_bottom = 56.0
-text = "-"
-
-[connection signal="pressed" from="CanvasLayer/Panel/Main/AddShieldFull" to="CanvasLayer/Panel/Main/ShieldsDisplay" method="add_shield_full"]
-[connection signal="pressed" from="CanvasLayer/Panel/Main/RemoveShieldFull" to="CanvasLayer/Panel/Main/ShieldsDisplay" method="remove_shield_full"]

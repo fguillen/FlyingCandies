@@ -14,7 +14,6 @@ var position_down:Vector2 = Vector2.ZERO
 var position_up:Vector2 = Vector2.ZERO
 
 
-
 func perform(_position:Vector2) -> void:
 	position_start = node2D.global_position
 	position_down = position_start
@@ -50,8 +49,10 @@ func float_down() -> void:
 
 
 func animate():
-	float_up()
-	yield(tween, "tween_completed")
-	float_down()
-	yield(tween, "tween_completed")
-	animate()
+	while(is_instance_valid(self)):
+		float_up()
+		# print("FeedbackFloating.is_instance_valid1() ", is_instance_valid(self))
+		yield(tween, "tween_completed")
+		# print("FeedbackFloating.is_instance_valid2() ", is_instance_valid(self))
+		float_down()
+		yield(tween, "tween_completed")
