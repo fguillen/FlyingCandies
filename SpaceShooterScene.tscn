@@ -67,11 +67,11 @@ position = Vector2( 268, 86 )
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath2" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 277, 86 )
+position = Vector2( 269, 86 )
 path_path = NodePath("../Path2D")
 
 [node name="EnemyPatrolPath3" parent="EnemiesPatrol" instance=ExtResource( 3 )]
-position = Vector2( 286, 86 )
+position = Vector2( 270, 86 )
 path_path = NodePath("../Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemiesPatrol"]
