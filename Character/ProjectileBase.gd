@@ -11,6 +11,10 @@ signal hit(position)
 
 var direction := Vector2.ZERO
 
+
+func _ready():
+	Global.add_projectile(self)
+
 func shoot(position:Vector2, _direction:Vector2):
 	global_position = position
 	direction = _direction

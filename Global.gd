@@ -3,10 +3,13 @@ extends Node
 var points = 0
 var player = null
 var player_dead = false
+var camera = null
 
 signal points_changed(value)
 signal shields_changed(value)
 signal shields_full_changed(value)
+signal player_health_changed(value)
+signal projectile_hit(value)
 
 
 func add_points(value):
@@ -41,3 +44,12 @@ func on_player_dead(_position):
 func on_player_health_changed(value):
 	print("Global.on_player_health_changed(%s)" % str(value))
 	set_shields_full(value - 1)
+	emit_signal("player_health_changed", value)
+
+
+func on_projectile_hit(position:Vector2):
+	emit_signal("projectile_hit", position)
+
+
+func add_projectile(projectile: ProjectileBase):
+	projectile.connect("hit", self, "on_projectile_hit")
