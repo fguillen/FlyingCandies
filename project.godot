@@ -144,7 +144,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Pilot.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "PilotUI",
 "language": "GDScript",
 "path": "res://PilotUI.gd"

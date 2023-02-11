@@ -31,10 +31,10 @@ func float_up() -> void:
 	tween.interpolate_property(
 		node2D,
 		"position",
-        position_down,
+		position_down,
 		position_up,
 		time,
-        Tween.TRANS_SINE,
+		Tween.TRANS_SINE,
 		Tween.EASE_IN_OUT
 	)
 	tween.start()
@@ -44,10 +44,10 @@ func float_down() -> void:
 	tween.interpolate_property(
 		node2D,
 		"position",
-        position_up,
+		position_up,
 		position_down,
 		time,
-        Tween.TRANS_SINE,
+		Tween.TRANS_SINE,
 		Tween.EASE_IN_OUT
 	)
 	tween.start()
