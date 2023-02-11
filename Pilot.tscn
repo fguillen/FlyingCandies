@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Pilot.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pilots_pieces.png" type="Texture" id=2]
+
+[node name="Pilot" type="Node2D"]
+position = Vector2( 20, 18 )
+script = ExtResource( 1 )
+eyes = 2
+nose = 2
+mouth = 3
+helmet = 1
+body = 2
+
+[node name="Face" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 6
+
+[node name="Eyes" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 6
+frame = 10
+
+[node name="Nose" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 6
+frame = 20
+
+[node name="Mouth" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 6
+frame = 30
+
+[node name="Helmet" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 6
+frame = 40
+
+[node name="Body" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 6
+frame = 50
