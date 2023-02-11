@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Pilots_pieces.png" type="Texture" id=2]
 
 [node name="PilotUI" type="Node2D"]
-position = Vector2( 20, 18 )
 script = ExtResource( 1 )
 eyes = 2
 nose = 2

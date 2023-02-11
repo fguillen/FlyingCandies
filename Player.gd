@@ -10,7 +10,7 @@ func _ready():
 
 
 func setup():
-	pilot := Pilot.new()
+	pilot = Pilot.new()
 	pilot.generate_random()
 
 	Global.set_player(self)

@@ -8,6 +8,7 @@ var camera = null
 signal points_changed(value)
 signal shields_changed(value)
 signal shields_full_changed(value)
+signal player_set(player)
 signal player_health_changed(value)
 signal projectile_hit(value)
 
@@ -26,6 +27,7 @@ func set_shields_full(value):
 
 
 func set_player(player):
+	print("Global.set_player()")
 	self.player = player
 	set_shields(player.damage_manager.health - 1)
 	set_shields_full(player.damage_manager.health - 1)
@@ -34,6 +36,9 @@ func set_player(player):
 
 	player.connect("dead", self, "on_player_dead")
 	player.connect("health_changed", self, "on_player_health_changed")
+
+	emit_signal("player_set", player)
+
 
 
 func on_player_dead(_position):

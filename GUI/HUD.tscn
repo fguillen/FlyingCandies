@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/HUD.png" type="Texture" id=1]
 [ext_resource path="res://Assets/m3x6.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://GUI/HUD.gd" type="Script" id=6]
 [ext_resource path="res://LabelPoints.gd" type="Script" id=7]
 [ext_resource path="res://GUI/theme.tres" type="Theme" id=8]
+[ext_resource path="res://PilotUI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -95,3 +96,13 @@ value = 50.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
 texture_progress_offset = Vector2( 2, 2 )
+
+[node name="Pilot" type="Control" parent="CanvasLayer/Panel"]
+margin_left = 64.0
+margin_top = 21.0
+margin_right = 104.0
+margin_bottom = 61.0
+
+[node name="PilotUI" parent="CanvasLayer/Panel/Pilot" instance=ExtResource( 9 )]
+unique_name_in_owner = true
+z_index = 10
