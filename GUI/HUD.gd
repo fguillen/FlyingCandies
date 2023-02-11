@@ -1,6 +1,7 @@
 extends Control
 
 onready var label_points:Label = $"%LabelPoints"
+onready var label_name:Label = $"%LabelName"
 onready var shields_display := $"%ShieldsDisplay"
 onready var pilot_ui := $"%PilotUI"
 
@@ -27,3 +28,4 @@ func on_shields_full_changed(value):
 func on_player_set(player: Player) -> void:
 	print("HUD.on_player_set()")
 	pilot_ui.setup(player.pilot)
+	label_name.text = player.pilot.name

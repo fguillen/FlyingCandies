@@ -55,6 +55,7 @@ margin_right = 196.0
 margin_bottom = 37.0
 
 [node name="LabelName" type="Label" parent="CanvasLayer/Panel/Main"]
+unique_name_in_owner = true
 margin_left = 3.0
 margin_top = -6.0
 margin_right = 35.0
