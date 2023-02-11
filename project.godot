@@ -139,6 +139,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://PathForEnemyPatrol.gd"
 }, {
+"base": "Reference",
+"class": "Pilot",
+"language": "GDScript",
+"path": "res://Pilot.gd"
+}, {
+"base": "Reference",
+"class": "PilotUI",
+"language": "GDScript",
+"path": "res://PilotUI.gd"
+}, {
 "base": "Character",
 "class": "Player",
 "language": "GDScript",
@@ -261,6 +271,8 @@ _global_script_class_icons={
 "InputManagerPlayer": "",
 "MovementManager": "",
 "PathForEnemyPatrol": "",
+"Pilot": "",
+"PilotUI": "",
 "Player": "",
 "ProjectileBall": "",
 "ProjectileBase": "",

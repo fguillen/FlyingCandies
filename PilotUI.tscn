@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Pilot.gd" type="Script" id=1]
+[ext_resource path="res://PilotUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pilots_pieces.png" type="Texture" id=2]
 
-[node name="Pilot" type="Node2D"]
+[node name="PilotUI" type="Node2D"]
 position = Vector2( 20, 18 )
 script = ExtResource( 1 )
 eyes = 2
