@@ -11,7 +11,7 @@ func _ready():
 
 func setup():
 	pilot = Pilot.new()
-	pilot.generate_random()
+	pilot.randomize()
 
 	Global.set_player(self)
 	ship_engine.setup(self)

@@ -15,16 +15,18 @@ export (int) var helmet := 0
 export (int) var body := 0
 export (int) var name_index := 0
 
+signal randomized()
+
 var random = RandomNumberGenerator.new()
 var name
 
 var names = [
 	"Chuckleberry Finn",
-	"Dingleberry Dinglehoffer",
+	"Dingleberry Dingle",
 	"Balthazoodle",
 	"Zoltar Zest",
 	"Tilly Toe-Tapper",
-	"Poppycock Pimpernel",
+	"Poppycock Pimperne",
 	"Giggleberry Gloop",
 	"Fizz Fuzzton",
 	"Ziggy Zapper",
@@ -33,14 +35,14 @@ var names = [
 	"Snicker Snackson",
 	"Kooky Kooligan",
 	"Jibber Jabberton",
-	"Skipper Skipperhoffer",
+	"Skipper Skipperhof",
 	"Sassy Slingwell",
-	"Hootie Hootenheimer",
-	"Pogo Pogo-Stickerson",
+	"Hootie Hootenher",
+	"Pogo Pogo-Sticker",
 	"Fruity Fruttle",
-	"Toodleoo Twinkletoes",
+	"Tood Twinkletoes",
 	"Jazzy Jazzybum",
-	"Spazzy Sparklespawn",
+	"Spazzy Sparkspawn",
 	"Zany Zapper",
 	"Bouncy Bounceson",
 	"Wacky Wackadoo",
@@ -50,13 +52,13 @@ var names = [
 	"Twirly Twirltastic",
 	"Hoppy Hopscotch",
 	"Dizzy Dazzler",
-	"Scrappy Scrappletooth",
+	"Scrappy Scrapple",
 	"Yappy Yapster",
 	"Grouchy Growler",
 	"Nimble Nimbler",
-	"Zesty Zestapotamus",
+	"Zesty Zestapotas",
 	"Jumpy Jumpspout",
-	"Skippy Skippernoodle",
+	"Skippy Skippernood",
 	"Hissy Hissyfit",
 	"Wriggly Wriggler"
 ]
@@ -66,7 +68,7 @@ func _init():
 	random.randomize()
 
 
-func generate_random() -> void:
+func randomize() -> void:
 	face = random.randi_range(0, MAX_FACES - 1)
 	eyes = random.randi_range(0, MAX_EYES - 1)
 	nose = random.randi_range(0, MAX_NOSES - 1)
@@ -74,5 +76,7 @@ func generate_random() -> void:
 	helmet = random.randi_range(0, MAX_HELMETS - 1)
 	body = random.randi_range(0, MAX_BODIES - 1)
 
-	name_index = random.randi_range(0, names.size())
+	name_index = random.randi_range(0, names.size() - 1)
 	name = names[name_index]
+
+	emit_signal("randomized")
