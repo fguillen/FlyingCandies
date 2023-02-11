@@ -18,7 +18,7 @@ export (int) var name_index := 0
 signal randomized()
 
 var random = RandomNumberGenerator.new()
-var name
+var name : String
 
 var names = [
 	"Chuckleberry Finn",
