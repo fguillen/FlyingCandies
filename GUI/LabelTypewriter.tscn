@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://LabelTypewriter.gd" type="Script" id=1]
+[ext_resource path="res://GUI/theme.tres" type="Theme" id=2]
+[ext_resource path="res://Character/Feedback/FeedbackSound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sound/KeyTypewriter.wav" type="AudioStream" id=4]
+
+[node name="LabelTypewriter" type="Label"]
+margin_left = 69.0
+margin_top = 30.0
+margin_right = 239.0
+margin_bottom = 88.0
+theme = ExtResource( 2 )
+custom_constants/line_spacing = -8
+text = "Text test. Text test. Text test. Text test. Text test. Text test. "
+align = 2
+autowrap = true
+script = ExtResource( 1 )
+auto_perform = true
+
+[node name="Feedback" type="Node" parent="."]
+
+[node name="FeedbackSound" parent="Feedback" instance=ExtResource( 3 )]
+position = Vector2( 69, 30 )
+audio_file = ExtResource( 4 )
+random_pitch = true
+
+[connection signal="key" from="." to="Feedback/FeedbackSound" method="perform"]

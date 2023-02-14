@@ -1,0 +1,278 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/LabelTypewriter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SergeantScene.gd" type="Script" id=3]
+[ext_resource path="res://PilotUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Pixel.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Play"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialog/Sargent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 3.7, 3.9, 6.1, 6.3, 12, 12.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 353, 61 ), Vector2( 273, 61 ), Vector2( 273, 61 ), Vector2( 353, 61 ), Vector2( 353, 61 ), Vector2( 273, 61 ), Vector2( 273, 61 ), Vector2( 353, 61 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Dialog/LabelSargentNext")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "perform"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Soldiers/SoldierFirst:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.2, 2.7, 17.1, 17.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 55, 59 ), Vector2( 121, 59 ), Vector2( 121, 59 ), Vector2( 219, 59 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Dialog/LabelSargentNext:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Dialog/LabelSargentName")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "perform"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Dialog/LabelSargentName:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 3.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Dialog/PilotUI:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.9, 4.1, 5.9, 6.1, 12.2, 12.4, 16.9, 17.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -38, 59 ), Vector2( -38, 59 ), Vector2( 33, 59 ), Vector2( 33, 59 ), Vector2( -38, 59 ), Vector2( -38, 59 ), Vector2( 33, 59 ), Vector2( 33, 59 ), Vector2( -38, 59 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Dialog/LabelPilotName")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 4.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "perform"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Dialog/LabelSargentEncouraging")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 6.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "perform"
+} ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Dialog/LabelSargentEncouraging:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 12.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Dialog/LabelPilotYesSir")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 12.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "perform"
+} ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Dialog/LabelPilotYesSir:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 17.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Dialog/LabelPilotName:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 6.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="SergeantScene" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Line" type="Sprite" parent="."]
+position = Vector2( 161, 92 )
+scale = Vector2( 393.611, -5.47763 )
+texture = ExtResource( 5 )
+
+[node name="Sargent" type="Sprite" parent="."]
+position = Vector2( 120, 29 )
+scale = Vector2( 9, 15 )
+texture = ExtResource( 5 )
+
+[node name="SpaceShip" type="Sprite" parent="."]
+position = Vector2( 230, 15 )
+scale = Vector2( 82.347, 37.0153 )
+texture = ExtResource( 5 )
+
+[node name="Soldiers" type="Node" parent="."]
+
+[node name="SoldierFirst" type="Sprite" parent="Soldiers"]
+position = Vector2( 121, 59 )
+scale = Vector2( 9, 15 )
+texture = ExtResource( 5 )
+
+[node name="Soldier" type="Sprite" parent="Soldiers"]
+position = Vector2( 16, 59 )
+scale = Vector2( 9, 15 )
+texture = ExtResource( 5 )
+
+[node name="Soldier2" type="Sprite" parent="Soldiers"]
+position = Vector2( 29, 59 )
+scale = Vector2( 9, 15 )
+texture = ExtResource( 5 )
+
+[node name="Soldier3" type="Sprite" parent="Soldiers"]
+position = Vector2( 42, 59 )
+scale = Vector2( 9, 15 )
+texture = ExtResource( 5 )
+
+[node name="Soldier5" type="Sprite" parent="Soldiers"]
+position = Vector2( 3, 59 )
+scale = Vector2( 9, 15 )
+texture = ExtResource( 5 )
+
+[node name="Soldier6" type="Sprite" parent="Soldiers"]
+position = Vector2( -9, 59 )
+scale = Vector2( 9, 15 )
+texture = ExtResource( 5 )
+
+[node name="Dialog" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -154.0
+margin_top = -103.0
+margin_right = 150.0
+margin_bottom = -3.0
+
+[node name="PilotUI" parent="Dialog" instance=ExtResource( 4 )]
+position = Vector2( 33, 59 )
+scale = Vector2( 2, 2 )
+
+[node name="Sargent" parent="Dialog" instance=ExtResource( 4 )]
+position = Vector2( 353, 61 )
+scale = Vector2( 2, 2 )
+
+[node name="LabelSargentNext" parent="Dialog" instance=ExtResource( 1 )]
+margin_bottom = 92.0
+text = "Next"
+auto_perform = false
+
+[node name="LabelSargentName" parent="Dialog" instance=ExtResource( 1 )]
+margin_bottom = 92.0
+text = "Name"
+auto_perform = false
+
+[node name="LabelPilotName" parent="Dialog" instance=ExtResource( 1 )]
+margin_left = 70.0
+margin_right = 240.0
+margin_bottom = 92.0
+text = "Federico Garcia"
+align = 0
+auto_perform = false
+
+[node name="LabelSargentEncouraging" parent="Dialog" instance=ExtResource( 1 )]
+margin_bottom = 92.0
+text = "The fate of our nation rests on your shoulders, soldier."
+auto_perform = false
+
+[node name="LabelPilotYesSir" parent="Dialog" instance=ExtResource( 1 )]
+margin_left = 72.0
+margin_right = 242.0
+margin_bottom = 92.0
+text = "Yes, sir"
+align = 0
+auto_perform = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Play = SubResource( 1 )

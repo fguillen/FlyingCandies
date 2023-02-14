@@ -20,7 +20,7 @@ signal randomized()
 var random = RandomNumberGenerator.new()
 var name : String
 
-var names = [
+const NAMES = [
 	"Chuckleberry Finn",
 	"Dingleberry Dingle",
 	"Balthazoodle",
@@ -76,7 +76,7 @@ func randomize() -> void:
 	helmet = random.randi_range(0, MAX_HELMETS - 1)
 	body = random.randi_range(0, MAX_BODIES - 1)
 
-	name_index = random.randi_range(0, names.size() - 1)
-	name = names[name_index]
+	name_index = random.randi_range(0, NAMES.size() - 1)
+	name = NAMES[name_index]
 
 	emit_signal("randomized")
