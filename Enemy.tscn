@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Enemy.png" type="Texture" id=1]
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Character/Feedback/FeedbackExplosion.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Character/Feedback/FeedbackFlash.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Character/Feedback/FeedbackPoints.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Character/Feedback/FeedbackSound.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Sound/Explosion4.wav" type="AudioStream" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.99425, 3 )
@@ -144,8 +146,13 @@ material_flash = SubResource( 8 )
 
 [node name="FeedbackPoints" parent="Feedback" instance=ExtResource( 16 )]
 
+[node name="FeedbackSoundExplosion" parent="Feedback" instance=ExtResource( 17 )]
+audio_file = ExtResource( 18 )
+random_pitch = true
+
 [connection signal="dead" from="." to="Feedback/FeedbackPoints" method="perform"]
 [connection signal="hit" from="." to="Feedback/FeedbackFlash" method="perform"]
 [connection signal="out_of_health" from="." to="Feedback/FeedbackExplosion" method="perform"]
+[connection signal="out_of_health" from="." to="Feedback/FeedbackSoundExplosion" method="perform"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="on_screen_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]
