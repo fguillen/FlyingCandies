@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/d2clon_Space_Blasters_Squad__logo_design_black_and_white_pixela_64f125e4-a609-45c8-9c8b-91b5b485f340.png-6ff965073c2d13288a1dfa76a700dcd7.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Art/d2clon_Space_Blasters_Squad__logo_design_black_and_white_pixela_64f125e4-a609-45c8-9c8b-91b5b485f340.png"
+dest_files=[ "res://.import/d2clon_Space_Blasters_Squad__logo_design_black_and_white_pixela_64f125e4-a609-45c8-9c8b-91b5b485f340.png-6ff965073c2d13288a1dfa76a700dcd7.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
