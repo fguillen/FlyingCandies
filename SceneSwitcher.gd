@@ -3,6 +3,11 @@ extends CanvasLayer
 func load_game_over():
 	change_scene("res://GUI/GameOver.tscn")
 
+
+func load_intro():
+	change_scene("res://SergeantScene.tscn")
+
+
 func load_start():
 	change_scene("res://SpaceShooterScene.tscn")
 

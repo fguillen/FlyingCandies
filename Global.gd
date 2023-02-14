@@ -4,6 +4,7 @@ var points = 0
 var player = null
 var player_dead = false
 var camera = null
+var pilot = null
 
 signal points_changed(value)
 signal shields_changed(value)
@@ -11,6 +12,12 @@ signal shields_full_changed(value)
 signal player_set(player)
 signal player_health_changed(value)
 signal projectile_hit(value)
+
+
+func _ready() -> void:
+	print("Global.ready")
+	pilot = Pilot.new()
+	pilot.randomize()
 
 
 func add_points(value):

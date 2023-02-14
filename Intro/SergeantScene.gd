@@ -45,10 +45,15 @@ const SOLDIER_ANSWERS = [
 ]
 
 onready var animation_player := $AnimationPlayer
+
+onready var label_pilot_name := $Dialog/LabelPilotName
 onready var label_sargeant_encouraging := $Dialog/LabelSargentEncouraging
 onready var label_pilot_yes_sir := $Dialog/LabelPilotYesSir
 
+onready var pilot_ui := $Dialog/PilotUI
+
 var random = RandomNumberGenerator.new()
+
 
 func _init():
 	random.randomize()
@@ -57,5 +62,22 @@ func _init():
 func _ready():
 	animation_player.play("Play")
 
+	label_pilot_name.text_to_display = Global.pilot.name
 	label_sargeant_encouraging.text_to_display = ENCOURAGING_WORDS[random.randi_range(0, ENCOURAGING_WORDS.size() - 1)]
 	label_pilot_yes_sir.text_to_display = SOLDIER_ANSWERS[random.randi_range(0, SOLDIER_ANSWERS.size() - 1)]
+
+	pilot_ui.setup(Global.pilot)
+
+
+func go_to_game() -> void:
+	animation_player.stop()
+	SceneSwitcher.load_start()
+
+
+func _on_AnimationPlayer_animation_finished(_anim_name:String):
+	go_to_game()
+
+
+func _input(event):
+  if event.is_action_pressed("ui_accept"):
+    go_to_game()
