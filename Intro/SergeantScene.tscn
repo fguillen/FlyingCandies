@@ -5,6 +5,7 @@
 [ext_resource path="res://GUI/LabelTypewriter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Intro/Solider.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PilotUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/SpaceShipIntro.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Play"
@@ -45,7 +46,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.6, 2.7, 17.1, 19.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 58, 60 ), Vector2( 58, 60 ), Vector2( 121, 59 ), Vector2( 121, 59 ), Vector2( 219, 59 ) ]
+"values": [ Vector2( 58, 60 ), Vector2( 58, 60 ), Vector2( 121, 59 ), Vector2( 121, 59 ), Vector2( 223, 59 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Dialog/LabelSargentNext:visible")
@@ -199,21 +200,6 @@ tracks/13/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=2]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Soldiers/SoldierFirst:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 58, 60 ) ]
-}
-
 [node name="SergeantScene" type="CanvasLayer"]
 script = ExtResource( 2 )
 
@@ -232,9 +218,8 @@ position = Vector2( 120, 35 )
 frame = 1
 
 [node name="SpaceShip" type="Sprite" parent="."]
-position = Vector2( 230, 15 )
-scale = Vector2( 82.347, 37.0153 )
-texture = ExtResource( 1 )
+position = Vector2( 230, 28 )
+texture = ExtResource( 6 )
 
 [node name="Soldiers" type="Node" parent="."]
 
@@ -315,4 +300,3 @@ auto_perform = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Play = SubResource( 1 )
-anims/RESET = SubResource( 2 )
