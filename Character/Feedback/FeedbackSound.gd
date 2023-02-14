@@ -1,4 +1,5 @@
-extends Node2D
+class_name FeedbackSound
+extends Feedback
 
 
 export(Resource) var audio_file

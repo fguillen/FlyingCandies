@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ProjectileBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Missile.png" type="Texture" id=2]
 [ext_resource path="res://ProjectileMissile.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Circle_small.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sound/ShootMissile.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sound/ImpactMissile.wav" type="AudioStream" id=6]
 
 [node name="ProjectileMissile" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -17,6 +19,12 @@ engine_lifetime = Vector2( 0.1, 0.3 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
+
+[node name="FeedbackShoot" parent="Feedback" index="2"]
+audio_file = ExtResource( 5 )
+
+[node name="FeedbackImpact" parent="Feedback" index="3"]
+audio_file = ExtResource( 6 )
 
 [node name="Sensor" type="Area2D" parent="." index="3"]
 collision_layer = 0

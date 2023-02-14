@@ -119,6 +119,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://FeedbackShakeNoise.gd"
 }, {
+"base": "Feedback",
+"class": "FeedbackSound",
+"language": "GDScript",
+"path": "res://Character/Feedback/FeedbackSound.gd"
+}, {
 "base": "Node",
 "class": "InputManager",
 "language": "GDScript",
@@ -267,6 +272,7 @@ _global_script_class_icons={
 "FeedbackPoints": "",
 "FeedbackShake": "",
 "FeedbackShakeNoise": "",
+"FeedbackSound": "",
 "InputManager": "",
 "InputManagerPlayer": "",
 "MovementManager": "",
