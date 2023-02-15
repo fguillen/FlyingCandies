@@ -4,12 +4,17 @@ func load_game_over():
 	change_scene("res://GUI/GameOver.tscn")
 
 
+func load_menu():
+	change_scene("res://Menu/MenuScene.tscn")
+
+
 func load_intro():
 	change_scene("res://Intro/SergeantScene.tscn")
 
 
-func load_start():
+func load_game():
 	change_scene("res://SpaceShooterScene.tscn")
+
 
 func change_scene(target: String) -> void:
 	$AnimationPlayer.play("FadeIn")

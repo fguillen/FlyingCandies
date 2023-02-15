@@ -71,7 +71,7 @@ func _ready():
 
 func go_to_game() -> void:
 	animation_player.stop()
-	SceneSwitcher.load_start()
+	SceneSwitcher.load_game()
 
 
 func _on_AnimationPlayer_animation_finished(_anim_name:String):
