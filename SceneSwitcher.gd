@@ -5,7 +5,7 @@ func load_game_over():
 
 
 func load_intro():
-	change_scene("res://SergeantScene.tscn")
+	change_scene("res://Intro/SergeantScene.tscn")
 
 
 func load_start():
