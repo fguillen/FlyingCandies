@@ -13,7 +13,7 @@ func load_intro():
 
 
 func load_game():
-	change_scene("res://SpaceShooterScene.tscn")
+	change_scene("res://GameScene.tscn")
 
 
 func change_scene(target: String) -> void:
