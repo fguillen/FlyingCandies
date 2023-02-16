@@ -29,7 +29,7 @@ weapon_default = ExtResource( 3 )
 
 [node name="Behavior" parent="." index="2"]
 script = ExtResource( 2 )
-shoot_time = Vector2( 0.1, 2 )
+shoot_time = Vector2( 1, 3 )
 
 [node name="FeedbackFlash" parent="Feedback" index="1"]
 material_flash = SubResource( 8 )

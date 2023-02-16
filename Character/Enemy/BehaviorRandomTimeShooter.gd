@@ -9,6 +9,10 @@ onready var timer_release := Timer.new()
 var rng = RandomNumberGenerator.new()
 
 
+func _ready():
+	rng.randomize()
+
+
 func setup(character:Character):
 	.setup(character)
 

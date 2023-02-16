@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://BattleshipEnsemble.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=4]
 
 [node name="SceneTest6" type="Node2D"]
 
@@ -12,9 +14,11 @@ position = Vector2( 224, 80 )
 activated = true
 
 [node name="EnemyBattleshipWeapon" parent="BattleshipEnsemble/Ensemble/EnemyBattleship" index="11"]
+position = Vector2( 1.52588e-05, 0 )
 activated = true
 
 [node name="EnemyBattleshipWeapon2" parent="BattleshipEnsemble/Ensemble/EnemyBattleship" index="12"]
+position = Vector2( 4.96043, 31.0064 )
 activated = true
 
 [node name="EnemyBattleshipWeapon3" parent="BattleshipEnsemble/Ensemble/EnemyBattleship" index="13"]
@@ -22,5 +26,11 @@ activated = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 57, 72 )
+ini_max_health = 5
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 154, 85 )
 
 [editable path="BattleshipEnsemble"]
