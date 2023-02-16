@@ -9,7 +9,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Play"
-length = 20.0
+length = 22.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Dialog/Sergeant:position")
 tracks/0/interp = 1
@@ -17,7 +17,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 3.7, 3.9, 6.1, 6.3, 12, 12.2 ),
+"times": PoolRealArray( 1.8, 2, 5.5, 5.7, 7.9, 8.1, 13.8, 14 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 353, 61 ), Vector2( 273, 61 ), Vector2( 273, 61 ), Vector2( 353, 61 ), Vector2( 353, 61 ), Vector2( 273, 61 ), Vector2( 273, 61 ), Vector2( 353, 61 ) ]
@@ -29,7 +29,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -43,7 +43,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.6, 2.7, 17.1, 19.4 ),
+"times": PoolRealArray( 1.8, 2.4, 4.5, 18.9, 21.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 58, 60 ), Vector2( 58, 60 ), Vector2( 121, 59 ), Vector2( 121, 59 ), Vector2( 223, 59 ) ]
@@ -55,7 +55,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 2.9 ),
+"times": PoolRealArray( 4.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -67,7 +67,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 3.1 ),
+"times": PoolRealArray( 4.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -81,7 +81,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 3.9 ),
+"times": PoolRealArray( 5.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -93,7 +93,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 3.9, 4.1, 5.9, 6.1, 12.2, 12.4, 16.9, 17.1 ),
+"times": PoolRealArray( 1.8, 5.7, 5.9, 7.7, 7.9, 14, 14.2, 18.7, 18.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -38, 59 ), Vector2( -38, 59 ), Vector2( 33, 59 ), Vector2( 33, 59 ), Vector2( -38, 59 ), Vector2( -38, 59 ), Vector2( 33, 59 ), Vector2( 33, 59 ), Vector2( -38, 59 ) ]
@@ -105,7 +105,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 4.1 ),
+"times": PoolRealArray( 5.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -119,7 +119,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 6.3 ),
+"times": PoolRealArray( 8.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -133,7 +133,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 12.2 ),
+"times": PoolRealArray( 14 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -145,7 +145,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 12.4 ),
+"times": PoolRealArray( 14.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -159,7 +159,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 17.1 ),
+"times": PoolRealArray( 18.9 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -171,7 +171,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 6.1 ),
+"times": PoolRealArray( 7.9 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -183,7 +183,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.6, 2.7, 17.1, 19.4 ),
+"times": PoolRealArray( 2.4, 4.5, 18.9, 21.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -210,6 +210,7 @@ texture = ExtResource( 1 )
 
 [node name="Sergeant" parent="." instance=ExtResource( 4 )]
 position = Vector2( 120, 35 )
+frame = 1
 
 [node name="SpaceShip" type="Sprite" parent="."]
 position = Vector2( 230, 28 )
@@ -221,21 +222,27 @@ texture = ExtResource( 6 )
 position = Vector2( 58, 60 )
 
 [node name="Solider" parent="Soldiers/SoldierFirst" instance=ExtResource( 4 )]
+frame = 1
 
 [node name="Solider" parent="Soldiers" instance=ExtResource( 4 )]
 position = Vector2( 8, 60 )
+frame = 1
 
 [node name="Solider2" parent="Soldiers" instance=ExtResource( 4 )]
 position = Vector2( 18, 60 )
+frame = 1
 
 [node name="Solider3" parent="Soldiers" instance=ExtResource( 4 )]
 position = Vector2( 28, 60 )
+frame = 1
 
 [node name="Solider4" parent="Soldiers" instance=ExtResource( 4 )]
 position = Vector2( 38, 60 )
+frame = 1
 
 [node name="Solider5" parent="Soldiers" instance=ExtResource( 4 )]
 position = Vector2( 48, 60 )
+frame = 1
 
 [node name="Dialog" type="Control" parent="."]
 anchor_left = 0.5
@@ -266,16 +273,19 @@ frame = 34
 frame = 52
 
 [node name="LabelSargentNext" parent="Dialog" instance=ExtResource( 3 )]
+visible = false
 margin_bottom = 92.0
 text = "Next"
 auto_perform = false
 
 [node name="LabelSargentName" parent="Dialog" instance=ExtResource( 3 )]
+visible = false
 margin_bottom = 92.0
 text = "Name"
 auto_perform = false
 
 [node name="LabelPilotName" parent="Dialog" instance=ExtResource( 3 )]
+visible = false
 margin_left = 70.0
 margin_right = 240.0
 margin_bottom = 92.0
@@ -284,11 +294,13 @@ align = 0
 auto_perform = false
 
 [node name="LabelSargentEncouraging" parent="Dialog" instance=ExtResource( 3 )]
+visible = false
 margin_bottom = 92.0
 text = "The fate of our nation rests on your shoulders, soldier."
 auto_perform = false
 
 [node name="LabelPilotYesSir" parent="Dialog" instance=ExtResource( 3 )]
+visible = false
 margin_left = 72.0
 margin_right = 242.0
 margin_bottom = 92.0
