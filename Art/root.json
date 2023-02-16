@@ -1,0 +1,150 @@
+{
+    "name": "root",
+    "nodes": [
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "Background_Merged",
+            "node_path": "Background_Merged",
+            "offset": [
+                -159.5,
+                102.0
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                -25,
+                -8
+            ],
+            "resource_path": "export/Background_Merged.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -4
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "SpaceShip",
+            "node_path": "SpaceShip",
+            "offset": [
+                -159.5,
+                102.0
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                -66,
+                -44
+            ],
+            "resource_path": "export/SpaceShip.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -3
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "SPACE_BLASTERS_border",
+            "node_path": "SPACE_BLASTERS_border",
+            "offset": [
+                -159.5,
+                102.0
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                15,
+                114
+            ],
+            "resource_path": "export/SPACE_BLASTERS_border.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -2
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "SPACE_BLASTERS",
+            "node_path": "SPACE_BLASTERS",
+            "offset": [
+                -159.5,
+                102.0
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                14,
+                116
+            ],
+            "resource_path": "export/SPACE_BLASTERS.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": -1
+        },
+        {
+            "children": [],
+            "frame_index": 0,
+            "name": "SQUAD",
+            "node_path": "SQUAD",
+            "offset": [
+                -159.5,
+                102.0
+            ],
+            "opacity": 1.0,
+            "pivot_offset": [
+                0.0,
+                0.0
+            ],
+            "position": [
+                14,
+                138
+            ],
+            "resource_path": "export/SQUAD.png",
+            "rotation": 0.0,
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "tiles_x": 1,
+            "tiles_y": 1,
+            "type": "SPRITE",
+            "z": 0
+        }
+    ]
+}

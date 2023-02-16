@@ -112,12 +112,12 @@ _global_script_classes=[ {
 "base": "Feedback",
 "class": "FeedbackShake",
 "language": "GDScript",
-"path": "res://FeedbackShake.gd"
+"path": "res://Character/Feedback/FeedbackShake.gd"
 }, {
 "base": "Feedback",
 "class": "FeedbackShakeNoise",
 "language": "GDScript",
-"path": "res://FeedbackShakeNoise.gd"
+"path": "res://Character/Feedback/FeedbackShakeNoise.gd"
 }, {
 "base": "Feedback",
 "class": "FeedbackSound",
