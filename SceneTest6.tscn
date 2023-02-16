@@ -8,16 +8,16 @@
 [node name="BattleshipEnsemble" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 80 )
 
-[node name="EnemyBattleshipWeapon" parent="BattleshipEnsemble/Ensemble" index="1"]
-position = Vector2( 1, 0 )
+[node name="EnemyBattleship" parent="BattleshipEnsemble/Ensemble" index="0"]
 activated = true
 
-[node name="EnemyBattleshipWeapon2" parent="BattleshipEnsemble/Ensemble" index="2"]
-position = Vector2( 6, 31 )
+[node name="EnemyBattleshipWeapon" parent="BattleshipEnsemble/Ensemble/EnemyBattleship" index="11"]
 activated = true
 
-[node name="EnemyBattleshipWeapon3" parent="BattleshipEnsemble/Ensemble" index="3"]
-position = Vector2( -43, 9.99999 )
+[node name="EnemyBattleshipWeapon2" parent="BattleshipEnsemble/Ensemble/EnemyBattleship" index="12"]
+activated = true
+
+[node name="EnemyBattleshipWeapon3" parent="BattleshipEnsemble/Ensemble/EnemyBattleship" index="13"]
 activated = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]

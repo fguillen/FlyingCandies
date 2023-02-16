@@ -38,8 +38,10 @@ func _ready():
 	state_manager.setup(self, "Idle")
 
 	weapon_manager.setup(self)
-	var weapon = weapon_default.instance()
-	weapon_manager.add_weapon(weapon)
+
+	if(weapon_default != null):
+		var weapon = weapon_default.instance()
+		weapon_manager.add_weapon(weapon)
 
 	movement_manager.MAX_SPEED = speed
 
