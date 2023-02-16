@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/KeyTypewriter2.wav-e248353093e2e5e12c8c91285971f610.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/KeyTypewriter2.wav"
+dest_files=[ "res://.import/KeyTypewriter2.wav-e248353093e2e5e12c8c91285971f610.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
