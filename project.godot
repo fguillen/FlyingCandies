@@ -308,8 +308,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Flying Candies"
-run/main_scene="res://Intro/SergeantScene.tscn"
+config/name="SpaceBlastersSquad"
+run/main_scene="res://Menu/MenuScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
