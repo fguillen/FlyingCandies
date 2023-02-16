@@ -2,6 +2,7 @@ extends Node
 
 var points = 0
 var player = null
+var battleship = null
 var player_dead = false
 var camera = null
 var pilot = null
@@ -10,6 +11,7 @@ signal points_changed(value)
 signal shields_changed(value)
 signal shields_full_changed(value)
 signal player_set(player)
+signal battleship_set(battleship)
 signal player_health_changed(value)
 signal projectile_hit(value)
 
@@ -46,6 +48,12 @@ func set_player(player):
 
 	emit_signal("player_set", player)
 
+
+func set_battleship(battleship):
+	print("Global.set_battleship()")
+	self.battleship = battleship
+
+	emit_signal("battleship_set", battleship)
 
 
 func on_player_dead(_position):
