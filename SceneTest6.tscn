@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://BattleshipEnsemble.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+
+[node name="SceneTest6" type="Node2D"]
+
+[node name="BattleshipEnsemble" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 80 )
+
+[node name="EnemyBattleshipWeapon" parent="BattleshipEnsemble/Ensemble" index="1"]
+position = Vector2( 1, 0 )
+activated = true
+
+[node name="EnemyBattleshipWeapon2" parent="BattleshipEnsemble/Ensemble" index="2"]
+position = Vector2( 6, 31 )
+activated = true
+
+[node name="EnemyBattleshipWeapon3" parent="BattleshipEnsemble/Ensemble" index="3"]
+position = Vector2( -43, 9.99999 )
+activated = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 57, 72 )
+
+[editable path="BattleshipEnsemble"]

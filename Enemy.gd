@@ -3,16 +3,18 @@ extends Character
 
 export var points: = 10
 export var behavior_path := NodePath()
+export var activated := false
 
 onready var behavior := get_node(behavior_path)
-
-var activated = false
 
 signal activate()
 
 func _ready():
 	connect("dead", self, "on_dead")
 	setup()
+
+	if(activated):
+		activate()
 
 
 func setup():

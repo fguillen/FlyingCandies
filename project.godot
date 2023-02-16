@@ -235,6 +235,11 @@ _global_script_classes=[ {
 "path": "res://WeaponBall.gd"
 }, {
 "base": "WeaponBase",
+"class": "WeaponBallHalfSphere",
+"language": "GDScript",
+"path": "res://WeaponBallSphere.gd"
+}, {
+"base": "WeaponBase",
 "class": "WeaponBallTowardsPlayer",
 "language": "GDScript",
 "path": "res://WeaponBallTowardsPlayer.gd"
@@ -300,6 +305,7 @@ _global_script_class_icons={
 "StateMove": "",
 "Weapon": "",
 "WeaponBall": "",
+"WeaponBallHalfSphere": "",
 "WeaponBallTowardsPlayer": "",
 "WeaponBase": "",
 "WeaponManager": "",
