@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Activator",
+"language": "GDScript",
+"path": "res://Activator.gd"
+}, {
+"base": "Area2D",
+"class": "ActivatorArea",
+"language": "GDScript",
+"path": "res://ActivatorArea.gd"
+}, {
 "base": "Node",
 "class": "Behavior",
 "language": "GDScript",
@@ -64,7 +74,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Enemy.gd"
 }, {
-"base": "Node2D",
+"base": "CanvasLayer",
 "class": "EnemyCaptainSpeaking",
 "language": "GDScript",
 "path": "res://EnemyCaptainSpeaking.gd"
@@ -270,6 +280,8 @@ _global_script_classes=[ {
 "path": "res://WeaponMissile.gd"
 } ]
 _global_script_class_icons={
+"Activator": "",
+"ActivatorArea": "",
 "Behavior": "",
 "BehaviorPathPatrol": "",
 "BehaviorRandomTimeShooter": "",
@@ -380,10 +392,12 @@ texture={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
+2d_physics/layer_1="PlayerHit"
 2d_physics/layer_2="PlayerProjectile"
-2d_physics/layer_3="Enemy"
+2d_physics/layer_3="EnemyHit"
 2d_physics/layer_4="EnemyProjectile"
+2d_physics/layer_5="Activators"
+2d_physics/layer_6="Ground"
 
 [physics]
 

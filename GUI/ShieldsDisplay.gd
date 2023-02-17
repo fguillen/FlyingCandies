@@ -31,9 +31,7 @@ func set_num_shields(value):
 
 
 func set_num_shields_full(value):
-	print("set_num_shields_full(%d)" % value)
 	value = clamp(value, 0, num_shields())
-	print("set_num_shields_full(%d)" % value)
 
 	if value > num_shields_full():
 		add_shield_full()
@@ -45,24 +43,18 @@ func set_num_shields_full(value):
 
 
 func add_shield_full():
-	print("add_shield_full")
-
 	if num_shields_full() == num_shields():
 		print("All shields already full but trying to full another one")
 		return
 
-	print("num_shields_full: ", num_shields_full(), " ,", num_shields())
 	shields[num_shields_full()].full = true
 
 
 func remove_shield_full():
-	print("remove_shield_full")
-
 	if num_shields_full() == 0:
 		print("All shields already empty but trying to empty another one")
 		return
 
-	print("num_shields_full: ", num_shields_full(), " ,", num_shields(), " ,", shields_control.get_child_count())
 	shields[num_shields_full() - 1].full = false
 
 

@@ -71,7 +71,6 @@ func get_hit(damage:int, position:Vector2):
 
 
 func on_health_changed(value:int):
-	print("on_health_changed: ", value)
 	emit_signal("health_changed", value)
 
 

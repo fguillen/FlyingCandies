@@ -1,5 +1,5 @@
 class_name EnemyCaptainSpeaking
-extends Node2D
+extends CanvasLayer
 
 const ENEMY_DISCOURAGING = [
 	"Your efforts are futile. Human.",
@@ -66,20 +66,13 @@ func _init():
 
 
 func _ready():
-	animation_player.play("Play")
-
 	label_enemy_discouraging.text_to_display = ENEMY_DISCOURAGING[random.randi_range(0, ENEMY_DISCOURAGING.size() - 1)]
 	label_pilot_answer.text_to_display = PILOT_ANSWERS[random.randi_range(0, PILOT_ANSWERS.size() - 1)]
 	label_enemy_answer.text_to_display = ENEMY_ANSWERS[random.randi_range(0, ENEMY_ANSWERS.size() - 1)]
 
 	pilot_ui.setup(Global.pilot)
 
-	perform()
-
 
 func perform() -> void:
+	print("EnemyCaptainSpeaking.perform()")
 	animation_player.play("Play")
-
-
-func _on_AnimationPlayer_animation_finished(_anim_name:String):
-	queue_free()

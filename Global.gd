@@ -12,6 +12,7 @@ signal shields_changed(value)
 signal shields_full_changed(value)
 signal player_set(player)
 signal battleship_set(battleship)
+signal activator_area_set(activator_area)
 signal player_health_changed(value)
 signal projectile_hit(value)
 
@@ -54,6 +55,13 @@ func set_battleship(battleship):
 	self.battleship = battleship
 
 	emit_signal("battleship_set", battleship)
+
+
+func set_activator_area(activator_area):
+	print("Global.set_activator_area()")
+	self.activator_area = activator_area
+
+	emit_signal("activator_area_set", activator_area)
 
 
 func on_player_dead(_position):

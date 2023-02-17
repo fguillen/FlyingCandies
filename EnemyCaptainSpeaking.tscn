@@ -170,7 +170,7 @@ tracks/11/keys = {
 } ]
 }
 
-[node name="EnemyCaptainSpeaking" type="Node2D"]
+[node name="EnemyCaptainSpeaking" type="CanvasLayer"]
 script = ExtResource( 7 )
 
 [node name="AlienCaptain" type="Sprite" parent="."]
@@ -187,10 +187,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -23.0
-margin_top = 126.0
-margin_right = 281.0
-margin_bottom = 225.999
+margin_left = -175.0
+margin_top = -45.0
+margin_right = 129.0
+margin_bottom = 54.999
 
 [node name="ColorRect" type="ColorRect" parent="Dialog"]
 margin_left = 53.0
@@ -212,7 +212,6 @@ texture = ExtResource( 6 )
 position = Vector2( -5, 72 )
 
 [node name="LabelEnemyDiscouraging" parent="Dialog" instance=ExtResource( 5 )]
-visible = false
 margin_left = 103.0
 margin_top = 52.0
 margin_right = 273.0
@@ -222,7 +221,6 @@ text = "Human, desist or you will die. I warn you."
 auto_perform = false
 
 [node name="LabelPilotAnswer" parent="Dialog" instance=ExtResource( 5 )]
-visible = false
 margin_left = 102.0
 margin_top = 52.0
 margin_right = 272.0
@@ -233,7 +231,6 @@ align = 0
 auto_perform = false
 
 [node name="LabelEnemyAnswer" parent="Dialog" instance=ExtResource( 5 )]
-visible = false
 margin_left = 102.0
 margin_top = 52.0
 margin_right = 272.0

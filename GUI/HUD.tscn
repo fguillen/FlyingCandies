@@ -29,6 +29,7 @@ margin_bottom = 148.0
 script = ExtResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 self_modulate = Color( 1, 1, 1, 0 )

@@ -41,5 +41,4 @@ func on_activate():
 
 
 func on_screen_exited():
-	print("Enemy.on_screen_exited", global_position)
 	queue_free()

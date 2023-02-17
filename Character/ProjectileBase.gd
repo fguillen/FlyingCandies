@@ -22,9 +22,7 @@ func shoot(position:Vector2, _direction:Vector2):
 	emit_signal("shoot", global_position)
 
 func on_collision(collision:KinematicCollision2D):
-	print("Projectile collision with: ", collision.collider.get_class())
-
-	if true: # collision.collider.get_class() == "Enemy":
+	if collision.collider.has_method("get_hit"):
 		collision.collider.get_hit(damage, collision.position)
 		emit_signal("hit", collision.position)
 
