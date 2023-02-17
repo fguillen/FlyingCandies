@@ -28,7 +28,7 @@ func can_attack() -> bool:
 	return not reloading
 
 
-func attack() -> void:
+func attack() -> ProjectileBase:
 	reloading = true
 	reloading_timer.start(reload_time)
 
@@ -37,6 +37,8 @@ func attack() -> void:
 	projectile.shoot(global_position, projectile_direction())
 
 	emit_signal("attack", global_position)
+
+	return projectile
 
 
 func projectile_direction() -> Vector2:

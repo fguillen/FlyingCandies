@@ -195,6 +195,11 @@ _global_script_classes=[ {
 "path": "res://Character/ProjectileBase.gd"
 }, {
 "base": "ProjectileBase",
+"class": "ProjectileLaser",
+"language": "GDScript",
+"path": "res://Character/ProjectileLaser.gd"
+}, {
+"base": "ProjectileBase",
 "class": "ProjectileMissile",
 "language": "GDScript",
 "path": "res://ProjectileMissile.gd"
@@ -269,6 +274,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://WeaponBase.gd"
 }, {
+"base": "WeaponBase",
+"class": "WeaponLaser",
+"language": "GDScript",
+"path": "res://WeaponLaser.gd"
+}, {
 "base": "Node2D",
 "class": "WeaponManager",
 "language": "GDScript",
@@ -317,6 +327,7 @@ _global_script_class_icons={
 "Player": "",
 "ProjectileBall": "",
 "ProjectileBase": "",
+"ProjectileLaser": "",
 "ProjectileMissile": "",
 "ShieldDisplay": "",
 "ShieldUI": "",
@@ -332,6 +343,7 @@ _global_script_class_icons={
 "WeaponBallHalfSphere": "",
 "WeaponBallTowardsPlayer": "",
 "WeaponBase": "",
+"WeaponLaser": "",
 "WeaponManager": "",
 "WeaponMissile": ""
 }

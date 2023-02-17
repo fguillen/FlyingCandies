@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WeaponLaser.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+
+[node name="SceneTeest_WeaponLaser" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, 32 )
+speed = 0
+activated = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32, 51 )
+weapon_default = ExtResource( 2 )
