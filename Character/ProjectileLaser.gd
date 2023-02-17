@@ -1,20 +1,44 @@
 class_name ProjectileLaser
 extends ProjectileBase
 
-export(int) var length = 20
+export(int) var length_max = 200
+export(float) var length_speed = 800.0
+export(float) var length_actual = 0.0
 export(int) var hits_per_second = 3
+export(float) var life_seconds = 2.0
 
 onready var line:Line2D = $Line2D
 onready var ray_cast:RayCast2D = $RayCast2D
+onready var life_timer:Timer = $LifeTimer
+onready var hits_per_second_timer:Timer = $HitsPerSecondTimer
+
 
 var node_origin:Node2D = null
+var offset := 0.0
+var life_expired = false
+
+func shoot(position:Vector2, direction:Vector2):
+	.shoot(position, direction)
+	life_expired = false
+	life_timer.start(life_seconds)
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if(node_origin == null): return
 
-	var position_ini = node_origin.global_position
-	var position_end = node_origin.global_position + (direction * length)
+	length_actual = move_toward(length_actual, length_max - offset, length_speed * delta)
+
+	var position_ini = node_origin.global_position + (offset * direction)
+	var position_end = position_ini + (direction * length_actual)
+
+	if life_expired:
+		offset = move_toward(offset, length_actual, length_speed * delta)
+
+		if offset >= length_actual:
+			_on_end_of_life()
+			return
+
+		position_ini += offset * direction
 
 	# print("ProjectileLaser.positions[%s, %s]" % [position_ini, position_end])
 
@@ -24,8 +48,28 @@ func _physics_process(_delta):
 	var collider = ray_cast.get_collider()
 
 	if collider != null:
-		position_end = collider.global_position
+		position_end = ray_cast.get_collision_point()
+		length_actual = (position_end - position_ini).length()
 
 	line.global_position = position_ini
 	line.points[0] = Vector2.ZERO
 	line.points[1] = position_end - position_ini
+
+
+func move_toward(actual:float, to:float, delta:float):
+	if(actual < to):
+		actual += delta
+		actual = min(actual, to)
+
+	return actual
+
+
+func _on_HitsPerSecondTimer_timeout():
+	pass # Replace with function body.
+
+
+func _on_LifeTimer_timeout():
+	life_expired = true
+
+func _on_end_of_life():
+	queue_free()

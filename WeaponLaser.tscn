@@ -7,7 +7,7 @@
 
 [node name="WeaponLaser" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
-reload_time = 1.0
+reload_time = 4.0
 projectile_template = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]

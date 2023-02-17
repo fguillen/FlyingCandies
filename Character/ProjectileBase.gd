@@ -15,9 +15,9 @@ var direction := Vector2.ZERO
 func _ready():
 	Global.add_projectile(self)
 
-func shoot(position:Vector2, _direction:Vector2):
+func shoot(position:Vector2, direction:Vector2):
 	global_position = position
-	direction = _direction
+	self.direction = direction
 
 	emit_signal("shoot", global_position)
 

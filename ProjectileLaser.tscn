@@ -7,8 +7,11 @@
 [node name="ProjectileLaser" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 speed = 0.0
-length = 100
+length_max = 200
+length_speed = 800.0
+length_actual = 0.0
 hits_per_second = 3
+life_seconds = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 visible = false
@@ -24,7 +27,7 @@ visible = false
 disabled = true
 
 [node name="Line2D" type="Line2D" parent="." index="4"]
-points = PoolVector2Array( 0, 0, 10, 10 )
+points = PoolVector2Array( 0, 0, 0, 0 )
 default_color = Color( 1, 1, 1, 1 )
 texture = ExtResource( 2 )
 texture_mode = 1
@@ -33,3 +36,12 @@ texture_mode = 1
 enabled = true
 collision_mask = 5
 collide_with_areas = true
+
+[node name="HitsPerSecondTimer" type="Timer" parent="." index="6"]
+one_shot = true
+
+[node name="LifeTimer" type="Timer" parent="." index="7"]
+one_shot = true
+
+[connection signal="timeout" from="HitsPerSecondTimer" to="." method="_on_HitsPerSecondTimer_timeout"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]
