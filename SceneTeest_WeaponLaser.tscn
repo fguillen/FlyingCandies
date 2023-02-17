@@ -8,6 +8,7 @@
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 100, 32 )
+ini_max_health = 10
 speed = 0
 activated = true
 

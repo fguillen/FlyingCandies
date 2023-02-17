@@ -22,15 +22,16 @@ func shoot(position:Vector2, direction:Vector2):
 	emit_signal("shoot", global_position)
 
 
-func on_collision(collision:KinematicCollision2D):
-	if collision.collider.has_method("get_hit"):
-		collision.collider.get_hit(damage, collision.position)
-		emit_signal("hit", collision.position)
+func on_collision(collisionable, position:Vector2, free:bool = true):
+	if collisionable.has_method("get_hit"):
+		collisionable.get_hit(damage, position)
+		emit_signal("hit", position)
 
-	queue_free()
+	if(free):
+		queue_free()
 
 
 func _physics_process(delta):
 	var collision = move_and_collide(direction * speed * delta)
 	if collision != null:
-		on_collision(collision)
+		on_collision(collision.collider, collision.position)

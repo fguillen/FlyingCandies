@@ -16,6 +16,7 @@ onready var hits_per_second_timer:Timer = $HitsPerSecondTimer
 var node_origin:Node2D = null
 var offset := 0.0
 var life_expired = false
+var hit_active = true
 
 func shoot(position:Vector2, direction:Vector2):
 	.shoot(position, direction)
@@ -48,8 +49,11 @@ func _physics_process(delta):
 	var collider = ray_cast.get_collider()
 
 	if collider != null:
-		position_end = ray_cast.get_collision_point()
+		var collision_position:Vector2 = ray_cast.get_collision_point()
+		position_end = collision_position
 		length_actual = (position_end - position_ini).length()
+		if(hit_active):
+			on_collision(collider, collision_position, false)
 
 	line.global_position = position_ini
 	line.points[0] = Vector2.ZERO
@@ -65,7 +69,8 @@ func move_toward(actual:float, to:float, delta:float):
 
 
 func _on_HitsPerSecondTimer_timeout():
-	pass # Replace with function body.
+	print("ProjectileLaser._on_HitsPerSecondTimer_timeout()")
+	hit_active = true
 
 
 func _on_LifeTimer_timeout():
@@ -73,3 +78,10 @@ func _on_LifeTimer_timeout():
 
 func _on_end_of_life():
 	queue_free()
+
+
+func on_collision(collisionable, position:Vector2, free:bool = true):
+	print("ProjectileLaser.on_collision")
+	.on_collision(collisionable, position, free)
+	hit_active = false
+	hits_per_second_timer.start(1.0 / hits_per_second)
