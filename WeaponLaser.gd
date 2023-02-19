@@ -6,10 +6,10 @@ func weapon_name() -> String:
 	return "Laser"
 
 
-func attack() -> ProjectileBase:
+func attack() -> Array:
 	print("WeaponLaser.attack: ", self.global_position)
 
-	var projectile = .attack()
-	projectile.node_origin = self
+	var projectiles = .attack()
+	projectiles[0].node_origin = self
 
-	return projectile
+	return projectiles

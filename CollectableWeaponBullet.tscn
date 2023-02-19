@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Bullet.png" type="Texture" id=1]
+[ext_resource path="res://CollectableWeapon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WeaponPlayer.tscn" type="PackedScene" id=3]
+
+[node name="CollectableWeaponBullet" instance=ExtResource( 2 )]
+weapon_template = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )

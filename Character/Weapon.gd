@@ -7,6 +7,7 @@ export (Resource) var projectile_template = null
 var reloading: = false
 var reloading_timer: = Timer.new()
 var character
+var holder
 
 signal attack(position)
 
@@ -27,7 +28,7 @@ func can_attack() -> bool:
 	return not reloading
 
 
-func attack() -> ProjectileBase:
+func attack() -> Array:
 	reloading = true
 	reloading_timer.start(reload_time)
 
@@ -37,11 +38,11 @@ func attack() -> ProjectileBase:
 
 	emit_signal("attack", global_position)
 
-	return projectile
+	return [projectile]
 
 
 func projectile_direction() -> Vector2:
-	return character.looking_towards
+	return holder.direction()
 
 
 func _on_reloading_timer_timeout():

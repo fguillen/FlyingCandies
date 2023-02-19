@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://EnemyFloor.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://BattleshipEnsemble.tscn" type="PackedScene" id=13]
 [ext_resource path="res://EnemyCaptainSpeaking.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Activator.gd" type="Script" id=15]
+[ext_resource path="res://CollectableWeaponBall.tscn" type="PackedScene" id=16]
+[ext_resource path="res://CollectableWeaponBullet.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -43,11 +45,11 @@ texture = ExtResource( 8 )
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 721, 87 )
+position = Vector2( 77, 87 )
 ini_max_health = 5
 
 [node name="ActivatorArea" parent="." instance=ExtResource( 11 )]
-position = Vector2( 758, 84 )
+position = Vector2( 282, 84 )
 collision_mask = 20
 
 [node name="Camera2D" parent="ActivatorArea" instance=ExtResource( 1 )]
@@ -59,6 +61,12 @@ position = Vector2( 118, 49 )
 
 [node name="CollectableWeaponMissile" parent="Collectables" instance=ExtResource( 5 )]
 position = Vector2( 130, 115 )
+
+[node name="CollectableWeaponBall" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 132, 82 )
+
+[node name="CollectableWeaponBullet" parent="Collectables" instance=ExtResource( 17 )]
+position = Vector2( 154, 65 )
 
 [node name="EndLevel" type="Node2D" parent="."]
 position = Vector2( 1300, 0 )

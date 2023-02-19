@@ -9,9 +9,11 @@ func weapon_name() -> String:
 	return "BallHalfSphere"
 
 
-func attack() -> void:
+func attack() -> Array:
 	reloading = true
 	reloading_timer.start(reload_time)
+
+	var projectiles = []
 
 	for i in num_projectiles:
 		var projectile_angle = lerp(0, angle, float(i) / num_projectiles)
@@ -20,4 +22,8 @@ func attack() -> void:
 		get_tree().current_scene.add_child(projectile)
 		projectile.shoot(global_position, projectile_direction().rotated(deg2rad(projectile_angle)))
 
+		projectiles.append(projectile)
+
 	emit_signal("attack", global_position)
+
+	return projectiles
