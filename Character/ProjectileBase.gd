@@ -18,6 +18,7 @@ func _ready():
 func shoot(position:Vector2, direction:Vector2):
 	global_position = position
 	self.direction = direction
+	rotation = direction.angle()
 
 	emit_signal("shoot", global_position)
 
