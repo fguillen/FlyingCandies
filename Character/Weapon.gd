@@ -15,13 +15,12 @@ func weapon_name() -> String:
 	return "Weapon"
 
 
-func setup(_character, position:Vector2):
+func setup(character):
 	add_child(reloading_timer)
 	reloading_timer.set_one_shot(true)
 	var _i = reloading_timer.connect("timeout", self, "_on_reloading_timer_timeout")
 
-	character = _character
-	global_position = position
+	self.character = character
 
 
 func can_attack() -> bool:

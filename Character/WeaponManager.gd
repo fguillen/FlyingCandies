@@ -19,7 +19,7 @@ func add_weapon(weapon:Weapon) -> void:
 		weapon.get_parent().remove_child(weapon)
 
 	add_child(weapon)
-	weapon.setup(character, global_position)
+	weapon.setup(character)
 
 	weapons.append(weapon)
 	actual_weapon = weapon
