@@ -6,6 +6,8 @@ var weapon_holders := []
 var character
 var _weapons_in_holders_cache = null
 
+signal attack()
+
 
 func _ready():
 	_load_weapon_holders()
@@ -27,9 +29,15 @@ func add_weapon(weapon:Weapon) -> void:
 
 
 func attack() -> void:
+	var attack_done := false
+
 	for weapon in _weapons_in_holders():
 		if weapon.can_attack():
 			weapon.attack()
+			attack_done = true
+
+	if attack_done:
+		emit_signal("attack")
 
 
 func can_attack() -> bool:
