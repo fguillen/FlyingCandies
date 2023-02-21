@@ -125,6 +125,11 @@ _global_script_classes=[ {
 "path": "res://Character/Feedback/FeedbackPoints.gd"
 }, {
 "base": "Feedback",
+"class": "FeedbackRecoil",
+"language": "GDScript",
+"path": "res://Character/Feedback/FeedbackRecoil.gd"
+}, {
+"base": "Feedback",
 "class": "FeedbackShake",
 "language": "GDScript",
 "path": "res://Character/Feedback/FeedbackShake.gd"
@@ -323,6 +328,7 @@ _global_script_class_icons={
 "FeedbackMuzzleBlast": "",
 "FeedbackParticles": "",
 "FeedbackPoints": "",
+"FeedbackRecoil": "",
 "FeedbackShake": "",
 "FeedbackShakeNoise": "",
 "FeedbackSound": "",

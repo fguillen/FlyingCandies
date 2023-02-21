@@ -24,6 +24,6 @@ func attack() -> Array:
 
 		projectiles.append(projectile)
 
-	emit_signal("attack", global_position)
+	emit_signal("attack", global_position, projectile_direction())
 
 	return projectiles
