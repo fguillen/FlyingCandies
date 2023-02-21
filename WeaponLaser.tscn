@@ -1,14 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://WeaponBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ProjectileLaser.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/LaserWeapon_Texture.png" type="Texture" id=3]
 [ext_resource path="res://WeaponLaser.gd" type="Script" id=4]
+[ext_resource path="res://Character/Feedback/FeedbackChargingEnergy.tscn" type="PackedScene" id=5]
 
 [node name="WeaponLaser" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 reload_time = 4.0
 projectile_template = ExtResource( 2 )
+charging_time = 1.0
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
+
+[node name="FeedbackChargingEnergy" parent="Feedback" index="1" instance=ExtResource( 5 )]
+
+[node name="TimerCharging" type="Timer" parent="." index="3"]
+one_shot = true
+
+[connection signal="charging" from="." to="Feedback/FeedbackChargingEnergy" method="perform"]
+
+[editable path="Feedback/FeedbackChargingEnergy"]

@@ -44,7 +44,11 @@ func attack() -> Array:
 
 
 func projectile_direction() -> Vector2:
-	return holder.direction()
+	if holder != null:
+		return holder.direction()
+	else:
+		print("[WARNING] Weapon.holder not found, direction RIGHT")
+		return Vector2.RIGHT
 
 
 func _on_reloading_timer_timeout():

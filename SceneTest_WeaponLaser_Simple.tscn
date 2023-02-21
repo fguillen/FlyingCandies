@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://WeaponLaser.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SceneTest_WeaponLaser_Simple.gd" type="Script" id=2]
+[ext_resource path="res://Character/Feedback/FeedbackChargingEnergy.tscn" type="PackedScene" id=3]
+
+[node name="SceneTest_WeaponLaser_Simple" type="Node2D"]
+position = Vector2( 8, 4 )
+script = ExtResource( 2 )
+
+[node name="FeedbackChargingEnergy" parent="." instance=ExtResource( 3 )]
+
+[node name="Particles" parent="FeedbackChargingEnergy" index="0"]
+local_coords = false
+
+[node name="WeaponLaser" parent="." instance=ExtResource( 1 )]
+position = Vector2( 36, 3 )
+
+[editable path="FeedbackChargingEnergy"]
+[editable path="WeaponLaser"]
+[editable path="WeaponLaser/Feedback/FeedbackChargingEnergy"]
