@@ -28,7 +28,6 @@ func _process(_delta):
 
 
 func _draw():
-	print("XXX: _draw()")
 	if parent_node and Engine.editor_hint:
 		draw_line(
 			Vector2.ZERO,
@@ -36,8 +35,6 @@ func _draw():
 			color,
 			width
 		)
-
-	print("XXX: ", parent_node.global_rotation / PI)
 
 
 func set_length(value):
