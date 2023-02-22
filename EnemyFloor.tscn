@@ -39,14 +39,19 @@ MAX_SPEED = 0.0
 [node name="WeaponManager" parent="." index="5"]
 position = Vector2( 0.0102081, -8 )
 
+[node name="WeaponHolder" parent="WeaponManager" index="0"]
+position = Vector2( 6.67572e-06, 6.67572e-06 )
+rotation = -0.785398
+
 [node name="Sprite" parent="." index="7"]
 position = Vector2( 0.0102142, -7.99999 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="8"]
 position = Vector2( 0.00127659, -1.49936 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 8 )
 
 [node name="FeedbackFlash" parent="Feedback" index="1"]
 material_flash = SubResource( 9 )
+
+[editable path="WeaponManager"]

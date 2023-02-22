@@ -25,6 +25,7 @@ shape = SubResource( 1 )
 [node name="Feedback" type="Node" parent="."]
 
 [node name="FeedbackProjectileImpact" parent="Feedback" instance=ExtResource( 1 )]
+reparent = true
 
 [node name="FeedbackMuzzleBlast" parent="Feedback" instance=ExtResource( 2 )]
 

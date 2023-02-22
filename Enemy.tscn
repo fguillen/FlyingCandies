@@ -9,7 +9,7 @@
 [ext_resource path="res://Character/MovemementManager.gd" type="Script" id=7]
 [ext_resource path="res://WeaponBall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Character/States/StateAttack.gd" type="Script" id=9]
-[ext_resource path="res://Character/WeaponManager.gd" type="Script" id=10]
+[ext_resource path="res://WeaponManager.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Character/Enemy/Behavior.gd" type="Script" id=11]
 [ext_resource path="res://Character/DamageManager.gd" type="Script" id=12]
 [ext_resource path="res://Character/States/StateDead.gd" type="Script" id=13]
@@ -99,9 +99,11 @@ FRICTION_DELTA = 1000.0
 ACCELERATION_DELTA = 1000.0
 MAX_SPEED = 20.0
 
-[node name="WeaponManager" type="Node2D" parent="."]
+[node name="WeaponManager" parent="." instance=ExtResource( 10 )]
+
+[node name="WeaponHolder" parent="WeaponManager" index="0"]
 position = Vector2( -7.99999, -0.0102142 )
-script = ExtResource( 10 )
+rotation = 3.14159
 
 [node name="StateManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -156,3 +158,5 @@ random_pitch = true
 [connection signal="out_of_health" from="." to="Feedback/FeedbackSoundExplosion" method="perform"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="on_screen_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="WeaponManager"]

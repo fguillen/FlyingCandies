@@ -264,11 +264,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character/States/StateMove.gd"
 }, {
-"base": "Node2D",
-"class": "Weapon",
-"language": "GDScript",
-"path": "res://Character/Weapon.gd"
-}, {
 "base": "WeaponBase",
 "class": "WeaponBall",
 "language": "GDScript",
@@ -284,7 +279,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://WeaponBallTowardsPlayer.gd"
 }, {
-"base": "Weapon",
+"base": "Node2D",
 "class": "WeaponBase",
 "language": "GDScript",
 "path": "res://WeaponBase.gd"
@@ -361,7 +356,6 @@ _global_script_class_icons={
 "StateIdle": "",
 "StateManager": "",
 "StateMove": "",
-"Weapon": "",
 "WeaponBall": "",
 "WeaponBallHalfSphere": "",
 "WeaponBallTowardsPlayer": "",

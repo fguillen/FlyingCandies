@@ -7,7 +7,4 @@
 script = ExtResource( 2 )
 
 [node name="WeaponHolder" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3, -4 )
-
-[node name="WeaponHolder2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3, 4 )
+position = Vector2( 4, 0 )

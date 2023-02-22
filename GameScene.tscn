@@ -75,6 +75,12 @@ position = Vector2( 101, 65 )
 [node name="CollectableWeaponBullet" parent="Collectables" instance=ExtResource( 17 )]
 position = Vector2( 154, 65 )
 
+[node name="CollectableWeaponBullet2" parent="Collectables" instance=ExtResource( 17 )]
+position = Vector2( 72, 59 )
+
+[node name="CollectableWeaponBullet3" parent="Collectables" instance=ExtResource( 17 )]
+position = Vector2( 74, 116 )
+
 [node name="EndLevel" type="Node2D" parent="."]
 position = Vector2( 1300, 0 )
 

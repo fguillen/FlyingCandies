@@ -12,32 +12,32 @@ var parent_node:Node2D
 
 
 func _ready():
-	print("GizmoRotation.ready()")
 	if get_parent() is Node2D:
 		parent_node = get_parent()
-		print("GizmoRotation.ready()")
 	else:
-		print("GizmoRotation. Parent class no valid: ", get_parent().get_class())
+		print("[WARNING] GizmoRotation. Parent class no valid: ", get_parent().get_class())
 
 	if parent_node:
-		previous_rotation = parent_node.rotation
+		previous_rotation = parent_node.global_rotation
 
 
 func _process(_delta):
 	if parent_node and Engine.editor_hint:
-		if previous_rotation != parent_node.rotation:
+		if previous_rotation != parent_node.global_rotation:
 			update()
 
 
 func _draw():
-	print("GizmoRotation.draw()")
+	print("XXX: _draw()")
 	if parent_node and Engine.editor_hint:
 		draw_line(
 			Vector2.ZERO,
-			(Vector2.RIGHT * length).rotated(parent_node.rotation),
+			(Vector2.RIGHT * length),
 			color,
 			width
 		)
+
+	print("XXX: ", parent_node.global_rotation / PI)
 
 
 func set_length(value):

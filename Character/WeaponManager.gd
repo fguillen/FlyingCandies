@@ -17,7 +17,8 @@ func setup(_character) -> void:
 	character = _character
 
 
-func add_weapon(weapon:Weapon) -> void:
+func add_weapon(weapon:WeaponBase) -> void:
+	print("WeaponManager.add_weapon(%s)" % weapon.weapon_name())
 	if weapon.get_parent() != null:
 		weapon.get_parent().remove_child(weapon)
 
@@ -79,6 +80,7 @@ func _add_weapon_to_first_free_weapon_holder(weapon) -> bool:
 		_weapons_in_holders_cache = null
 		return true
 
+	print("[WARNING] WeaponManager.add_weapon not free holder found")
 	return false
 
 
