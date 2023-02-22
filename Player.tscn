@@ -94,19 +94,24 @@ MAX_SPEED = 60.0
 [node name="WeaponManager" parent="." instance=ExtResource( 10 )]
 
 [node name="WeaponHolder" parent="WeaponManager" index="0"]
-position = Vector2( 13, 0 )
+position = Vector2( 16, 0 )
+
+[node name="WeaponHolder6" parent="WeaponManager" instance=ExtResource( 18 )]
+position = Vector2( 8, -8 )
+rotation = -0.392699
+scale = Vector2( 0.996632, 1.00152 )
 
 [node name="WeaponHolder3" parent="WeaponManager" instance=ExtResource( 18 )]
-position = Vector2( 11, 12 )
-rotation = 0.226893
+position = Vector2( 8, 8 )
+rotation = 0.392699
 
 [node name="WeaponHolder4" parent="WeaponManager" instance=ExtResource( 18 )]
-position = Vector2( 0, -14 )
-rotation = -0.785398
+position = Vector2( 1.49214e-13, -16 )
+rotation = -1.5708
 
 [node name="WeaponHolder5" parent="WeaponManager" instance=ExtResource( 18 )]
-position = Vector2( 0, 14 )
-rotation = 0.785398
+position = Vector2( 7.10544e-15, 16 )
+rotation = 1.5708
 
 [node name="StateManager" type="Node" parent="."]
 script = ExtResource( 2 )

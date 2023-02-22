@@ -2,7 +2,7 @@ class_name ProjectileLaser
 extends ProjectileBase
 
 export(int) var length_max = 200
-export(float) var length_speed = 800.0
+export(float) var length_speed = 80.0
 export(float) var length_actual = 0.0
 export(int) var hits_per_second = 3
 export(float) var life_seconds = 2.0
@@ -20,17 +20,18 @@ var hit_active = true
 
 func shoot(position:Vector2, direction:Vector2):
 	.shoot(position, direction)
+	global_rotation = 0.0
 	life_expired = false
 	life_timer.start(life_seconds)
 
 
 func _physics_process(delta):
-	if(node_origin == null): return
+	if(not is_instance_valid(node_origin)): return
 
 	length_actual = move_toward(length_actual, length_max - offset, length_speed * delta)
 
-	var position_ini = node_origin.global_position + (offset * direction)
-	var position_end = position_ini + (direction * length_actual)
+	var global_position_ini = node_origin.global_position + (offset * direction)
+	var global_position_end = global_position_ini + (direction * length_actual)
 
 	if life_expired:
 		offset = move_toward(offset, length_actual, length_speed * delta)
@@ -39,25 +40,25 @@ func _physics_process(delta):
 			_on_end_of_life()
 			return
 
-		position_ini += offset * direction
+		# global_position_ini += offset * Vector2.RIGHT
 
-	# print("ProjectileLaser.positions[%s, %s]" % [position_ini, position_end])
+	# print("ProjectileLaser.positions[%s, %s]" % [global_position_ini, global_position_end])
 
-	ray_cast.global_position = position_ini
-	ray_cast.set_cast_to(position_end - position_ini)
+	ray_cast.global_position = global_position_ini
+	ray_cast.set_cast_to(global_position_end - global_position_ini)
 
 	var collider = ray_cast.get_collider()
 
 	if collider != null:
 		var collision_position:Vector2 = ray_cast.get_collision_point()
-		position_end = collision_position
-		length_actual = (position_end - position_ini).length()
+		global_position_end = collision_position
+		length_actual = (global_position_end - global_position_ini).length()
 		if(hit_active):
 			on_collision(collider, collision_position, false)
 
-	line.global_position = position_ini
+	line.global_position = global_position_ini
 	line.points[0] = Vector2.ZERO
-	line.points[1] = position_end - position_ini
+	line.points[1] = global_position_end - global_position_ini
 
 
 func move_toward(actual:float, to:float, delta:float):
