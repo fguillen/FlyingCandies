@@ -7,6 +7,7 @@ var character
 var _weapons_in_holders_cache = null
 
 signal attack()
+signal weapon_added(weapon)
 
 
 func _ready():
@@ -26,7 +27,10 @@ func add_weapon(weapon:WeaponBase) -> void:
 
 	weapons.append(weapon)
 
-	_add_weapon_to_first_free_weapon_holder(weapon)
+	var weapon_was_added = _add_weapon_to_first_free_weapon_holder(weapon)
+	if weapon_was_added:
+		emit_signal("weapon_added", weapon)
+
 
 
 func attack() -> void:

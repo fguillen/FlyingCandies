@@ -264,6 +264,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character/States/StateMove.gd"
 }, {
+"base": "Node",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://Utils/Utils.gd"
+}, {
 "base": "WeaponBase",
 "class": "WeaponBall",
 "language": "GDScript",
@@ -303,6 +308,16 @@ _global_script_classes=[ {
 "class": "WeaponMissile",
 "language": "GDScript",
 "path": "res://WeaponMissile.gd"
+}, {
+"base": "Control",
+"class": "WeaponUI",
+"language": "GDScript",
+"path": "res://GUI/WeaponUI.gd"
+}, {
+"base": "Control",
+"class": "WeaponsUI",
+"language": "GDScript",
+"path": "res://GUI/WeaponsUI.gd"
 } ]
 _global_script_class_icons={
 "Activator": "",
@@ -356,6 +371,7 @@ _global_script_class_icons={
 "StateIdle": "",
 "StateManager": "",
 "StateMove": "",
+"Utils": "",
 "WeaponBall": "",
 "WeaponBallHalfSphere": "",
 "WeaponBallTowardsPlayer": "",
@@ -363,7 +379,9 @@ _global_script_class_icons={
 "WeaponHolder": "",
 "WeaponLaser": "",
 "WeaponManager": "",
-"WeaponMissile": ""
+"WeaponMissile": "",
+"WeaponUI": "",
+"WeaponsUI": ""
 }
 
 [application]

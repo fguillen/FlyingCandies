@@ -2,6 +2,7 @@ class_name WeaponBase
 extends Node2D
 
 onready var projectile_origin:Node2D = $ProjectileOrigin
+onready var sprite:Sprite = $Sprite
 
 export(float) var reload_time: = 1.0
 export (Resource) var projectile_template = null
@@ -53,3 +54,7 @@ func projectile_direction() -> Vector2:
 
 func _on_reloading_timer_timeout():
 	reloading = false
+
+
+func get_texture() -> Texture:
+	return sprite.texture
