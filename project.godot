@@ -381,7 +381,8 @@ _global_script_class_icons={
 [application]
 
 config/name="SpaceBlastersSquad"
-run/main_scene="res://Scenes/MenuScene.tscn"
+run/main_scene="res://Scenes/SplashScreen/SplashScreenScene.tscn"
+boot_splash/image="res://Assets/Logo.png"
 config/icon="res://icon.png"
 
 [autoload]

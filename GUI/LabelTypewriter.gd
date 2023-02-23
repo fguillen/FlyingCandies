@@ -9,13 +9,13 @@ onready var timer = Timer.new()
 var text_to_display
 
 signal key()
+signal finished()
 
 
 func _ready():
 	text_to_display = get_text()
 	set_text("")
 	call_deferred("setup")
-
 
 
 func setup():
@@ -28,16 +28,8 @@ func setup():
 		perform()
 
 
-
-
 func perform() -> void:
 	timer.start()
-
-
-
-
-
-
 
 
 func _on_timer_timeout():
@@ -46,4 +38,5 @@ func _on_timer_timeout():
 		set_text(new_text)
 		emit_signal("key")
 	else:
+		emit_signal("finished")
 		timer.queue_free()
