@@ -19,7 +19,7 @@ func setup(_character) -> void:
 
 
 func add_weapon(weapon:BaseWeapon) -> void:
-	print("WeaponManager.add_weapon(%s)" % weapon.weapon_name())
+	# print("WeaponManager.add_weapon(%s)" % weapon.weapon_name())
 	if weapon.get_parent() != null:
 		weapon.get_parent().remove_child(weapon)
 
