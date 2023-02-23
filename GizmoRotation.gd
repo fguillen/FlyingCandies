@@ -15,7 +15,7 @@ func _ready():
 	if get_parent() is Node2D:
 		parent_node = get_parent()
 	else:
-		print("[WARNING] GizmoRotation. Parent class no valid: ", get_parent().get_class())
+		push_warning("GizmoRotation. Parent class no valid: %s" % get_parent().get_class())
 
 	if parent_node:
 		previous_rotation = parent_node.global_rotation

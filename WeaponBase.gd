@@ -48,7 +48,7 @@ func projectile_direction() -> Vector2:
 	if holder != null:
 		return holder.direction()
 	else:
-		print("[WARNING] Weapon.holder not found, direction RIGHT")
+		push_warning("Weapon.holder not found, direction RIGHT")
 		return Vector2.RIGHT
 
 

@@ -24,7 +24,7 @@ func _on_weapon_added(weapon:WeaponBase) -> void:
 		if weapon_ui.set_weapon(weapon):
 			return
 
-	print("[WARNING] WeaponUI._on_weapon_added() not WeaponUI free found")
+	push_warning("WeaponUI._on_weapon_added() not WeaponUI free found")
 
 
 func _on_player_set(player) -> void:

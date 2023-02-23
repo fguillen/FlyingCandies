@@ -83,7 +83,7 @@ func _add_weapon_to_first_free_weapon_holder(weapon) -> bool:
 		_weapons_in_holders_cache = null
 		return true
 
-	print("[WARNING] WeaponManager.add_weapon not free holder found")
+	push_warning("WeaponManager.add_weapon not free holder found")
 	return false
 
 

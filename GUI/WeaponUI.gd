@@ -9,9 +9,16 @@ var count := 0
 
 
 func _ready():
-	print("XXX: weapon_name ", weapon_name == null)
+	sprite.texture = null
+	label.text = ""
+
 	var weapons_ui = Utils.get_parent_of_type(self, "WeaponsUI")
-	weapons_ui.register(self)
+
+	if weapons_ui != null:
+		weapons_ui.register(self)
+	else:
+		push_warning("Parent WeaponsUI not found")
+
 
 
 func set_weapon(weapon:WeaponBase) -> bool:
