@@ -1,4 +1,4 @@
-class_name Activator
+class_name ActivableEmitter
 extends Area2D
 
 
@@ -6,5 +6,5 @@ signal activate()
 
 
 func activate():
-	print("Activator.activate()")
+	print("AreaactivateEmitter.activate()")
 	emit_signal("activate")
