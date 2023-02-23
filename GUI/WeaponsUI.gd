@@ -29,3 +29,6 @@ func _on_weapon_added(weapon:WeaponBase) -> void:
 
 func _on_player_set(player) -> void:
 	player.weapon_manager.connect("weapon_added", self, "_on_weapon_added")
+
+	for weapon_already_added in player.weapon_manager.weapons:
+		_on_weapon_added(weapon_already_added)

@@ -25,10 +25,9 @@ func add_weapon(weapon:WeaponBase) -> void:
 
 	weapon.setup(character)
 
-	weapons.append(weapon)
-
 	var weapon_was_added = _add_weapon_to_first_free_weapon_holder(weapon)
 	if weapon_was_added:
+		weapons.append(weapon)
 		emit_signal("weapon_added", weapon)
 
 

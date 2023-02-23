@@ -2,6 +2,7 @@ class_name WeaponUI
 extends Control
 
 onready var sprite:Sprite = $Sprite
+onready var label:Label = $Label
 
 var weapon_name:String = ""
 var count := 0
@@ -22,5 +23,10 @@ func set_weapon(weapon:WeaponBase) -> bool:
 		sprite.texture = weapon.get_texture()
 
 	count += 1
+
+	if count > 1:
+		label.text = "x%d" % count
+	else:
+		label.text = ""
 
 	return true # accepted

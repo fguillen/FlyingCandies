@@ -118,7 +118,7 @@ margin_right = 209.0
 margin_bottom = 158.0
 
 [node name="WeaponsUI" parent="CanvasLayer/Panel" instance=ExtResource( 11 )]
-margin_left = 33.0
-margin_top = 152.0
-margin_right = 33.0
-margin_bottom = 152.0
+margin_left = 38.0
+margin_top = 151.0
+margin_right = 38.0
+margin_bottom = 151.0

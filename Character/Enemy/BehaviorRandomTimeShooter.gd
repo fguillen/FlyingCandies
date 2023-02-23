@@ -28,7 +28,6 @@ func setup(character:Character):
 
 
 func shoot():
-	print("BehaviorRandomTimeShooter.shoot()")
 	character.input_manager.attacking = true
 	timer_release.start(0.1)
 	start_shoot_timer()

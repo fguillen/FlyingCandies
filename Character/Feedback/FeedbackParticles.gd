@@ -10,7 +10,6 @@ export var reparent:bool
 func _ready():
 	assert(particles != null)
 
-	print("FeedbackParticles.ready.reparent ", reparent)
 	if reparent:
 		particles.get_parent().remove_child(particles)
 		get_tree().current_scene.call_deferred("add_child", particles)
