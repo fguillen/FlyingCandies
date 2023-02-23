@@ -40,8 +40,8 @@ MAX_SPEED = 0.0
 position = Vector2( 0.0102081, -8 )
 
 [node name="WeaponHolder" parent="WeaponManager" index="0"]
-position = Vector2( 6.67572e-06, 6.67572e-06 )
-rotation = -0.785398
+position = Vector2( 0.00128937, -0.999992 )
+rotation = -1.5708
 
 [node name="Sprite" parent="." index="7"]
 position = Vector2( 0.0102142, -7.99999 )
