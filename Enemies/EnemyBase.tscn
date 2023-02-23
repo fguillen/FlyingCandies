@@ -1,0 +1,163 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Character/States/StateIdle.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sound/Explosion4.wav" type="AudioStream" id=2]
+[ext_resource path="res://Feedbacks/FeedbackPoints.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Weapons/Ball/BallWeapon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Feedbacks/FeedbackSound.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Character/States/StateMove.gd" type="Script" id=6]
+[ext_resource path="res://Character/Components/DamageManager.gd" type="Script" id=7]
+[ext_resource path="res://Feedbacks/FeedbackFlash.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/EnemyBase.gd" type="Script" id=9]
+[ext_resource path="res://Character/Components/InputManager.gd" type="Script" id=10]
+[ext_resource path="res://Character/Components/MovemementManager.gd" type="Script" id=11]
+[ext_resource path="res://Enemies/Enemy_02.png" type="Texture" id=12]
+[ext_resource path="res://Character/States/StateAttack.gd" type="Script" id=13]
+[ext_resource path="res://Character/Behaviors/BehaviorBase.gd" type="Script" id=14]
+[ext_resource path="res://Character/Components/WeaponManager.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Character/States/StateDead.gd" type="Script" id=16]
+[ext_resource path="res://Character/States/StateManager.gd" type="Script" id=17]
+[ext_resource path="res://Feedbacks/FeedbackExplosion.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.99425, 7.99999 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Attack"
+length = 0.1
+
+[sub_resource type="Animation" id=4]
+resource_name = "Dead"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+length = 0.1
+
+[sub_resource type="Animation" id=3]
+resource_name = "Move"
+length = 0.1
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0, 1.0, 0.1) = 0.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
+
+[node name="EnemyBase" type="KinematicBody2D"]
+rotation = -0.00127678
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 9 )
+state_manager_path = NodePath("StateManager")
+input_manager_path = NodePath("InputManager")
+movement_manager_path = NodePath("MovementManager")
+animation_player_path = NodePath("AnimationPlayer")
+weapon_manager_path = NodePath("WeaponManager")
+damage_manager_path = NodePath("DamageManager")
+weapon_default = ExtResource( 4 )
+behavior_path = NodePath("Behavior")
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="DamageManager" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Behavior" type="Node" parent="."]
+script = ExtResource( 14 )
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="MovementManager" type="Node" parent="."]
+script = ExtResource( 11 )
+FRICTION_DELTA = 1000.0
+ACCELERATION_DELTA = 1000.0
+MAX_SPEED = 20.0
+
+[node name="WeaponManager" parent="." instance=ExtResource( 15 )]
+
+[node name="WeaponHolder" parent="WeaponManager" index="0"]
+position = Vector2( -12, -0.0152964 )
+rotation = 3.14159
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource( 17 )
+initial_state_path = NodePath("StateIdle")
+debug = true
+
+[node name="StateIdle" type="Node" parent="StateManager"]
+script = ExtResource( 1 )
+
+[node name="StateMove" type="Node" parent="StateManager"]
+script = ExtResource( 6 )
+
+[node name="StateDead" type="Node" parent="StateManager"]
+script = ExtResource( 16 )
+
+[node name="StateAttack" type="Node" parent="StateManager"]
+script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.00446955, 5.21027e-07 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Attack = SubResource( 6 )
+anims/Dead = SubResource( 4 )
+anims/Idle = SubResource( 2 )
+anims/Move = SubResource( 3 )
+
+[node name="Feedback" type="Node" parent="."]
+
+[node name="FeedbackExplosion" parent="Feedback" instance=ExtResource( 18 )]
+
+[node name="FeedbackFlash" parent="Feedback" instance=ExtResource( 8 )]
+flashing_number = 1
+sprite_to_flash_path = NodePath("../../Sprite")
+material_flash = SubResource( 8 )
+
+[node name="FeedbackPoints" parent="Feedback" instance=ExtResource( 3 )]
+
+[node name="FeedbackSoundExplosion" parent="Feedback" instance=ExtResource( 5 )]
+audio_file = ExtResource( 2 )
+random_pitch = true
+
+[connection signal="dead" from="." to="Feedback/FeedbackPoints" method="perform"]
+[connection signal="hit" from="." to="Feedback/FeedbackFlash" method="perform"]
+[connection signal="out_of_health" from="." to="Feedback/FeedbackExplosion" method="perform"]
+[connection signal="out_of_health" from="." to="Feedback/FeedbackSoundExplosion" method="perform"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="on_screen_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="WeaponManager"]

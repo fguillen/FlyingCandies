@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://GUI/theme.tres" type="Theme" id=2]
+[ext_resource path="res://Scenes/MenuScene.gd" type="Script" id=3]
+[ext_resource path="res://Assets/MenuElements/Background_Merged.png" type="Texture" id=4]
+[ext_resource path="res://Assets/MenuElements/SpaceShip.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MenuElements/SQUAD.png" type="Texture" id=6]
+[ext_resource path="res://Assets/MenuElements/SPACE_BLASTERS.png" type="Texture" id=7]
+[ext_resource path="res://Assets/MenuElements/SPACE_BLASTERS_border.png" type="Texture" id=8]
+[ext_resource path="res://Menu/Camera2D.gd" type="Script" id=9]
+[ext_resource path="res://Feedbacks/FeedbackShakeNoise.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Feedbacks/KeepInsideViewport.tscn" type="PackedScene" id=11]
+
+[node name="MenuScene" type="Node"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -135.0
+margin_top = 42.0
+margin_right = -9.0
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 126.0
+margin_bottom = 80.0
+theme = ExtResource( 2 )
+text = "Space to Play"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+
+[node name="BackgroundMerged" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 145, 114 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="SpaceShip" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 77, 54 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="Squad" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 3, 136 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="KeepInsideViewport" parent="ParallaxBackground/ParallaxLayer3" instance=ExtResource( 11 )]
+sprite_path = NodePath("../Squad")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="SpaceBlastersBorder" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 2, 114 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="SpaceBlasters" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 2, 114 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="KeepInsideViewport2" parent="ParallaxBackground/ParallaxLayer4" instance=ExtResource( 11 )]
+sprite_path = NodePath("../SpaceBlastersBorder")
+
+[node name="KeepInsideViewport3" parent="ParallaxBackground/ParallaxLayer4" instance=ExtResource( 11 )]
+sprite_path = NodePath("../SpaceBlasters")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 9 )
+
+[node name="FeedbackShakeNoise" parent="Camera2D" instance=ExtResource( 10 )]
+position = Vector2( 2, 1 )
+camera_path = NodePath("..")
+amplitude = 30.0
+period = 10.0
+speed = 3.0
+decay_rate = 0.0
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="ready" from="Camera2D/FeedbackShakeNoise" to="Camera2D/FeedbackShakeNoise" method="perform" binds= [ Vector2( 0, 0 ) ]]

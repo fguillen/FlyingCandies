@@ -1,0 +1,163 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Floor/EnemyFloor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Collectables/CollectableStar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Collectables/CollectableWeaponMissile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/HUD/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Game/EnemiesBatchPatrol.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Game/EnemiesBatchPatrol2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Game/EnemiesBatchPatrol3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Game/ActivatorArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Moon.png" type="Texture" id=12]
+[ext_resource path="res://Enemies/Battleship/BattleshipEnsemble.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Game/EnemyCaptainSpeaking.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Game/Activator.gd" type="Script" id=15]
+[ext_resource path="res://Collectables/CollectableWeaponBall.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Collectables/CollectableWeaponBullet.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Collectables/CollectableWeaponLaser.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="GameScene" type="Node"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 200, 146 )
+texture = ExtResource( 12 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 172, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 0, 144 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 344, 144 )
+texture = ExtResource( 8 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 77, 87 )
+ini_max_health = 5
+
+[node name="ActivatorArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 282, 84 )
+collision_mask = 20
+
+[node name="Camera2D" parent="ActivatorArea" instance=ExtResource( 1 )]
+
+[node name="Collectables" type="Node" parent="."]
+
+[node name="CollectableStar" parent="Collectables" instance=ExtResource( 4 )]
+position = Vector2( 112, 92 )
+
+[node name="CollectableWeaponMissile" parent="Collectables" instance=ExtResource( 5 )]
+position = Vector2( 130, 115 )
+
+[node name="CollectableWeaponBall" parent="Collectables" instance=ExtResource( 16 )]
+position = Vector2( 132, 82 )
+
+[node name="CollectableWeaponLaser" parent="Collectables" instance=ExtResource( 18 )]
+position = Vector2( 103, 107 )
+
+[node name="CollectableWeaponLaser2" parent="Collectables" instance=ExtResource( 18 )]
+position = Vector2( 101, 65 )
+
+[node name="CollectableWeaponBullet" parent="Collectables" instance=ExtResource( 17 )]
+position = Vector2( 154, 65 )
+
+[node name="CollectableWeaponBullet2" parent="Collectables" instance=ExtResource( 17 )]
+position = Vector2( 72, 59 )
+
+[node name="CollectableWeaponBullet3" parent="Collectables" instance=ExtResource( 17 )]
+position = Vector2( 74, 116 )
+
+[node name="EndLevel" type="Node2D" parent="."]
+position = Vector2( 1300, 0 )
+
+[node name="BattleshipEnsemble" parent="EndLevel" instance=ExtResource( 13 )]
+position = Vector2( -342, 69 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="EnemiesPatrol" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 351, 74 )
+
+[node name="EnemiesPatrol2" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 407, 52 )
+
+[node name="EnemiesPatrol3" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 408, 100 )
+
+[node name="EnemiesPatrol4" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 575, 77 )
+
+[node name="EnemiesPatrol5" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 632, 76 )
+
+[node name="EnemiesPatrol6" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 682, 75 )
+
+[node name="EnemiesPatrol7" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 725, 75 )
+
+[node name="EnemiesBatchPatrol2" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 458, 77 )
+
+[node name="EnemiesBatchPatrol3" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 497, 77 )
+
+[node name="EnemiesBatchPatrol4" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 532, 77 )
+
+[node name="EnemiesFloor" type="Node2D" parent="Enemies"]
+position = Vector2( 0, 3 )
+
+[node name="EnemyFloor" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
+position = Vector2( 200, 134 )
+speed = 0
+
+[node name="EnemyFloor2" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
+position = Vector2( 212, 134 )
+speed = 0
+
+[node name="EnemyFloor3" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
+position = Vector2( 224, 134 )
+speed = 0
+
+[node name="EnemiesFloor2" type="Node2D" parent="Enemies"]
+position = Vector2( 145, 0 )
+
+[node name="EnemyFloor" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
+position = Vector2( 200, 134 )
+speed = 0
+
+[node name="EnemyFloor2" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
+position = Vector2( 212, 134 )
+speed = 0
+
+[node name="EnemyFloor3" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
+position = Vector2( 224, 134 )
+speed = 0
+
+[node name="ActivatorEnemyCaptainSpeaking" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivatorEnemyCaptainSpeaking"]
+position = Vector2( 812, 74 )
+shape = SubResource( 1 )
+
+[node name="EnemyCaptainSpeaking" parent="." instance=ExtResource( 14 )]
+
+[editable path="ActivatorArea"]
