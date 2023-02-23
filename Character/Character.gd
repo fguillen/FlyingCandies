@@ -56,7 +56,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	state_manager.physics_process(delta)
-	var collision = move_and_collide(movement_manager.velocity * delta)
+	move_and_slide(movement_manager.velocity)
+	var collision = get_last_slide_collision ( )
 	if collision != null:
 		state_manager.on_collision(collision)
 
