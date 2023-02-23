@@ -1,19 +1,19 @@
 extends CanvasLayer
 
 func load_game_over():
-	change_scene("res://GUI/GameOver.tscn")
+	change_scene("res://Scenes/GameOverScene.tscn")
 
 
 func load_menu():
-	change_scene("res://Menu/MenuScene.tscn")
+	change_scene("res://Scenes/MenuScene.tscn")
 
 
 func load_intro():
-	change_scene("res://Intro/SergeantScene.tscn")
+	change_scene("res://Scenes/SergeantScene.tscn")
 
 
 func load_game():
-	change_scene("res://GameScene.tscn")
+	change_scene("res://Scenes/Game/GameScene.tscn")
 
 
 func change_scene(target: String) -> void:

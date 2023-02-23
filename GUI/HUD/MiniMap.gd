@@ -9,7 +9,7 @@ onready var ini_map_position:float = $Ini.global_position.x
 onready var end_map_position:float = $End.global_position.x
 onready var marker := $Marker
 
-var activator_area
+var enemy_activator
 var battleship
 
 var ini_global_position := 0.0
@@ -17,7 +17,7 @@ var end_global_position := 0.0
 
 
 func _ready():
-	Global.connect("activator_area_set", self, "on_activator_area_set")
+	Global.connect("enemy_activator_set", self, "on_enemy_activator_set")
 	Global.connect("battleship_set", self, "on_battleship_set")
 
 
@@ -27,17 +27,17 @@ func _process(_delta):
 		marker.global_position.x = lerp(ini_map_position, end_map_position, progress)
 
 
-func on_activator_area_set(activator_area):
-	print("MiniMap.on_activator_area_set")
-	self.activator_area = activator_area
-	ini_global_position = activator_area.global_position.x
+func on_enemy_activator_set(enemy_activator):
+	print("MiniMap.on_enemy_activator_set")
+	self.enemy_activator = enemy_activator
+	ini_global_position = enemy_activator.global_position.x
 
 
 func on_battleship_set(battleship):
-	print("MiniMap.on_battlehip_set")
+	print("MiniMap.on_battleship_set")
 	self.battleship = battleship
 	end_global_position = battleship.global_position.x
 
 
 func _calculate_progress():
-	progress = (activator_area.global_position.x - ini_global_position) / (end_global_position - ini_global_position)
+	progress = (enemy_activator.global_position.x - ini_global_position) / (end_global_position - ini_global_position)

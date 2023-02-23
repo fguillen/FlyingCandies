@@ -7,6 +7,11 @@ var speed = 5
 func _ready():
 	connect("body_entered", self, "activate_activable")
 	connect("area_entered", self, "activate_activable")
+	call_deferred("setup")
+
+
+func setup():
+	Global.set_enemy_activator(self)
 
 
 func _process(delta):
