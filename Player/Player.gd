@@ -7,6 +7,7 @@ var pilot
 
 func _ready():
 	call_deferred("setup")
+	connect("hit", self, "_on_hit")
 
 
 func setup():
@@ -17,3 +18,7 @@ func setup():
 
 func get_class():
 	return "Player"
+
+
+func _on_hit(_position:Vector2) -> void:
+	movement_manager.set_velocity(Vector2.ZERO)

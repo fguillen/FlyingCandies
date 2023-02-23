@@ -14,7 +14,7 @@
 [ext_resource path="res://Weapons/Bullet/BulletWeapon.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Character/States/StateAttack.gd" type="Script" id=13]
 [ext_resource path="res://Feedbacks/FeedbackInmunity.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Feedbacks/FeedbackBlink.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Feedbacks/FeedbackBlinkFlash.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Feedbacks/FeedbackExplosionBig.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Character/States/StateDead.gd" type="Script" id=17]
 [ext_resource path="res://Weapons/WeaponHolder.tscn" type="PackedScene" id=18]
@@ -165,6 +165,9 @@ material_flash = SubResource( 7 )
 
 [node name="FeedbackExplosionBig" parent="Feedback" instance=ExtResource( 16 )]
 
+[connection signal="hit" from="." to="Feedback/FeedbackInmunity" method="perform"]
+[connection signal="hit" from="." to="Feedback/FeedbackBlink" method="perform"]
+[connection signal="out_of_health" from="." to="Feedback/FeedbackExplosionBig" method="perform"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateManager" method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="WeaponManager"]

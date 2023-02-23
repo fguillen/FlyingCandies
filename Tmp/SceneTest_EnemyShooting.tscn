@@ -25,10 +25,8 @@ shader_param/flash_modifier = 0.0
 [node name="EnemyFloor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 65, 74 )
 speed = 0
+damage_on_collision = 100
 activated = true
-
-[node name="WeaponHolder" parent="EnemyFloor/WeaponManager" index="0"]
-rotation = -1.5708
 
 [node name="FeedbackFlash" parent="EnemyFloor/Feedback" index="1"]
 material_flash = SubResource( 8 )

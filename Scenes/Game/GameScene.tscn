@@ -170,14 +170,17 @@ position = Vector2( 0, 3 )
 [node name="EnemyFloor" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
 position = Vector2( 200, 134 )
 speed = 0
+damage_on_collision = 100
 
 [node name="EnemyFloor2" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
 position = Vector2( 212, 134 )
 speed = 0
+damage_on_collision = 100
 
 [node name="EnemyFloor3" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
 position = Vector2( 224, 134 )
 speed = 0
+damage_on_collision = 100
 
 [node name="EnemiesFloor2" type="Node2D" parent="Enemies"]
 position = Vector2( 145, 0 )
@@ -185,14 +188,17 @@ position = Vector2( 145, 0 )
 [node name="EnemyFloor" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
 position = Vector2( 200, 134 )
 speed = 0
+damage_on_collision = 100
 
 [node name="EnemyFloor2" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
 position = Vector2( 212, 134 )
 speed = 0
+damage_on_collision = 100
 
 [node name="EnemyFloor3" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
 position = Vector2( 224, 134 )
 speed = 0
+damage_on_collision = 100
 
 [connection signal="activate" from="EndLevel/ActivatorEnemyCaptainSpeaking" to="EndLevel/EnemyCaptainSpeaking" method="perform"]
 

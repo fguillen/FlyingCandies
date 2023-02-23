@@ -23,7 +23,7 @@ func shoot(position:Vector2, direction:Vector2):
 	emit_signal("shoot", global_position)
 
 
-func on_collision(collisionable, position:Vector2, free:bool = true):
+func _on_collision(collisionable, position:Vector2, free:bool = true):
 	if collisionable.has_method("get_hit"):
 		collisionable.get_hit(damage, position)
 		emit_signal("hit", position)
@@ -35,4 +35,4 @@ func on_collision(collisionable, position:Vector2, free:bool = true):
 func _physics_process(delta):
 	var collision = move_and_collide(direction * speed * delta)
 	if collision != null:
-		on_collision(collision.collider, collision.position)
+		_on_collision(collision.collider, collision.position)

@@ -11,7 +11,8 @@ func _ready():
 	print("CollisionShape: ", collision_shape)
 
 
-func perform(_position:Vector2):
+func perform(_position:Vector2 = Vector2.ZERO):
+	print("FeedbackInmunity.perform()")
 	collision_shape.disabled = true
 
 	timer.start(time_seconds)

@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 export (int) var ini_max_health := 3
 export (int) var speed := 50
+export (int) var damage_on_collision := 100
 
 export var state_manager_path := NodePath()
 export var input_manager_path := NodePath()
@@ -59,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide(movement_manager.velocity)
 	var collision = get_last_slide_collision ( )
 	if collision != null:
-		state_manager.on_collision(collision)
+		_on_collision(collision)
 
 
 func get_class():
@@ -67,6 +68,7 @@ func get_class():
 
 
 func get_hit(damage:int, position:Vector2):
+	print("%s.get_hit()", name)
 	damage_manager.get_hit(damage)
 	emit_signal("hit", position)
 
@@ -89,3 +91,10 @@ func dead():
 	print("dead")
 	emit_signal("dead", global_position)
 	queue_free()
+
+
+func _on_collision(collision):
+	state_manager.on_collision(collision)
+
+	if collision.collider.has_method("get_hit"):
+		collision.collider.get_hit(damage_on_collision, collision.position)

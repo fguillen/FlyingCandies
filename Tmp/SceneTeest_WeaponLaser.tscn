@@ -32,14 +32,12 @@ script = ExtResource( 4 )
 position = Vector2( 100, 32 )
 ini_max_health = 100
 speed = 0
+damage_on_collision = 1
 activated = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 32, 51 )
 weapon_default = ExtResource( 2 )
-
-[node name="WeaponHolder5" parent="Player/WeaponManager" index="3"]
-rotation = 1.5708
 
 [node name="WeaponHolder2" parent="Player/WeaponManager" index="4" instance=ExtResource( 5 )]
 position = Vector2( -11, -16 )
