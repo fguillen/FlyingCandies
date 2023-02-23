@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "ActivatorArea",
 "language": "GDScript",
-"path": "res://Scenes/Game/ActivatorArea.gd"
+"path": "res://Scenes/Game/EnemyActivator.gd"
 }, {
 "base": "BaseProjectile",
 "class": "BallProjectile",

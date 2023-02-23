@@ -1,4 +1,4 @@
-class_name ActivatorArea
+class_name EnemyActivator
 extends Area2D
 
 var speed = 5
@@ -14,6 +14,6 @@ func _process(delta):
 
 
 func activate_activable(activable:Node):
-	print("ActivatorArea.activate_activable: ", activable.get_class())
+	print("EnemyActivator.activate_activable: ", activable.get_class())
 	if activable.has_method("activate"):
 		activable.activate()

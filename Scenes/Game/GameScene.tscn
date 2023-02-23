@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Game/EnemiesBatchPatrol2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Game/EnemiesBatchPatrol3.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Game/ActivatorArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Game/EnemyActivator.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Moon.png" type="Texture" id=12]
 [ext_resource path="res://Enemies/Battleship/BattleshipEnsemble.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Game/EnemyCaptainSpeaking.tscn" type="PackedScene" id=14]
@@ -49,11 +49,11 @@ texture = ExtResource( 8 )
 position = Vector2( 77, 87 )
 ini_max_health = 5
 
-[node name="ActivatorArea" parent="." instance=ExtResource( 11 )]
+[node name="EnemyActivator" parent="." instance=ExtResource( 11 )]
 position = Vector2( 282, 84 )
 collision_mask = 20
 
-[node name="Camera2D" parent="ActivatorArea" instance=ExtResource( 1 )]
+[node name="Camera2D" parent="EnemyActivator" instance=ExtResource( 1 )]
 
 [node name="Collectables" type="Node" parent="."]
 
@@ -160,4 +160,4 @@ shape = SubResource( 1 )
 
 [node name="EnemyCaptainSpeaking" parent="." instance=ExtResource( 14 )]
 
-[editable path="ActivatorArea"]
+[editable path="EnemyActivator"]
