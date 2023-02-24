@@ -383,12 +383,14 @@ _global_script_class_icons={
 config/name="SpaceBlastersSquad"
 run/main_scene="res://Scenes/SplashScreen/SplashScreenScene.tscn"
 boot_splash/image="res://Assets/Logo.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Global/Global.gd"
-SceneSwitcher="*res://Scenes/SceneSwitcher.tscn"
+SceneSwitcher="*res://Global/SceneSwitcher/SceneSwitcher.tscn"
 
 [debug]
 

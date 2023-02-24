@@ -25,4 +25,4 @@ position = Vector2( 69, 30 )
 audio_file = ExtResource( 4 )
 random_pitch = true
 
-[connection signal="key" from="." to="Feedback/FeedbackSound" method="perform"]
+[connection signal="key" from="." to="Feedback/FeedbackSound" method="perform" binds= [ Vector2( 0, 0 ) ]]

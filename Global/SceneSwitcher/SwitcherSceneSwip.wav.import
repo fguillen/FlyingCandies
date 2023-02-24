@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SwitcherSceneSwip_invert.wav-e153ba3511a0ac7636fa2908952dcb03.sample"
+path="res://.import/SwitcherSceneSwip.wav-972e7a126abb83443aa1d99a59daeccc.sample"
 
 [deps]
 
-source_file="res://Scenes/SwitcherSceneSwip_invert.wav"
-dest_files=[ "res://.import/SwitcherSceneSwip_invert.wav-e153ba3511a0ac7636fa2908952dcb03.sample" ]
+source_file="res://Global/SceneSwitcher/SwitcherSceneSwip.wav"
+dest_files=[ "res://.import/SwitcherSceneSwip.wav-972e7a126abb83443aa1d99a59daeccc.sample" ]
 
 [params]
 
