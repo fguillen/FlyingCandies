@@ -19,7 +19,7 @@ func _ready():
 
 
 
-func perform(position:Vector2) -> void:
+func perform(position:Vector2 = Vector2.ZERO) -> void:
 	global_position = position
 	if random_pitch:
 		audio_stream_player.pitch_scale = random.randf_range(0.8, 1.2)

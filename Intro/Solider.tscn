@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Intro/Solider.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Solider.png" type="Texture" id=2]
+[ext_resource path="res://Feedbacks/FeedbackSound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Intro/Step.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -35,5 +37,16 @@ animations = [ {
 [node name="Solider" type="AnimatedSprite"]
 frames = SubResource( 5 )
 animation = "Idle"
+frame = 1
 playing = true
 script = ExtResource( 1 )
+
+[node name="FeedbackSound" parent="." instance=ExtResource( 3 )]
+audio_file = ExtResource( 4 )
+random_pitch = true
+
+[node name="TimerStep" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="walk_step" from="." to="FeedbackSound" method="perform"]
+[connection signal="timeout" from="TimerStep" to="." method="_on_TimerStep_timeout"]
