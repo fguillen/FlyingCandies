@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Floor/EnemyFloor.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Collectables/CollectableWeaponBall.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Collectables/CollectableWeaponBullet.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Collectables/CollectableWeaponLaser.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Game/BulletLimits.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.87504, 56 )
@@ -27,6 +28,18 @@ extents = Vector2( 6.87504, 48 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6.87504, 120 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6.87504, 56 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 6.87504, 48 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 6.87504, 48 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 6.87504, 48 )
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -85,6 +98,34 @@ shape = SubResource( 4 )
 position = Vector2( 154, 136 )
 rotation = 1.57079
 shape = SubResource( 4 )
+
+[node name="BulletLimits" type="Node2D" parent="EnemyActivator"]
+position = Vector2( -283, -84 )
+script = ExtResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="EnemyActivator/BulletLimits"]
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyActivator/BulletLimits/Area2D"]
+position = Vector2( 29, 88 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EnemyActivator/BulletLimits/Area2D"]
+position = Vector2( 276, 90 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyActivator/BulletLimits/Area2D"]
+position = Vector2( 152, 24.7499 )
+rotation = 1.57079
+scale = Vector2( 1, 2.56 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EnemyActivator/BulletLimits/Area2D"]
+position = Vector2( 154, 151 )
+rotation = 1.57079
+scale = Vector2( 1, 2.8 )
+shape = SubResource( 8 )
 
 [node name="Camera2D" parent="EnemyActivator" instance=ExtResource( 1 )]
 
@@ -200,6 +241,7 @@ position = Vector2( 224, 134 )
 speed = 0
 damage_on_collision = 100
 
+[connection signal="body_entered" from="EnemyActivator/BulletLimits/Area2D" to="EnemyActivator/BulletLimits" method="_on_Area2D_body_entered"]
 [connection signal="activate" from="EndLevel/ActivatorEnemyCaptainSpeaking" to="EndLevel/EnemyCaptainSpeaking" method="perform"]
 
 [editable path="EnemyActivator"]
