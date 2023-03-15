@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/Game/ActivableEmiter.gd"
 }, {
-"base": "Area2D",
-"class": "ActivatorArea",
-"language": "GDScript",
-"path": "res://Scenes/Game/EnemyActivator.gd"
-}, {
 "base": "BaseProjectile",
 "class": "BallProjectile",
 "language": "GDScript",
@@ -88,6 +83,11 @@ _global_script_classes=[ {
 "class": "DamageManager",
 "language": "GDScript",
 "path": "res://Character/Components/DamageManager.gd"
+}, {
+"base": "Area2D",
+"class": "EnemyActivator",
+"language": "GDScript",
+"path": "res://Scenes/Game/EnemyActivator.gd"
 }, {
 "base": "Character",
 "class": "EnemyBase",
@@ -316,7 +316,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "ActivableEmitter": "",
-"ActivatorArea": "",
 "BallProjectile": "",
 "BallRadialWeapon": "",
 "BallWeapon": "",
@@ -331,6 +330,7 @@ _global_script_class_icons={
 "CollectableStar": "",
 "CollectableWeapon": "",
 "DamageManager": "",
+"EnemyActivator": "",
 "EnemyBase": "",
 "EnemyCaptainSpeaking": "",
 "EnemyFloor": "",

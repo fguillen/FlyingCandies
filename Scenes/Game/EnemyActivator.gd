@@ -22,3 +22,7 @@ func activate_activable(activable:Node):
 	print("EnemyActivator.activate_activable: ", activable.get_class())
 	if activable.has_method("activate"):
 		activable.activate()
+
+
+func stop():
+	speed = 0
