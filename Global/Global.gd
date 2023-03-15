@@ -5,6 +5,7 @@ var player = null
 var battleship = null
 var enemy_activator = null
 var player_dead = false
+var battleship_dead = false
 var camera = null
 var pilot = null
 
@@ -55,6 +56,7 @@ func set_battleship(battleship):
 	print("Global.set_battleship()")
 	self.battleship = battleship
 
+	battleship.connect("dead", self, "on_battleship_dead")
 	emit_signal("battleship_set", battleship)
 
 
@@ -68,6 +70,14 @@ func set_enemy_activator(enemy_activator):
 func on_player_dead(_position):
 	player_dead = true
 	SceneSwitcher.load_game_over()
+
+
+func on_battleship_dead():
+	battleship_dead = true
+
+
+func enemy_defeated():
+	SceneSwitcher.load_success()
 
 
 func on_player_health_changed(value):

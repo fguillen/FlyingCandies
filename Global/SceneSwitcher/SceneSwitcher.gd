@@ -4,6 +4,10 @@ func load_game_over():
 	change_scene("res://Scenes/GameOver/GameOverScene.tscn")
 
 
+func load_success():
+	change_scene("res://Scenes/Success/SuccessScene.tscn")
+
+
 func load_menu():
 	change_scene("res://Scenes/Menu/MenuScene.tscn")
 

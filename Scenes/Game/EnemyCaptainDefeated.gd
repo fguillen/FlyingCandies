@@ -25,5 +25,6 @@ func perform() -> void:
 	animation_player.play("Play")
 
 
-func _on_AnimationPlayer_animation_finished(anim_name:String):
+func _on_AnimationPlayer_animation_finished(_anim_name:String):
 	print("EnemyCaptainDefeated.animation_finished")
+	Global.enemy_defeated()
