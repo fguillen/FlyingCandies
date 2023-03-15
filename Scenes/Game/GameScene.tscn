@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Floor/EnemyFloor.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Collectables/CollectableWeaponBullet.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Collectables/CollectableWeaponLaser.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Game/BulletLimits.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Game/EnemyCaptainDefeated.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.87504, 56 )
@@ -185,6 +186,8 @@ position = Vector2( -342, 69 )
 
 [node name="EnemyCaptainSpeaking" parent="EndLevel" instance=ExtResource( 14 )]
 
+[node name="EnemyCaptainDefeated" parent="EndLevel" instance=ExtResource( 20 )]
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="EnemiesPatrol" parent="Enemies" instance=ExtResource( 7 )]
@@ -262,5 +265,6 @@ damage_on_collision = 100
 [connection signal="body_entered" from="EnemyActivator/BulletLimits/Area2D" to="EnemyActivator/BulletLimits" method="_on_Area2D_body_entered"]
 [connection signal="activate" from="EndLevel/ActivatorEnemyCaptainSpeaking" to="EndLevel/EnemyCaptainSpeaking" method="perform"]
 [connection signal="activate" from="EndLevel/StopActivatorMovement" to="EnemyActivator" method="stop"]
+[connection signal="dead" from="EndLevel/BattleshipEnsemble" to="EndLevel/EnemyCaptainDefeated" method="perform"]
 
 [editable path="EnemyActivator"]

@@ -3,6 +3,7 @@ extends Node2D
 var weapons := []
 var num_weapons := 0
 
+signal dying()
 signal dead()
 
 func _ready():
@@ -26,8 +27,14 @@ func _load_weapons() -> void:
 func _on_weapon_destroyed(_position) -> void:
 	num_weapons -= 1
 	if num_weapons == 0:
-		destroy()
+		dying()
 
 
-func destroy():
+func dying():
+	emit_signal("dying")
+	yield(get_tree().create_timer(4), "timeout")
+	dead()
+
+func dead():
 	emit_signal("dead")
+	queue_free()

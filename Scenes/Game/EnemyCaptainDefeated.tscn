@@ -1,0 +1,158 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/AlienCaptain.png" type="Texture" id=2]
+[ext_resource path="res://Assets/AlienCaptain_face.png" type="Texture" id=3]
+[ext_resource path="res://glitch_shader.tres" type="Shader" id=4]
+[ext_resource path="res://GUI/LabelTypewriter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Game/EnemyCaptainDefeated.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Pixel.png" type="Texture" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/shake_power = 0.3
+shader_param/shake_rate = 1.0
+shader_param/shake_speed = 5.0
+shader_param/shake_block_size = 100.0
+shader_param/shake_color_rate = 0.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "Play"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialog:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8, 2, 7.5, 7.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -23, 126 ), Vector2( -23, 126 ), Vector2( -23, 57 ), Vector2( -23, 57 ), Vector2( -23, 126 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AlienCaptain:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialog/AlienCaptainFace:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 2.2, 7.3, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 356, 72 ), Vector2( 356, 72 ), Vector2( 268, 72 ), Vector2( 268, 72 ), Vector2( 356, 72 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Dialog/LabelEnemyDefeated:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 7.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AlienCaptain:material:shader_param/shake_rate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 1.1, 8.2, 9.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.2, 0.2, 1.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AlienCaptain:material:shader_param/shake_power")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 1.1, 8.2, 9.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.3, 0.03, 0.03, 0.3 ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Dialog/LabelEnemyDefeated")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 2.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "perform"
+} ]
+}
+
+[node name="EnemyCaptainDefeated" type="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="AlienCaptain" type="Sprite" parent="."]
+visible = false
+material = SubResource( 1 )
+position = Vector2( -360, 67 )
+scale = Vector2( 0.77193, 0.77193 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 510.409, -63.4773 )
+
+[node name="Dialog" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -175.0
+margin_top = -45.0
+margin_right = 129.0
+margin_bottom = 54.9989
+
+[node name="ColorRect" type="ColorRect" parent="Dialog"]
+margin_left = 53.0
+margin_top = 56.0
+margin_right = 300.0
+margin_bottom = 113.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Line" type="Sprite" parent="Dialog"]
+position = Vector2( 175, 56 )
+scale = Vector2( 309.806, -1.73885 )
+texture = ExtResource( 7 )
+
+[node name="AlienCaptainFace" type="Sprite" parent="Dialog"]
+position = Vector2( 356, 72 )
+texture = ExtResource( 3 )
+
+[node name="LabelEnemyDefeated" parent="Dialog" instance=ExtResource( 5 )]
+margin_left = 103.0
+margin_top = 52.0
+margin_right = 273.0
+margin_bottom = 114.0
+rect_scale = Vector2( 0.8, 0.8 )
+text = "Human, desist or you will die. I warn you."
+auto_perform = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Play = SubResource( 2 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
