@@ -8,5 +8,13 @@
 [node name="BattleshipEnsemble" parent="." instance=ExtResource( 1 )]
 position = Vector2( 231, 75 )
 
+[node name="EnemyBattleship" parent="BattleshipEnsemble/Ensemble" index="0"]
+activated = true
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 62, 85 )
+
+[editable path="BattleshipEnsemble"]
+[editable path="BattleshipEnsemble/Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion"]
+[editable path="BattleshipEnsemble/Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion2"]
+[editable path="BattleshipEnsemble/Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion3"]
