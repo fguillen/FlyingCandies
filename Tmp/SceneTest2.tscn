@@ -56,3 +56,4 @@ script = ExtResource( 5 )
 [connection signal="health_changed" from="Player" to="CanvasLayer/Label" method="set_text"]
 
 [editable path="EnemyFloor"]
+[editable path="EnemyFloor/WeaponManager"]

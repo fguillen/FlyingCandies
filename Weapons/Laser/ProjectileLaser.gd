@@ -54,7 +54,7 @@ func _physics_process(delta):
 		global_position_end = collision_position
 		length_actual = (global_position_end - global_position_ini).length()
 		if(hit_active):
-			on_collision(collider, collision_position, false)
+			_on_collision(collider, collision_position, false)
 
 	line.global_position = global_position_ini
 	line.points[0] = Vector2.ZERO
@@ -81,8 +81,8 @@ func _on_end_of_life():
 	queue_free()
 
 
-func on_collision(collisionable, position:Vector2, free:bool = true):
+func _on_collision(collisionable, position:Vector2, free:bool = true):
 	print("ProjectileLaser.on_collision")
-	.on_collision(collisionable, position, free)
+	._on_collision(collisionable, position, free)
 	hit_active = false
 	hits_per_second_timer.start(1.0 / hits_per_second)
