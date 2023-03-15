@@ -2,7 +2,16 @@ class_name EnemyCaptainDefeated
 extends CanvasLayer
 
 const ENEMY_DEFEATED = [
-	"You are a brave warrior"
+	"You are too powerful.",
+	"Our plan has failed.",
+	"We misjudged your strength.",
+	"You've bested us.",
+	"You've won this battle.",
+	"We underestimated your skill.",
+	"Our defeat is certain.",
+	"You are a formidable foe.",
+	"Our forces were no match.",
+	"You are a true warrior."
 ]
 
 onready var animation_player := $AnimationPlayer
