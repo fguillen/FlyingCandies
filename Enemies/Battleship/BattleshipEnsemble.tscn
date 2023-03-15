@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemies/Battleship/EnemyBattleshipWeapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Battleship/EnemyBattleship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Patrol/PathForEnemyPatrol.gd" type="Script" id=3]
 [ext_resource path="res://Enemies/Battleship/BattleshipEnsemble.gd" type="Script" id=4]
+[ext_resource path="res://Feedbacks/FeedbackExplosion.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( -1.36429, 38.8822, 1.36429, -38.8822, -15, 13, 6.90298, -0.14434, -6.90298, 0.14434, -25, -48, 2.72858, -43.6572, -2.72858, 43.6572, -36, 15, -7.04548, -0.405935, 7.04548, 0.405935, -25, 83, 0, 37.5834, 0, -37.5834, -15, 13 )
+"points": PoolVector2Array( -1.36429, 38.8822, 1.36429, -38.8822, -15, 13, 6.90298, -0.14434, -6.90298, 0.14434, -25, -33, 2.72858, -43.6572, -2.72858, 43.6572, -36, 15, -7.04548, -0.405935, 7.04548, 0.405935, -25, 55, 0, 37.5834, 0, -37.5834, -15, 13 )
 }
 
 [node name="BattleshipEnsemble" type="Node2D"]
@@ -18,17 +19,78 @@ script = ExtResource( 4 )
 [node name="EnemyBattleship" parent="Ensemble" instance=ExtResource( 2 )]
 path_path = NodePath("../../PathForEnemyPatrol")
 
-[node name="EnemyBattleshipWeapon" parent="Ensemble/EnemyBattleship" instance=ExtResource( 1 )]
-rotation = 1.16415e-10
+[node name="Weapons" type="Node2D" parent="Ensemble/EnemyBattleship"]
+unique_name_in_owner = true
 
-[node name="EnemyBattleshipWeapon2" parent="Ensemble/EnemyBattleship" instance=ExtResource( 1 )]
+[node name="EnemyBattleshipWeapon" parent="Ensemble/EnemyBattleship/Weapons" instance=ExtResource( 1 )]
+rotation = 1.16415e-10
+scale = Vector2( 1, 1 )
+collision_layer = 4
+ini_max_health = 3
+
+[node name="EnemyBattleshipWeapon2" parent="Ensemble/EnemyBattleship/Weapons" instance=ExtResource( 1 )]
 position = Vector2( 4.96042, 31.0064 )
 rotation = 1.16415e-10
+scale = Vector2( 1, 1 )
+collision_layer = 4
+ini_max_health = 3
 
-[node name="EnemyBattleshipWeapon3" parent="Ensemble/EnemyBattleship" instance=ExtResource( 1 )]
+[node name="EnemyBattleshipWeapon3" parent="Ensemble/EnemyBattleship/Weapons" instance=ExtResource( 1 )]
 position = Vector2( -44.0127, 9.94381 )
 rotation = 1.16415e-10
+scale = Vector2( 1, 1 )
+collision_layer = 4
+ini_max_health = 3
 
 [node name="PathForEnemyPatrol" type="Path2D" parent="."]
 curve = SubResource( 1 )
 script = ExtResource( 3 )
+
+[node name="Feedback" type="Node2D" parent="."]
+
+[node name="FeedbackExplosion" parent="Feedback" instance=ExtResource( 5 )]
+position = Vector2( -25, -16 )
+
+[node name="Particles" parent="Feedback/FeedbackExplosion" index="0"]
+amount = 10
+lifetime = 1.0
+one_shot = false
+direction = Vector2( 1, 1 )
+spread = 172.13
+initial_velocity = 16.25
+initial_velocity_random = 0.11
+scale_amount_random = 0.94
+
+[node name="FeedbackExplosion2" parent="Feedback" instance=ExtResource( 5 )]
+position = Vector2( -20, 21 )
+
+[node name="Particles" parent="Feedback/FeedbackExplosion2" index="0"]
+amount = 10
+lifetime = 1.0
+one_shot = false
+direction = Vector2( 1, 1 )
+spread = 172.13
+initial_velocity = 16.25
+initial_velocity_random = 0.11
+scale_amount_random = 0.94
+
+[node name="FeedbackExplosion3" parent="Feedback" instance=ExtResource( 5 )]
+position = Vector2( 31, 10 )
+
+[node name="Particles" parent="Feedback/FeedbackExplosion3" index="0"]
+amount = 10
+lifetime = 1.0
+one_shot = false
+direction = Vector2( 1, 1 )
+spread = 172.13
+initial_velocity = 16.25
+initial_velocity_random = 0.11
+scale_amount_random = 0.94
+
+[connection signal="dead" from="." to="Feedback/FeedbackExplosion" method="perform"]
+[connection signal="dead" from="." to="Feedback/FeedbackExplosion2" method="perform"]
+[connection signal="dead" from="." to="Feedback/FeedbackExplosion3" method="perform"]
+
+[editable path="Feedback/FeedbackExplosion"]
+[editable path="Feedback/FeedbackExplosion2"]
+[editable path="Feedback/FeedbackExplosion3"]

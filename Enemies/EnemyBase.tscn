@@ -70,7 +70,7 @@ shader_param/flash_modifier = 0.0
 
 [node name="EnemyBase" type="KinematicBody2D"]
 rotation = -0.00127678
-collision_layer = 4
+collision_layer = 20
 collision_mask = 3
 script = ExtResource( 9 )
 damage_on_collision = 1

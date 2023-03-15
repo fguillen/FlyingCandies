@@ -15,7 +15,9 @@ func _ready():
 		get_tree().current_scene.call_deferred("add_child", particles)
 
 
-func perform(position:Vector2):
-	particles.global_position = position
+func perform(position:Vector2 = Vector2.ZERO):
+	if position != Vector2.ZERO:
+		particles.global_position = position
+
 	if not particles.emitting:
 		particles.emitting = true
