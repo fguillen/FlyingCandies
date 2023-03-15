@@ -13,8 +13,12 @@ func weapon_name() -> String:
 	return "Laser"
 
 
-func attack() -> Array:
+func attack(delay:float = 0) -> Array:
 	reloading = true
+
+	if delay > 0:
+		yield(get_tree().create_timer(delay), "timeout")
+
 	reloading_timer.start(reload_time)
 
 	_charging()

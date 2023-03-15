@@ -31,8 +31,12 @@ func can_attack() -> bool:
 	return not reloading
 
 
-func attack() -> Array:
+func attack(delay:float = 0) -> Array:
 	reloading = true
+
+	if delay > 0:
+		yield(get_tree().create_timer(delay), "timeout")
+
 	reloading_timer.start(reload_time)
 
 	var projectile = projectile_template.instance()

@@ -9,7 +9,7 @@ func weapon_name() -> String:
 	return "BallRadial"
 
 
-func attack() -> Array:
+func attack(_delay:float = 0) -> Array:
 	reloading = true
 	reloading_timer.start(reload_time)
 

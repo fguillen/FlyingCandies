@@ -5,12 +5,14 @@ var weapons: = []
 var weapon_holders := []
 var character
 var _weapons_in_holders_cache = null
+var random = RandomNumberGenerator.new()
 
 signal attack()
 signal weapon_added(weapon)
 
 
 func _ready():
+	random.randomize()
 	_load_weapon_holders()
 
 
@@ -37,7 +39,8 @@ func attack() -> void:
 
 	for weapon in _weapons_in_holders():
 		if weapon.can_attack():
-			weapon.attack()
+			var delay:float = 0.0 if not attack_done else random.randf_range(0, 0.3)
+			weapon.attack(delay)
 			attack_done = true
 
 	if attack_done:

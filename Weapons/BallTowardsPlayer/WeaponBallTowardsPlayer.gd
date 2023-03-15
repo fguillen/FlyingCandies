@@ -7,6 +7,9 @@ func weapon_name() -> String:
 
 
 func projectile_direction() -> Vector2:
+	if not is_instance_valid(Global.player):
+		return Vector2.LEFT
+
 	var direction = (Global.player.global_position - global_position).normalized()
 	return direction
 
