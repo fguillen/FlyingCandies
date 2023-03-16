@@ -28,6 +28,8 @@ shader_param/flash_modifier = 0.0
 
 [node name="EnemyFloor" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
+ini_max_health = 20
+speed = 0
 
 [node name="Behavior" parent="." index="2"]
 script = ExtResource( 3 )

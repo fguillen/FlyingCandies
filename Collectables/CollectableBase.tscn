@@ -27,7 +27,7 @@ shape = SubResource( 1 )
 [node name="FeedbackCollectableCollected" parent="Feedback" instance=ExtResource( 3 )]
 
 [node name="FeedbackFloating" parent="Feedback" instance=ExtResource( 4 )]
-time = 0.5
+time_range = Vector2( 0.7, 0.75 )
 node2D_path = NodePath("../..")
 
 [node name="FeedbackSound" parent="Feedback" instance=ExtResource( 6 )]

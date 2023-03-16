@@ -2,19 +2,22 @@ class_name FeedbackFloating
 extends Feedback
 
 export(int) var distance = 10
-export(float) var time = 1.0
+export(Vector2) var time_range = Vector2(1.0, 1.0)
 export(NodePath) var node2D_path
 
 onready var node2D: Node2D = get_node(node2D_path)
 onready var tween := $Tween
 
 
+var random = RandomNumberGenerator.new()
+var time:float = 0.0
 var position_start:Vector2 = Vector2.ZERO
 var position_down:Vector2 = Vector2.ZERO
 var position_up:Vector2 = Vector2.ZERO
 
-# func _ready():
-# 	print("FeedbackFloating.ready()")
+func _ready():
+	random.randomize()
+	time = random.randf_range(time_range.x, time_range.y)
 
 
 func perform(_position:Vector2) -> void:

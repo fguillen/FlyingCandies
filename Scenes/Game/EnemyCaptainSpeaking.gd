@@ -74,6 +74,5 @@ func _ready():
 
 
 func perform() -> void:
-	return
 	print("EnemyCaptainSpeaking.perform()")
 	animation_player.play("Play")

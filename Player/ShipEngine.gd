@@ -2,7 +2,7 @@ class_name ShipEngine
 extends Node2D
 
 const MIN_SCALE = 0.25
-const MAX_SCALE = 3.25
+const MAX_SCALE = 1.0
 
 var sprites: = []
 var power = 0.0

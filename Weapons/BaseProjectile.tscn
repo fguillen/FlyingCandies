@@ -32,12 +32,14 @@ reparent = true
 
 [node name="FeedbackShoot" parent="Feedback" instance=ExtResource( 2 )]
 audio_file = ExtResource( 6 )
+random_pitch = true
 
-[node name="FeedbackImpact" parent="Feedback" instance=ExtResource( 2 )]
+[node name="FeedbackSoundImpact" parent="Feedback" instance=ExtResource( 2 )]
+reparent = true
 audio_file = ExtResource( 7 )
 random_pitch = true
 
 [connection signal="hit" from="." to="Feedback/FeedbackProjectileImpact" method="perform"]
-[connection signal="hit" from="." to="Feedback/FeedbackImpact" method="perform"]
+[connection signal="hit" from="." to="Feedback/FeedbackSoundImpact" method="perform"]
 [connection signal="shoot" from="." to="Feedback/FeedbackMuzzleBlast" method="perform"]
 [connection signal="shoot" from="." to="Feedback/FeedbackShoot" method="perform"]

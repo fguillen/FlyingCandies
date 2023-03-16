@@ -1,7 +1,7 @@
 class_name EnemyActivator
 extends Area2D
 
-var speed = 5
+export var speed:float = 5.0
 
 
 func _ready():

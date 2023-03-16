@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Floor/EnemyFloor.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Enemies/Battleship/BattleshipEnsemble.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Game/EnemyCaptainSpeaking.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Game/ActivableEmiter.gd" type="Script" id=15]
-[ext_resource path="res://Collectables/CollectableWeaponBall.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Collectables/CollectableWeaponBullet.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Collectables/CollectableWeaponLaser.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Game/BulletLimits.gd" type="Script" id=19]
@@ -71,11 +70,11 @@ texture = ExtResource( 8 )
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 640, 89 )
+position = Vector2( 58, 89 )
 ini_max_health = 5
 
 [node name="EnemyActivator" parent="." instance=ExtResource( 11 )]
-position = Vector2( 840, 84 )
+position = Vector2( 282, 84 )
 collision_mask = 16
 
 [node name="PlayerLimits" type="Node2D" parent="EnemyActivator"]
@@ -134,29 +133,88 @@ shape = SubResource( 8 )
 
 [node name="Collectables" type="Node" parent="."]
 
-[node name="CollectableStar" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 112, 92 )
+[node name="Weapons" type="Node2D" parent="Collectables"]
 
-[node name="CollectableWeaponMissile" parent="Collectables" instance=ExtResource( 5 )]
-position = Vector2( 130, 115 )
+[node name="CollectableWeaponMissile" parent="Collectables/Weapons" instance=ExtResource( 5 )]
+position = Vector2( 555, 52 )
 
-[node name="CollectableWeaponBall" parent="Collectables" instance=ExtResource( 16 )]
-position = Vector2( 132, 82 )
+[node name="CollectableWeaponMissile2" parent="Collectables/Weapons" instance=ExtResource( 5 )]
+position = Vector2( 694, 53 )
 
-[node name="CollectableWeaponLaser" parent="Collectables" instance=ExtResource( 18 )]
-position = Vector2( 103, 107 )
+[node name="CollectableWeaponLaser" parent="Collectables/Weapons" instance=ExtResource( 18 )]
+position = Vector2( 622, 109 )
 
-[node name="CollectableWeaponLaser2" parent="Collectables" instance=ExtResource( 18 )]
-position = Vector2( 101, 65 )
+[node name="CollectableWeaponLaser2" parent="Collectables/Weapons" instance=ExtResource( 18 )]
+position = Vector2( 622, 59 )
 
-[node name="CollectableWeaponBullet" parent="Collectables" instance=ExtResource( 17 )]
-position = Vector2( 154, 65 )
+[node name="CollectableWeaponBullet" parent="Collectables/Weapons" instance=ExtResource( 17 )]
+position = Vector2( 348, 81 )
 
-[node name="CollectableWeaponBullet2" parent="Collectables" instance=ExtResource( 17 )]
-position = Vector2( 72, 59 )
+[node name="CollectableWeaponBullet2" parent="Collectables/Weapons" instance=ExtResource( 17 )]
+position = Vector2( 555, 111 )
 
-[node name="CollectableWeaponBullet3" parent="Collectables" instance=ExtResource( 17 )]
-position = Vector2( 74, 116 )
+[node name="CollectableWeaponBullet3" parent="Collectables/Weapons" instance=ExtResource( 17 )]
+position = Vector2( 672, 109 )
+
+[node name="Stars" type="Node2D" parent="Collectables"]
+position = Vector2( 1, 11 )
+
+[node name="Line2" type="Node2D" parent="Collectables/Stars"]
+position = Vector2( 57, 0 )
+
+[node name="CollectableStar" parent="Collectables/Stars/Line2" instance=ExtResource( 4 )]
+position = Vector2( 319, 89 )
+
+[node name="CollectableStar2" parent="Collectables/Stars/Line2" instance=ExtResource( 4 )]
+position = Vector2( 319, 76 )
+
+[node name="CollectableStar3" parent="Collectables/Stars/Line2" instance=ExtResource( 4 )]
+position = Vector2( 319, 63 )
+
+[node name="CollectableStar4" parent="Collectables/Stars/Line2" instance=ExtResource( 4 )]
+position = Vector2( 319, 50 )
+
+[node name="LineHorizontal" type="Node2D" parent="Collectables/Stars"]
+position = Vector2( 236, 0 )
+
+[node name="CollectableStar" parent="Collectables/Stars/LineHorizontal" instance=ExtResource( 4 )]
+position = Vector2( 335, 76 )
+
+[node name="CollectableStar2" parent="Collectables/Stars/LineHorizontal" instance=ExtResource( 4 )]
+position = Vector2( 319, 76 )
+
+[node name="CollectableStar3" parent="Collectables/Stars/LineHorizontal" instance=ExtResource( 4 )]
+position = Vector2( 350, 76 )
+
+[node name="CollectableStar4" parent="Collectables/Stars/LineHorizontal" instance=ExtResource( 4 )]
+position = Vector2( 366, 76 )
+
+[node name="Circle" type="Node2D" parent="Collectables/Stars"]
+position = Vector2( 123, 0 )
+
+[node name="CollectableStar" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 328, 89 )
+
+[node name="CollectableStar8" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 356, 89 )
+
+[node name="CollectableStar2" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 319, 76 )
+
+[node name="CollectableStar7" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 362, 76 )
+
+[node name="CollectableStar3" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 328, 63 )
+
+[node name="CollectableStar6" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 355, 63 )
+
+[node name="CollectableStar4" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 341, 50 )
+
+[node name="CollectableStar5" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
+position = Vector2( 341, 100 )
 
 [node name="EndLevel" type="Node2D" parent="."]
 position = Vector2( 1300, 0 )
@@ -221,45 +279,33 @@ position = Vector2( 497, 77 )
 position = Vector2( 532, 77 )
 
 [node name="EnemiesFloor" type="Node2D" parent="Enemies"]
-position = Vector2( 0, 3 )
+position = Vector2( 128, 3 )
 
 [node name="EnemyFloor" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
 position = Vector2( 200, 134 )
-collision_layer = 4
-speed = 0
 damage_on_collision = 100
 
 [node name="EnemyFloor2" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
 position = Vector2( 212, 134 )
-collision_layer = 4
-speed = 0
 damage_on_collision = 100
 
 [node name="EnemyFloor3" parent="Enemies/EnemiesFloor" instance=ExtResource( 2 )]
 position = Vector2( 224, 134 )
-collision_layer = 4
-speed = 0
 damage_on_collision = 100
 
 [node name="EnemiesFloor2" type="Node2D" parent="Enemies"]
-position = Vector2( 145, 0 )
+position = Vector2( 273, 0 )
 
 [node name="EnemyFloor" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
 position = Vector2( 200, 134 )
-collision_layer = 4
-speed = 0
 damage_on_collision = 100
 
 [node name="EnemyFloor2" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
 position = Vector2( 212, 134 )
-collision_layer = 4
-speed = 0
 damage_on_collision = 100
 
 [node name="EnemyFloor3" parent="Enemies/EnemiesFloor2" instance=ExtResource( 2 )]
 position = Vector2( 224, 134 )
-collision_layer = 4
-speed = 0
 damage_on_collision = 100
 
 [connection signal="body_entered" from="EnemyActivator/BulletLimits/Area2D" to="EnemyActivator/BulletLimits" method="_on_Area2D_body_entered"]

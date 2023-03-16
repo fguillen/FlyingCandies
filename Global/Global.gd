@@ -69,6 +69,7 @@ func set_enemy_activator(enemy_activator):
 
 func on_player_dead(_position):
 	player_dead = true
+	yield(get_tree().create_timer(4.0), "timeout")
 	SceneSwitcher.load_game_over()
 
 

@@ -34,7 +34,7 @@ texture_mode = 1
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="5"]
 enabled = true
-collision_mask = 5
+collision_mask = 4
 collide_with_areas = true
 
 [node name="HitsPerSecondTimer" type="Timer" parent="." index="6"]

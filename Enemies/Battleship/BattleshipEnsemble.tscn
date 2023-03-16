@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Enemies/Battleship/EnemyBattleshipWeapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Battleship/EnemyBattleship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Patrol/PathForEnemyPatrol.gd" type="Script" id=3]
 [ext_resource path="res://Enemies/Battleship/BattleshipEnsemble.gd" type="Script" id=4]
 [ext_resource path="res://Feedbacks/FeedbackExplosion.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sound/battleship_destroyed.wav" type="AudioStream" id=6]
+[ext_resource path="res://Feedbacks/FeedbackSound.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sound/battleship_destroyed_2.wav" type="AudioStream" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -17,32 +20,31 @@ script = ExtResource( 4 )
 [node name="Ensemble" type="Node2D" parent="."]
 
 [node name="EnemyBattleship" parent="Ensemble" instance=ExtResource( 2 )]
+speed = 30
 path_path = NodePath("../../PathForEnemyPatrol")
 
 [node name="Weapons" type="Node2D" parent="Ensemble/EnemyBattleship"]
 unique_name_in_owner = true
-scale = Vector2( 1, 1 )
 
 [node name="EnemyBattleshipWeapon" parent="Ensemble/EnemyBattleship/Weapons" instance=ExtResource( 1 )]
 rotation = 1.16415e-10
-scale = Vector2( 1, 1 )
-ini_max_health = 3
 
 [node name="EnemyBattleshipWeapon2" parent="Ensemble/EnemyBattleship/Weapons" instance=ExtResource( 1 )]
 position = Vector2( 4.96042, 31.0064 )
 rotation = 1.16415e-10
-scale = Vector2( 1, 1 )
-ini_max_health = 3
 
 [node name="EnemyBattleshipWeapon3" parent="Ensemble/EnemyBattleship/Weapons" instance=ExtResource( 1 )]
 position = Vector2( -44.0127, 9.94381 )
 rotation = 1.16415e-10
-scale = Vector2( 1, 1 )
-ini_max_health = 3
 
 [node name="Feedback2" type="Node2D" parent="Ensemble/EnemyBattleship"]
 rotation = 0.00127678
-scale = Vector2( 1, 1 )
+
+[node name="FeedbackSoundDestroyed" parent="Ensemble/EnemyBattleship/Feedback2" instance=ExtResource( 7 )]
+audio_file = ExtResource( 6 )
+
+[node name="FeedbackSoundDestroyed2" parent="Ensemble/EnemyBattleship/Feedback2" instance=ExtResource( 7 )]
+audio_file = ExtResource( 8 )
 
 [node name="FeedbackExplosion" parent="Ensemble/EnemyBattleship/Feedback2" instance=ExtResource( 5 )]
 position = Vector2( -25, -16 )
@@ -90,6 +92,8 @@ script = ExtResource( 3 )
 [connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion" method="perform"]
 [connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion2" method="perform"]
 [connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion3" method="perform"]
+[connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackSoundDestroyed" method="perform"]
+[connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackSoundDestroyed2" method="perform"]
 
 [editable path="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion"]
 [editable path="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion2"]

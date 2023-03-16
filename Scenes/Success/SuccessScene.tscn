@@ -14,29 +14,51 @@ Label/fonts/font = SubResource( 1 )
 [node name="SuccessScene" type="CanvasLayer"]
 script = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -58.5
-margin_top = -19.0
-margin_right = 58.5
-margin_bottom = 19.0
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Control"]
+anchor_right = 1.0
+margin_top = -8.0
+margin_bottom = 30.0
 theme = SubResource( 2 )
-text = "You Won"
+text = "You Won,"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Control"]
+anchor_right = 1.0
+margin_top = 17.0
+margin_bottom = 55.0
+theme = SubResource( 2 )
+text = "The human colony is safe"
 align = 1
 
-[node name="ButtonRestart" type="Button" parent="."]
+[node name="Label3" type="Label" parent="Control"]
+anchor_right = 1.0
+margin_top = 55.0
+margin_bottom = 93.0
+theme = SubResource( 2 )
+text = "Your score is:"
+align = 1
+
+[node name="Points" type="Label" parent="Control"]
+anchor_right = 1.0
+margin_top = 81.0
+margin_bottom = 119.0
+theme = SubResource( 2 )
+text = "100000000"
+align = 1
+
+[node name="ButtonRestart" type="Button" parent="Control"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -76.0
-margin_top = 23.5
-margin_right = 76.0
-margin_bottom = 55.5
+margin_left = -72.0
+margin_top = 129.0
+margin_right = 80.0
+margin_bottom = 161.0
 theme = ExtResource( 2 )
 text = "Space to restart"
 
-[connection signal="pressed" from="ButtonRestart" to="." method="_on_ButtonRestart_pressed"]
+[connection signal="pressed" from="Control/ButtonRestart" to="." method="_on_ButtonRestart_pressed"]

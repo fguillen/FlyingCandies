@@ -35,6 +35,9 @@ shoot_time = Vector2( 2, 5 )
 [node name="WeaponManager" parent="." index="5"]
 position = Vector2( -9.99999, -0.0127678 )
 
+[node name="WeaponHolder" parent="WeaponManager" index="0"]
+position = Vector2( -4, -0.00513201 )
+
 [node name="FeedbackFlash" parent="Feedback" index="1"]
 material_flash = SubResource( 8 )
 

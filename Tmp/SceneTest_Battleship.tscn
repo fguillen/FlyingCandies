@@ -11,6 +11,18 @@ position = Vector2( 231, 75 )
 [node name="EnemyBattleship" parent="BattleshipEnsemble/Ensemble" index="0"]
 activated = true
 
+[node name="EnemyBattleshipWeapon" parent="BattleshipEnsemble/Ensemble/EnemyBattleship/Weapons" index="0"]
+ini_max_health = 3
+activated = true
+
+[node name="EnemyBattleshipWeapon2" parent="BattleshipEnsemble/Ensemble/EnemyBattleship/Weapons" index="1"]
+ini_max_health = 3
+activated = true
+
+[node name="EnemyBattleshipWeapon3" parent="BattleshipEnsemble/Ensemble/EnemyBattleship/Weapons" index="2"]
+ini_max_health = 3
+activated = true
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 62, 85 )
 
