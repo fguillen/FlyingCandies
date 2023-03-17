@@ -2,7 +2,7 @@ class_name Character
 extends KinematicBody2D
 
 export (int) var ini_max_health := 3
-export (int) var speed := 50
+export (int) var speed := 50 setget set_speed
 export (int) var damage_on_collision := 100
 
 export var state_manager_path := NodePath()
@@ -98,3 +98,9 @@ func _on_collision(collision):
 
 	if collision.collider.has_method("get_hit"):
 		collision.collider.get_hit(damage_on_collision, collision.position)
+
+
+func set_speed(value):
+	speed = value
+	if movement_manager:
+		movement_manager.MAX_SPEED = value

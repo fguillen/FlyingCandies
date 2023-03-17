@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Floor/EnemyFloor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Collectables/CollectableStar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Collectables/CollectableWeaponMissile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/HUD/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Game/EnemiesBatchPatrol.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=8]
@@ -15,8 +14,7 @@
 [ext_resource path="res://Enemies/Battleship/BattleshipEnsemble.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Game/EnemyCaptainSpeaking.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Game/ActivableEmiter.gd" type="Script" id=15]
-[ext_resource path="res://Collectables/CollectableWeaponBullet.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Collectables/CollectableWeaponLaser.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Enemies/Meteor/EnemyMeteor.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Game/BulletLimits.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/Game/EnemyCaptainDefeated.tscn" type="PackedScene" id=20]
 
@@ -71,7 +69,7 @@ texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 58, 89 )
-ini_max_health = 5
+ini_max_health = 10
 
 [node name="EnemyActivator" parent="." instance=ExtResource( 11 )]
 position = Vector2( 282, 84 )
@@ -133,29 +131,6 @@ shape = SubResource( 8 )
 
 [node name="Collectables" type="Node" parent="."]
 
-[node name="Weapons" type="Node2D" parent="Collectables"]
-
-[node name="CollectableWeaponMissile" parent="Collectables/Weapons" instance=ExtResource( 5 )]
-position = Vector2( 555, 52 )
-
-[node name="CollectableWeaponMissile2" parent="Collectables/Weapons" instance=ExtResource( 5 )]
-position = Vector2( 694, 53 )
-
-[node name="CollectableWeaponLaser" parent="Collectables/Weapons" instance=ExtResource( 18 )]
-position = Vector2( 622, 109 )
-
-[node name="CollectableWeaponLaser2" parent="Collectables/Weapons" instance=ExtResource( 18 )]
-position = Vector2( 622, 59 )
-
-[node name="CollectableWeaponBullet" parent="Collectables/Weapons" instance=ExtResource( 17 )]
-position = Vector2( 348, 81 )
-
-[node name="CollectableWeaponBullet2" parent="Collectables/Weapons" instance=ExtResource( 17 )]
-position = Vector2( 555, 111 )
-
-[node name="CollectableWeaponBullet3" parent="Collectables/Weapons" instance=ExtResource( 17 )]
-position = Vector2( 672, 109 )
-
 [node name="Stars" type="Node2D" parent="Collectables"]
 position = Vector2( 1, 11 )
 
@@ -216,6 +191,26 @@ position = Vector2( 341, 50 )
 [node name="CollectableStar5" parent="Collectables/Stars/Circle" instance=ExtResource( 4 )]
 position = Vector2( 341, 100 )
 
+[node name="Meteors" type="Node2D" parent="Collectables"]
+
+[node name="EnemyMeteor" parent="Collectables/Meteors" instance=ExtResource( 16 )]
+position = Vector2( 315, -22 )
+
+[node name="EnemyMeteor2" parent="Collectables/Meteors" instance=ExtResource( 16 )]
+position = Vector2( 440, -23 )
+
+[node name="EnemyMeteor3" parent="Collectables/Meteors" instance=ExtResource( 16 )]
+position = Vector2( 541, -22 )
+
+[node name="EnemyMeteor4" parent="Collectables/Meteors" instance=ExtResource( 16 )]
+position = Vector2( 597, -23 )
+
+[node name="EnemyMeteor5" parent="Collectables/Meteors" instance=ExtResource( 16 )]
+position = Vector2( 638, -23 )
+
+[node name="EnemyMeteor6" parent="Collectables/Meteors" instance=ExtResource( 16 )]
+position = Vector2( 686, -23 )
+
 [node name="EndLevel" type="Node2D" parent="."]
 position = Vector2( 1300, 0 )
 
@@ -252,31 +247,31 @@ position = Vector2( -342, 69 )
 position = Vector2( 351, 74 )
 
 [node name="EnemiesPatrol2" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 407, 52 )
+position = Vector2( 660, 53 )
 
 [node name="EnemiesPatrol3" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 408, 100 )
+position = Vector2( 661, 101 )
 
 [node name="EnemiesPatrol4" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 575, 77 )
+position = Vector2( 525, 94 )
 
 [node name="EnemiesPatrol5" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 632, 76 )
+position = Vector2( 581, 75 )
 
 [node name="EnemiesPatrol6" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 682, 75 )
+position = Vector2( 690, 75 )
 
 [node name="EnemiesPatrol7" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 725, 75 )
+position = Vector2( 733, 75 )
 
 [node name="EnemiesBatchPatrol2" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 458, 77 )
+position = Vector2( 409, 61 )
 
 [node name="EnemiesBatchPatrol3" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 497, 77 )
+position = Vector2( 446, 87 )
 
 [node name="EnemiesBatchPatrol4" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 532, 77 )
+position = Vector2( 486, 67 )
 
 [node name="EnemiesFloor" type="Node2D" parent="Enemies"]
 position = Vector2( 128, 3 )

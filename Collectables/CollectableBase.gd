@@ -10,6 +10,7 @@ signal collected_at(position)
 
 
 func _ready():
+	print("CollectableBase._ready()")
 	area2d.connect("body_entered", self, "on_body_entered")
 
 

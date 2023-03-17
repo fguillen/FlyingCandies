@@ -1,0 +1,70 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Enemies/EnemyBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Meteor/EnemyMeteor.png" type="Texture" id=2]
+[ext_resource path="res://Character/Behaviors/BehaviorMeteor.gd" type="Script" id=3]
+[ext_resource path="res://Collectables/CollectableWeaponLaser.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Collectables/CollectableDropper.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Collectables/CollectableWeaponBullet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Collectables/CollectableDropperOption.gd" type="Script" id=7]
+[ext_resource path="res://Collectables/CollectableWeaponMissile.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0, 1.0, 0.1) = 0.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
+
+[sub_resource type="Resource" id=10]
+resource_local_to_scene = true
+script = ExtResource( 7 )
+collectable = ExtResource( 6 )
+chances = 20.0
+
+[sub_resource type="Resource" id=9]
+resource_local_to_scene = true
+script = ExtResource( 7 )
+collectable = ExtResource( 8 )
+chances = 20.0
+
+[sub_resource type="Resource" id=11]
+resource_local_to_scene = true
+script = ExtResource( 7 )
+collectable = ExtResource( 4 )
+chances = 10.0
+
+[node name="EnemyMeteor" instance=ExtResource( 1 )]
+ini_max_health = 5
+weapon_default = null
+points = 15
+
+[node name="Behavior" parent="." index="2"]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="7"]
+texture = ExtResource( 2 )
+
+[node name="FeedbackFlash" parent="Feedback" index="1"]
+material_flash = SubResource( 8 )
+
+[node name="FeedbackPoints" parent="Feedback" index="2"]
+points = 15
+
+[node name="CollectableDropper" parent="." index="11" instance=ExtResource( 5 )]
+collectable_options = [ SubResource( 10 ), SubResource( 9 ), SubResource( 11 ) ]
+
+[connection signal="dead" from="." to="CollectableDropper" method="perform"]
+
+[editable path="WeaponManager"]

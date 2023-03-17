@@ -6,8 +6,10 @@
 
 [node name="CollectableStar" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-points = 10
+points = 25
 
 [node name="FeedbackPoints" parent="Feedback" index="1" instance=ExtResource( 3 )]
+reparent = true
+points = 25
 
 [connection signal="collected_at" from="." to="Feedback/FeedbackPoints" method="perform"]

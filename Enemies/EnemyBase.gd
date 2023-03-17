@@ -31,6 +31,10 @@ func get_class():
 
 
 func activate():
+	if activated:
+		return
+
+	print("EnemyBase.activate()")
 	on_activate()
 	activated = true
 	emit_signal("activate")

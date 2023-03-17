@@ -8,9 +8,6 @@ onready var label := $Label
 
 
 func _ready():
-	get_parent().call_deferred("remove_child", self)
-	get_tree().current_scene.call_deferred("add_child", self)
-
 	label.visible = false
 	label.text = str(points)
 

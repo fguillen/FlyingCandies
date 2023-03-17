@@ -142,6 +142,7 @@ anims/Move = SubResource( 3 )
 [node name="Feedback" type="Node" parent="."]
 
 [node name="FeedbackExplosion" parent="Feedback" instance=ExtResource( 18 )]
+reparent = true
 
 [node name="FeedbackFlash" parent="Feedback" instance=ExtResource( 8 )]
 flashing_number = 1
@@ -149,8 +150,10 @@ sprite_to_flash_path = NodePath("../../Sprite")
 material_flash = SubResource( 8 )
 
 [node name="FeedbackPoints" parent="Feedback" instance=ExtResource( 3 )]
+reparent = true
 
 [node name="FeedbackSoundExplosion" parent="Feedback" instance=ExtResource( 5 )]
+reparent = true
 audio_file = ExtResource( 2 )
 random_pitch = true
 
