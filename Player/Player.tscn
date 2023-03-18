@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Ship_02.png" type="Texture" id=1]
 [ext_resource path="res://Character/States/StateManager.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Feedbacks/FeedbackSound.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Sound/player_hit.wav" type="AudioStream" id=20]
 [ext_resource path="res://Assets/Sound/player_destroyed.wav" type="AudioStream" id=21]
+[ext_resource path="res://Coponents/KeepInScreenComponent.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.5, 4 )
@@ -179,6 +180,15 @@ random_pitch = true
 reparent = true
 audio_file = ExtResource( 21 )
 random_pitch = true
+
+[node name="Components" type="Node" parent="."]
+
+[node name="KeepInScreenComponent" parent="Components" instance=ExtResource( 22 )]
+node_path = NodePath("../..")
+top = 46
+down = 124
+left = 47
+right = 254
 
 [connection signal="hit" from="." to="Feedback/FeedbackInmunity" method="perform"]
 [connection signal="hit" from="." to="Feedback/FeedbackBlink" method="perform"]
