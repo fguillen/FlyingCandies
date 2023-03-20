@@ -10,4 +10,5 @@ reload_time = 0.3
 projectile_template = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -1 )
 texture = ExtResource( 3 )

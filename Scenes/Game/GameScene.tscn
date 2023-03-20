@@ -73,7 +73,7 @@ texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 48, 90 )
-ini_max_health = 10
+ini_max_health = 5
 
 [node name="EnemyActivator" parent="." instance=ExtResource( 11 )]
 position = Vector2( 282, 84 )

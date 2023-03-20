@@ -57,4 +57,7 @@ shape = SubResource( 8 )
 [node name="FeedbackFlash" parent="Feedback" index="1"]
 material_flash = SubResource( 9 )
 
+[node name="FeedbackPoints" parent="Feedback" index="2"]
+points = 15
+
 [editable path="WeaponManager"]
