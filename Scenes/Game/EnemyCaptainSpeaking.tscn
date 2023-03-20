@@ -212,6 +212,7 @@ texture = ExtResource( 6 )
 position = Vector2( -5, 72 )
 
 [node name="LabelEnemyDiscouraging" parent="Dialog" instance=ExtResource( 5 )]
+visible = false
 margin_left = 103.0
 margin_top = 52.0
 margin_right = 273.0
@@ -221,6 +222,7 @@ text = "Human, desist or you will die. I warn you."
 auto_perform = false
 
 [node name="LabelPilotAnswer" parent="Dialog" instance=ExtResource( 5 )]
+visible = false
 margin_left = 102.0
 margin_top = 52.0
 margin_right = 272.0
@@ -231,6 +233,7 @@ align = 0
 auto_perform = false
 
 [node name="LabelEnemyAnswer" parent="Dialog" instance=ExtResource( 5 )]
+visible = false
 margin_left = 102.0
 margin_top = 52.0
 margin_right = 272.0
@@ -241,3 +244,5 @@ auto_perform = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Play = SubResource( 2 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

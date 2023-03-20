@@ -1,6 +1,8 @@
 class_name EnemyCaptainSpeaking
 extends CanvasLayer
 
+signal animation_finished()
+
 const ENEMY_DISCOURAGING = [
 	"Your efforts are futile. Human.",
 	"Surrender or face destruction. Human.",
@@ -76,3 +78,7 @@ func _ready():
 func perform() -> void:
 	print("EnemyCaptainSpeaking.perform()")
 	animation_player.play("Play")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name:String):
+	emit_signal("animation_finished")

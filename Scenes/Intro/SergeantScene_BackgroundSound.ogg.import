@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SergeantScene_BackgroundSound.ogg-f61f76a315c84a874585bd293ad9d09d.oggstr"
+
+[deps]
+
+source_file="res://Scenes/Intro/SergeantScene_BackgroundSound.ogg"
+dest_files=[ "res://.import/SergeantScene_BackgroundSound.ogg-f61f76a315c84a874585bd293ad9d09d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

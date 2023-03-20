@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://GUI/Camera2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Floor/EnemyFloor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Collectables/CollectableStar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Sound/GameMusic.wav" type="AudioStream" id=5]
 [ext_resource path="res://GUI/HUD/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Game/EnemiesBatchPatrol.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/MoonFloor.png" type="Texture" id=8]
@@ -15,6 +16,8 @@
 [ext_resource path="res://Scenes/Game/EnemyCaptainSpeaking.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Game/ActivableEmiter.gd" type="Script" id=15]
 [ext_resource path="res://Enemies/Meteor/EnemyMeteor.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Game/GameScene.gd" type="Script" id=17]
+[ext_resource path="res://Assets/Sound/BossMusic.wav" type="AudioStream" id=18]
 [ext_resource path="res://Scenes/Game/BulletLimits.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/Game/EnemyCaptainDefeated.tscn" type="PackedScene" id=20]
 
@@ -44,6 +47,7 @@ extents = Vector2( 6.87504, 48 )
 [sub_resource type="RectangleShape2D" id=9]
 
 [node name="GameScene" type="Node"]
+script = ExtResource( 17 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -303,11 +307,19 @@ damage_on_collision = 100
 position = Vector2( 224, 134 )
 damage_on_collision = 100
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayerGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="AudioStreamPlayerBoss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
 
 [connection signal="body_entered" from="EnemyActivator/BulletLimits/Area2D" to="EnemyActivator/BulletLimits" method="_on_Area2D_body_entered"]
+[connection signal="activate" from="EndLevel/ActivatorEnemyCaptainSpeaking" to="." method="music_game_stop"]
 [connection signal="activate" from="EndLevel/ActivatorEnemyCaptainSpeaking" to="EndLevel/EnemyCaptainSpeaking" method="perform"]
 [connection signal="activate" from="EndLevel/StopActivatorMovement" to="EnemyActivator" method="stop"]
+[connection signal="dead" from="EndLevel/BattleshipEnsemble" to="." method="music_boss_stop"]
 [connection signal="dead" from="EndLevel/BattleshipEnsemble" to="EndLevel/EnemyCaptainDefeated" method="perform"]
+[connection signal="animation_finished" from="EndLevel/EnemyCaptainSpeaking" to="." method="music_boss_start"]
 
 [editable path="EnemyActivator"]
