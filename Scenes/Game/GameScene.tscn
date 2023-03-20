@@ -303,6 +303,8 @@ damage_on_collision = 100
 position = Vector2( 224, 134 )
 damage_on_collision = 100
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="EnemyActivator/BulletLimits/Area2D" to="EnemyActivator/BulletLimits" method="_on_Area2D_body_entered"]
 [connection signal="activate" from="EndLevel/ActivatorEnemyCaptainSpeaking" to="EndLevel/EnemyCaptainSpeaking" method="perform"]
 [connection signal="activate" from="EndLevel/StopActivatorMovement" to="EnemyActivator" method="stop"]
