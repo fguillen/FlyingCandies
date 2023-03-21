@@ -45,7 +45,7 @@ const SOLDIER_ANSWERS = [
 ]
 
 onready var animation_player := $AnimationPlayer
-
+onready var audio_stream_player := $AudioStreamPlayer
 onready var label_pilot_name := $Dialog/LabelPilotName
 onready var label_sargeant_encouraging := $Dialog/LabelSargentEncouraging
 onready var label_pilot_yes_sir := $Dialog/LabelPilotYesSir
@@ -71,6 +71,7 @@ func _ready():
 
 func go_to_game() -> void:
 	animation_player.stop()
+	audio_stream_player.stop()
 	SceneSwitcher.load_game()
 
 
