@@ -8,6 +8,7 @@ var boss_music_initial_volume_db:float
 
 func _ready():
 	boss_music_initial_volume_db = audio_stream_player_boss.volume_db
+	Global.points = 0
 
 
 func music_game_start():

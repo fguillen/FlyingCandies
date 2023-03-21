@@ -1,6 +1,6 @@
 extends Node
 
-var points = 0
+var points = 0 setget _set_points
 var player = null
 var battleship = null
 var enemy_activator = null
@@ -26,8 +26,7 @@ func _ready() -> void:
 
 
 func add_points(value):
-	points += value
-	emit_signal("points_changed", points)
+	self.points += value
 
 
 func set_shields(value):
@@ -93,3 +92,8 @@ func on_projectile_hit(position:Vector2):
 
 func add_projectile(projectile:BaseProjectile):
 	projectile.connect("hit", self, "on_projectile_hit")
+
+
+func _set_points(value):
+	points = value
+	emit_signal("points_changed", points)
