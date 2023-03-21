@@ -25,7 +25,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.8, 2, 7.5, 7.7 ),
+"times": PoolRealArray( 0, 1.8, 2, 8.1, 8.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -23, 126 ), Vector2( -23, 126 ), Vector2( -23, 57 ), Vector2( -23, 57 ), Vector2( -23, 126 ) ]
@@ -37,7 +37,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 10 ),
+"times": PoolRealArray( 0, 0.1, 10.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -49,7 +49,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2, 2.2, 7.3, 7.5 ),
+"times": PoolRealArray( 0, 2, 2.2, 7.9, 8.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 356, 72 ), Vector2( 356, 72 ), Vector2( 268, 72 ), Vector2( 268, 72 ), Vector2( 356, 72 ) ]
@@ -61,7 +61,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 7.3 ),
+"times": PoolRealArray( 0, 7.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -73,7 +73,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.1, 1.1, 8.2, 9.1 ),
+"times": PoolRealArray( 0.1, 1.1, 8.8, 9.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 1.0, 0.2, 0.2, 1.0 ]
@@ -85,7 +85,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.1, 1.1, 8.2, 9.1 ),
+"times": PoolRealArray( 0.1, 1.1, 8.8, 9.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.3, 0.03, 0.03, 0.3 ]
@@ -144,6 +144,7 @@ position = Vector2( 356, 72 )
 texture = ExtResource( 3 )
 
 [node name="LabelEnemyDefeated" parent="Dialog" instance=ExtResource( 5 )]
+visible = false
 margin_left = 103.0
 margin_top = 52.0
 margin_right = 273.0

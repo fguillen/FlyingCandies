@@ -89,11 +89,11 @@ scale_amount_random = 0.94
 curve = SubResource( 1 )
 script = ExtResource( 3 )
 
+[connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackSoundDestroyed" method="perform"]
+[connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackSoundDestroyed2" method="perform"]
 [connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion" method="perform"]
 [connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion2" method="perform"]
 [connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion3" method="perform"]
-[connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackSoundDestroyed" method="perform"]
-[connection signal="dying" from="." to="Ensemble/EnemyBattleship/Feedback2/FeedbackSoundDestroyed2" method="perform"]
 
 [editable path="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion"]
 [editable path="Ensemble/EnemyBattleship/Feedback2/FeedbackExplosion2"]
