@@ -14,6 +14,7 @@ const ENEMY_DEFEATED = [
 	"You are a true warrior."
 ]
 
+signal animation_ended
 onready var animation_player := $AnimationPlayer
 
 onready var label_enemy_defeated := $Dialog/LabelEnemyDefeated
@@ -37,3 +38,4 @@ func perform() -> void:
 func _on_AnimationPlayer_animation_finished(_anim_name:String):
 	print("EnemyCaptainDefeated.animation_finished")
 	Global.enemy_defeated()
+	emit_signal("animation_ended")

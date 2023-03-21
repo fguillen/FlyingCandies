@@ -18,7 +18,7 @@ shader_param/shake_color_rate = 0.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "Play"
-length = 17.5
+length = 18.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Dialog:rect_position")
 tracks/0/interp = 1
@@ -26,7 +26,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.8, 2, 15.6, 15.8 ),
+"times": PoolRealArray( 0, 1.8, 2, 16.6, 16.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -23, 126 ), Vector2( -23, 126 ), Vector2( -23, 57 ), Vector2( -23, 57 ), Vector2( -23, 126 ) ]
@@ -38,7 +38,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 17.4 ),
+"times": PoolRealArray( 0, 0.1, 18.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -62,7 +62,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2, 2.2, 7.3, 7.5, 11.6, 11.8, 15.3, 15.5 ),
+"times": PoolRealArray( 0, 2, 2.2, 7.3, 7.5, 11.6, 11.8, 16.3, 16.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 356, 72 ), Vector2( 356, 72 ), Vector2( 268, 72 ), Vector2( 268, 72 ), Vector2( 356, 72 ), Vector2( 356, 72 ), Vector2( 268, 72 ), Vector2( 268, 72 ), Vector2( 356, 72 ) ]
@@ -98,7 +98,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 15.2 ),
+"times": PoolRealArray( 0, 16.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -110,7 +110,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.1, 1.1, 15.9, 16.8 ),
+"times": PoolRealArray( 0.1, 1.1, 16.9, 17.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 1.0, 0.2, 0.2, 1.0 ]
@@ -122,7 +122,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0.1, 1.1, 15.9, 16.8 ),
+"times": PoolRealArray( 0.1, 1.1, 16.9, 17.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.3, 0.03, 0.03, 0.3 ]
