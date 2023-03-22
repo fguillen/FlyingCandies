@@ -62,6 +62,8 @@ func _init():
 func _ready():
 	animation_player.play("Play")
 
+	Global.randomize_pilot()
+
 	label_pilot_name.text_to_display = Global.pilot.name
 	label_sargeant_encouraging.text_to_display = ENCOURAGING_WORDS[random.randi_range(0, ENCOURAGING_WORDS.size() - 1)]
 	label_pilot_yes_sir.text_to_display = SOLDIER_ANSWERS[random.randi_range(0, SOLDIER_ANSWERS.size() - 1)]

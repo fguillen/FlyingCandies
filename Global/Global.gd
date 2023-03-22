@@ -21,13 +21,16 @@ signal projectile_hit(value)
 
 func _ready() -> void:
 	print("Global.ready")
-	pilot = Pilot.new()
-	pilot.randomize()
+	randomize_pilot()
 
 
 func add_points(value):
 	self.points += value
 
+
+func randomize_pilot():
+	pilot = Pilot.new()
+	pilot.randomize()
 
 func set_shields(value):
 	emit_signal("shields_changed", value)
